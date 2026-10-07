@@ -1,0 +1,1623 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Technology Notes | College Resource Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eef5ff, #f8fbff);
+            color: #172033;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+
+        .web-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #dbe7f5;
+            box-shadow: 0 4px 18px rgba(20, 60, 100, 0.08);
+            padding: 14px 5%;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .nav-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0756b8;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #25364d;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #0b63ce;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .notes-hero {
+            max-width: 1200px;
+            margin: 35px auto 25px;
+            padding: 55px 35px;
+            text-align: center;
+            background: linear-gradient(135deg, #0756b8, #1389e8);
+            color: white;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(7, 86, 184, 0.22);
+        }
+
+        .notes-hero .emoji {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .notes-hero h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 10px;
+        }
+
+        .notes-hero p {
+            font-size: 17px;
+            max-width: 800px;
+            margin: auto;
+            opacity: 0.95;
+        }
+
+        /* COMMON */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 10px 20px 50px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin: 35px 0 20px;
+        }
+
+        .section-heading h2 {
+            color: #0756b8;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .section-heading p {
+            color: #607086;
+        }
+
+        /* UNIT NAVIGATION */
+
+        .unit-navigation {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0 40px;
+        }
+
+        .unit-navigation a {
+            text-decoration: none;
+            background: white;
+            border: 2px solid #d9e8f8;
+            border-radius: 15px;
+            padding: 18px 10px;
+            text-align: center;
+            color: #0756b8;
+            font-weight: 800;
+            box-shadow: 0 7px 20px rgba(30, 80, 130, 0.08);
+            transition: 0.3s;
+        }
+
+        .unit-navigation a:hover {
+            background: #0756b8;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* PPT SLIDE */
+
+        .ppt-slide {
+            background: white;
+            margin: 35px 0;
+            padding: 32px;
+            border-radius: 22px;
+            border-left: 7px solid #0b63ce;
+            box-shadow: 0 10px 30px rgba(30, 70, 110, 0.09);
+            scroll-margin-top: 100px;
+        }
+
+        .slide-number {
+            display: inline-block;
+            background: #e8f2ff;
+            color: #0756b8;
+            padding: 6px 13px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .ppt-slide h2 {
+            color: #0756b8;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .ppt-slide h3 {
+            color: #174a7c;
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 8px;
+        }
+
+        .ppt-slide h4 {
+            color: #0756b8;
+            margin-top: 18px;
+            margin-bottom: 5px;
+        }
+
+        .ppt-slide p {
+            margin-bottom: 10px;
+        }
+
+        .ppt-slide ul,
+        .ppt-slide ol {
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        .ppt-slide li {
+            margin: 6px 0;
+        }
+
+        /* DEFINITION BOX */
+
+        .definition {
+            background: #eef6ff;
+            border-left: 5px solid #0b63ce;
+            padding: 16px 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .definition strong {
+            color: #0756b8;
+        }
+
+        /* EXAMPLE BOX */
+
+        .example {
+            background: #f5f8fc;
+            border: 1px solid #dbe5f0;
+            padding: 17px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .example-title {
+            font-weight: 800;
+            color: #0b63ce;
+            margin-bottom: 6px;
+        }
+
+        /* IMPORTANT BOX */
+
+        .important {
+            background: #fff8e7;
+            border-left: 5px solid #f0a500;
+            padding: 17px;
+            border-radius: 10px;
+            margin: 18px 0;
+        }
+
+        .important strong {
+            color: #b66b00;
+        }
+
+        /* TABLE */
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 18px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d6e2ef;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #0756b8;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f5f9fd;
+        }
+
+        /* CODE */
+
+        .code-box {
+            background: #101827;
+            color: #e8f1ff;
+            padding: 18px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+        }
+
+        /* REVISION */
+
+        .revision-box {
+            background: linear-gradient(135deg, #0756b8, #1389e8);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 12px 30px rgba(7, 86, 184, 0.2);
+        }
+
+        .revision-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .revision-box ul {
+            padding-left: 25px;
+        }
+
+        .revision-box li {
+            margin: 7px 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 28px 15px;
+            background: #0b1728;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .unit-navigation {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ppt-slide {
+                padding: 23px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .notes-hero {
+                margin: 20px 12px;
+                padding: 40px 20px;
+            }
+
+            .container {
+                padding: 10px 12px 40px;
+            }
+
+            .unit-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .ppt-slide h2 {
+                font-size: 24px;
+            }
+
+            .ppt-slide h3 {
+                font-size: 19px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+                padding: 7px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav class="web-nav">
+
+        <div class="nav-container">
+
+            <div class="nav-title">
+                🌐 Web Technology Notes
+            </div>
+
+            <div class="nav-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="web-syllabus.html">
+                    Syllabus
+                </a>
+
+                <a href="html-css.html">
+                    HTML & CSS
+                </a>
+
+                <a href="web-pyq.html">
+                    PYQs
+                </a>
+
+                <a href="#unit1">
+                    Unit 1
+                </a>
+
+                <a href="#unit2">
+                    Unit 2
+                </a>
+
+                <a href="#unit3">
+                    Unit 3
+                </a>
+
+                <a href="#unit4">
+                    Unit 4
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="notes-hero">
+
+        <div class="emoji">
+            📚
+        </div>
+
+        <h1>
+            Web Technology – Detailed Notes
+        </h1>
+
+        <p>
+            Complete unit-wise notes covering Internet, WWW, HTML,
+            HTML5 and CSS with definitions, examples, tables and
+            exam-oriented points.
+        </p>
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- UNIT NAVIGATION -->
+
+        <div class="unit-navigation">
+
+            <a href="#unit1">
+                🌐<br>
+                UNIT 1<br>
+                Internet & WWW
+            </a>
+
+            <a href="#unit2">
+                🏗️<br>
+                UNIT 2<br>
+                HTML Basics
+            </a>
+
+            <a href="#unit3">
+                🚀<br>
+                UNIT 3<br>
+                HTML5
+            </a>
+
+            <a href="#unit4">
+                🎨<br>
+                UNIT 4<br>
+                CSS
+            </a>
+
+        </div>
+
+
+        <!-- ================= UNIT 1 ================= -->
+
+        <section class="ppt-slide" id="unit1">
+
+            <span class="slide-number">
+                UNIT 1
+            </span>
+
+            <h2>
+                🌐 Internet & World Wide Web
+            </h2>
+
+            <div class="definition">
+
+                <strong>Internet:</strong>
+
+                Internet is a worldwide network of interconnected
+                computers and devices that communicate with each
+                other using standard communication protocols.
+                
+            </div>
+
+
+            <h3>
+                1.1 What is the Internet?
+            </h3>
+
+            <p>
+                The Internet is a global network that connects
+                millions of computers, smartphones, servers and
+                other devices. It allows users to share information
+                and communicate from different locations.
+            </p>
+
+            <h4>Major Uses of Internet</h4>
+
+            <ul>
+
+                <li>Communication through email and messaging</li>
+
+                <li>Online education</li>
+
+                <li>Online banking</li>
+
+                <li>E-commerce and shopping</li>
+
+                <li>Entertainment and streaming</li>
+
+                <li>Social networking</li>
+
+                <li>Cloud computing</li>
+
+                <li>Information searching</li>
+
+            </ul>
+
+
+            <h3>
+                1.2 What is the World Wide Web?
+            </h3>
+
+            <div class="definition">
+
+                <strong>World Wide Web (WWW):</strong>
+
+                WWW is a collection of interconnected web pages
+                and resources that can be accessed through the
+                Internet using web browsers.
+
+            </div>
+
+            <p>
+                The Web uses technologies such as HTML, HTTP,
+                URLs and web browsers to provide information
+                to users.
+            </p>
+
+
+            <h3>
+                1.3 Internet vs WWW
+            </h3>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <tr>
+                        <th>Internet</th>
+                        <th>World Wide Web</th>
+                    </tr>
+
+                    <tr>
+                        <td>Global network of connected devices.</td>
+                        <td>Collection of websites and web pages.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Infrastructure/network.</td>
+                        <td>Service running over the Internet.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Includes email, FTP, web etc.</td>
+                        <td>Mainly uses web pages and web resources.</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <h3>
+                1.4 Web Browser
+            </h3>
+
+            <div class="definition">
+
+                <strong>Web Browser:</strong>
+
+                A software application used to access and display
+                web pages on the Internet.
+
+            </div>
+
+            <h4>Examples</h4>
+
+            <ul>
+                <li>Google Chrome</li>
+                <li>Microsoft Edge</li>
+                <li>Mozilla Firefox</li>
+                <li>Safari</li>
+                <li>Opera</li>
+            </ul>
+
+
+            <h3>
+                1.5 Web Server
+            </h3>
+
+            <div class="definition">
+
+                <strong>Web Server:</strong>
+
+                A computer or software that stores and delivers
+                websites and web resources to clients through
+                the Internet.
+
+            </div>
+
+
+            <h3>
+                1.6 HTTP
+            </h3>
+
+            <div class="definition">
+
+                <strong>HTTP:</strong>
+
+                HTTP stands for HyperText Transfer Protocol.
+                It is used for communication between web browsers
+                and web servers.
+
+            </div>
+
+            <p>
+                When a user enters a website address, the browser
+                sends an HTTP request to the server. The server
+                processes the request and sends an HTTP response.
+            </p>
+
+
+            <div class="example">
+
+                <div class="example-title">
+                    Example:
+                </div>
+
+                When you open a website, the browser requests
+                the required web page from the server and the
+                server sends the page back to the browser.
+
+            </div>
+
+
+            <h3>
+                1.7 Web Searching Techniques
+            </h3>
+
+            <ul>
+
+                <li>Use specific keywords.</li>
+
+                <li>Use quotation marks for exact phrases.</li>
+
+                <li>Use relevant keywords instead of long sentences.</li>
+
+                <li>Check multiple reliable sources.</li>
+
+                <li>Use advanced search filters when required.</li>
+
+            </ul>
+
+
+            <div class="important">
+
+                <strong>Exam Point:</strong>
+
+                Internet is the global network, whereas WWW is
+                a service that works over the Internet and provides
+                interconnected web pages.
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UNIT 2 ================= -->
+
+        <section class="ppt-slide" id="unit2">
+
+            <span class="slide-number">
+                UNIT 2
+            </span>
+
+            <h2>
+                🏗️ Basics of HTML
+            </h2>
+
+            <div class="definition">
+
+                <strong>HTML:</strong>
+
+                HTML stands for HyperText Markup Language.
+                It is the standard markup language used to
+                create and structure web pages.
+
+            </div>
+
+
+            <h3>
+                2.1 Features of HTML
+            </h3>
+
+            <ul>
+
+                <li>Easy to learn and use.</li>
+
+                <li>Platform independent.</li>
+
+                <li>Supports multimedia.</li>
+
+                <li>Used to create web page structure.</li>
+
+                <li>Works with CSS and JavaScript.</li>
+
+                <li>Supported by all modern browsers.</li>
+
+            </ul>
+
+
+            <h3>
+                2.2 Basic Structure of HTML
+            </h3>
+
+            <div class="code-box">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My Web Page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;p&gt;Welcome to my website.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </div>
+
+
+            <h3>
+                2.3 Important HTML Tags
+            </h3>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <tr>
+                        <th>Tag</th>
+                        <th>Purpose</th>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;html&gt;</td>
+                        <td>Defines HTML document.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;head&gt;</td>
+                        <td>Contains document information.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;title&gt;</td>
+                        <td>Defines page title.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;body&gt;</td>
+                        <td>Contains visible page content.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;h1&gt; to &lt;h6&gt;</td>
+                        <td>Defines headings.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;p&gt;</td>
+                        <td>Defines paragraph.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;a&gt;</td>
+                        <td>Creates hyperlink.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;img&gt;</td>
+                        <td>Displays an image.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;br&gt;</td>
+                        <td>Creates line break.</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <h3>
+                2.4 HTML Lists
+            </h3>
+
+            <h4>Ordered List</h4>
+
+            <div class="code-box">
+&lt;ol&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+            </div>
+
+
+            <h4>Unordered List</h4>
+
+            <div class="code-box">
+&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+            </div>
+
+
+            <h3>
+                2.5 Hyperlinks
+            </h3>
+
+            <p>
+                The anchor tag is used to create hyperlinks
+                between web pages.
+            </p>
+
+            <div class="code-box">
+&lt;a href="https://example.com"&gt;
+    Visit Website
+&lt;/a&gt;
+            </div>
+
+
+            <h3>
+                2.6 Images
+            </h3>
+
+            <p>
+                The &lt;img&gt; tag is used to insert an image
+                into an HTML page.
+            </p>
+
+            <div class="code-box">
+&lt;img src="image.jpg"
+     alt="My Image"
+     width="300"&gt;
+            </div>
+
+
+            <h3>
+                2.7 Static and Dynamic Websites
+            </h3>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <tr>
+                        <th>Static Website</th>
+                        <th>Dynamic Website</th>
+                    </tr>
+
+                    <tr>
+                        <td>Content usually remains fixed.</td>
+                        <td>Content can change dynamically.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Usually simpler.</td>
+                        <td>Usually more complex.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mostly HTML/CSS.</td>
+                        <td>May use server-side programming and databases.</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <div class="important">
+
+                <strong>Exam Point:</strong>
+
+                HTML provides the structure of a webpage.
+                CSS provides styling and JavaScript provides
+                behavior and interactivity.
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UNIT 3 ================= -->
+
+        <section class="ppt-slide" id="unit3">
+
+            <span class="slide-number">
+                UNIT 3
+            </span>
+
+            <h2>
+                🚀 HTML5
+            </h2>
+
+            <div class="definition">
+
+                <strong>HTML5:</strong>
+
+                HTML5 is the modern version of HTML that provides
+                improved semantic elements, multimedia support,
+                graphics, storage and advanced form features.
+
+            </div>
+
+
+            <h3>
+                3.1 Advantages of HTML5
+            </h3>
+
+            <ul>
+
+                <li>Supports audio and video without external plugins.</li>
+
+                <li>Provides semantic elements.</li>
+
+                <li>Supports graphics using Canvas and SVG.</li>
+
+                <li>Provides web storage.</li>
+
+                <li>Improves form controls.</li>
+
+                <li>Supports modern web applications.</li>
+
+            </ul>
+
+
+            <h3>
+                3.2 HTML5 Semantic Elements
+            </h3>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <tr>
+                        <th>Element</th>
+                        <th>Purpose</th>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;header&gt;</td>
+                        <td>Defines header section.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;nav&gt;</td>
+                        <td>Defines navigation links.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;section&gt;</td>
+                        <td>Defines a section of content.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;article&gt;</td>
+                        <td>Defines independent content.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;aside&gt;</td>
+                        <td>Defines side content.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;footer&gt;</td>
+                        <td>Defines footer section.</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <h3>
+                3.3 Audio
+            </h3>
+
+            <p>
+                HTML5 provides the &lt;audio&gt; element for
+                playing audio directly in a web page.
+            </p>
+
+            <div class="code-box">
+&lt;audio controls&gt;
+    &lt;source src="song.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+            </div>
+
+
+            <h3>
+                3.4 Video
+            </h3>
+
+            <div class="code-box">
+&lt;video width="500" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+            </div>
+
+
+            <h3>
+                3.5 Canvas
+            </h3>
+
+            <div class="definition">
+
+                <strong>Canvas:</strong>
+
+                The HTML5 Canvas element provides an area where
+                graphics can be drawn using JavaScript.
+
+            </div>
+
+            <div class="code-box">
+&lt;canvas id="myCanvas"
+        width="300"
+        height="150"&gt;
+&lt;/canvas&gt;
+            </div>
+
+
+            <h3>
+                3.6 Web Storage
+            </h3>
+
+            <p>
+                Web Storage allows websites to store data in
+                the user's browser.
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>localStorage:</strong>
+                    Data remains stored until manually removed.
+                </li>
+
+                <li>
+                    <strong>sessionStorage:</strong>
+                    Data normally remains only for the current session.
+                </li>
+
+            </ul>
+
+
+            <h3>
+                3.7 HTML5 Forms
+            </h3>
+
+            <p>
+                HTML5 introduced new input types that make
+                forms easier and more user-friendly.
+            </p>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <tr>
+                        <th>Input Type</th>
+                        <th>Use</th>
+                    </tr>
+
+                    <tr>
+                        <td>email</td>
+                        <td>Email address</td>
+                    </tr>
+
+                    <tr>
+                        <td>number</td>
+                        <td>Numeric values</td>
+                    </tr>
+
+                    <tr>
+                        <td>date</td>
+                        <td>Date selection</td>
+                    </tr>
+
+                    <tr>
+                        <td>range</td>
+                        <td>Range/slider</td>
+                    </tr>
+
+                    <tr>
+                        <td>color</td>
+                        <td>Color selection</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <div class="important">
+
+                <strong>Exam Point:</strong>
+
+                HTML5 is important because it introduced semantic
+                elements, multimedia, graphics, web storage and
+                improved form controls.
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UNIT 4 ================= -->
+
+        <section class="ppt-slide" id="unit4">
+
+            <span class="slide-number">
+                UNIT 4
+            </span>
+
+            <h2>
+                🎨 CSS – Cascading Style Sheets
+            </h2>
+
+            <div class="definition">
+
+                <strong>CSS:</strong>
+
+                CSS stands for Cascading Style Sheets.
+                It is used to control the appearance, layout
+                and presentation of HTML elements.
+
+            </div>
+
+
+            <h3>
+                4.1 Why CSS is Used?
+            </h3>
+
+            <ul>
+
+                <li>Changes colors and backgrounds.</li>
+
+                <li>Controls fonts and text.</li>
+
+                <li>Creates layouts.</li>
+
+                <li>Controls spacing and borders.</li>
+
+                <li>Improves website appearance.</li>
+
+                <li>Helps create responsive designs.</li>
+
+            </ul>
+
+
+            <h3>
+                4.2 Types of CSS
+            </h3>
+
+            <h4>
+                1. Inline CSS
+            </h4>
+
+            <p>
+                CSS written directly inside an HTML element.
+            </p>
+
+            <div class="code-box">
+&lt;p style="color: blue;"&gt;
+    Hello World
+&lt;/p&gt;
+            </div>
+
+
+            <h4>
+                2. Internal CSS
+            </h4>
+
+            <p>
+                CSS written inside the &lt;style&gt; element
+                in the HTML document.
+            </p>
+
+            <div class="code-box">
+&lt;style&gt;
+
+p {
+    color: blue;
+}
+
+&lt;/style&gt;
+            </div>
+
+
+            <h4>
+                3. External CSS
+            </h4>
+
+            <p>
+                CSS is written in a separate .css file and
+                linked with HTML.
+            </p>
+
+            <div class="code-box">
+&lt;link rel="stylesheet"
+      href="style.css"&gt;
+            </div>
+
+
+            <h3>
+                4.3 CSS Selectors
+            </h3>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <tr>
+                        <th>Selector</th>
+                        <th>Example</th>
+                        <th>Purpose</th>
+                    </tr>
+
+                    <tr>
+                        <td>Element</td>
+                        <td>p</td>
+                        <td>Selects all paragraph elements.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Class</td>
+                        <td>.box</td>
+                        <td>Selects elements with class box.</td>
+                    </tr>
+
+                    <tr>
+                        <td>ID</td>
+                        <td>#header</td>
+                        <td>Selects element with specific ID.</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <h3>
+                4.4 Text Formatting
+            </h3>
+
+            <div class="code-box">
+p {
+    color: blue;
+    font-size: 18px;
+    text-align: center;
+    font-family: Arial;
+}
+            </div>
+
+
+            <h3>
+                4.5 Background
+            </h3>
+
+            <div class="code-box">
+body {
+    background-color: lightblue;
+}
+
+.box {
+    background-image: url("image.jpg");
+}
+            </div>
+
+
+            <h3>
+                4.6 CSS Box Model
+            </h3>
+
+            <p>
+                The CSS box model describes how every HTML element
+                is treated as a rectangular box.
+            </p>
+
+            <ul>
+
+                <li><strong>Content</strong> – actual content</li>
+
+                <li><strong>Padding</strong> – space around content</li>
+
+                <li><strong>Border</strong> – boundary around padding</li>
+
+                <li><strong>Margin</strong> – outer space around element</li>
+
+            </ul>
+
+
+            <div class="example">
+
+                <div class="example-title">
+                    Box Model Order
+                </div>
+
+                Content → Padding → Border → Margin
+
+            </div>
+
+
+            <h3>
+                4.7 CSS Positioning
+            </h3>
+
+            <p>
+                CSS position property controls how an element
+                is positioned on a webpage.
+            </p>
+
+            <ul>
+
+                <li>static</li>
+                <li>relative</li>
+                <li>absolute</li>
+                <li>fixed</li>
+                <li>sticky</li>
+
+            </ul>
+
+
+            <h3>
+                4.8 Display Property
+            </h3>
+
+            <ul>
+
+                <li>block</li>
+
+                <li>inline</li>
+
+                <li>inline-block</li>
+
+                <li>none</li>
+
+                <li>flex</li>
+
+                <li>grid</li>
+
+            </ul>
+
+
+            <h3>
+                4.9 CSS Float
+            </h3>
+
+            <p>
+                The float property is used to move an element
+                to the left or right and allow other content
+                to wrap around it.
+            </p>
+
+            <div class="code-box">
+img {
+    float: left;
+    margin-right: 15px;
+}
+            </div>
+
+
+            <h3>
+                4.10 CSS Tables
+            </h3>
+
+            <div class="code-box">
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 10px;
+}
+            </div>
+
+
+            <div class="important">
+
+                <strong>Exam Point:</strong>
+
+                CSS is responsible for the presentation and
+                styling of HTML documents. The three main types
+                are Inline, Internal and External CSS.
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK REVISION -->
+
+        <section class="revision-box">
+
+            <h2>
+                ⚡ Quick Revision – Web Technology
+            </h2>
+
+            <ul>
+
+                <li>
+                    Internet = Global network of interconnected devices.
+                </li>
+
+                <li>
+                    WWW = Collection of interconnected web resources.
+                </li>
+
+                <li>
+                    HTML = Structure of webpage.
+                </li>
+
+                <li>
+                    HTML5 = Modern HTML with multimedia, semantic
+                    elements and web storage.
+                </li>
+
+                <li>
+                    CSS = Styling and presentation of webpage.
+                </li>
+
+                <li>
+                    CSS Types = Inline, Internal and External.
+                </li>
+
+                <li>
+                    HTTP = HyperText Transfer Protocol.
+                </li>
+
+                <li>
+                    Browser is used to access web pages.
+                </li>
+
+                <li>
+                    Web server stores and delivers web resources.
+                </li>
+
+                <li>
+                    Canvas is used for graphics.
+                </li>
+
+                <li>
+                    localStorage and sessionStorage are Web Storage APIs.
+                </li>
+
+                <li>
+                    CSS Box Model = Content + Padding + Border + Margin.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- EXAM PREPARATION -->
+
+        <section class="ppt-slide">
+
+            <span class="slide-number">
+                EXAM PREPARATION
+            </span>
+
+            <h2>
+                📝 Topics You Should Prepare
+            </h2>
+
+            <h3>
+                Short Answer Questions
+            </h3>
+
+            <ul>
+
+                <li>Define Internet.</li>
+
+                <li>Define WWW.</li>
+
+                <li>What is HTTP?</li>
+
+                <li>What is a web browser?</li>
+
+                <li>What is a web server?</li>
+
+                <li>Define HTML.</li>
+
+                <li>What is HTML5?</li>
+
+                <li>Define CSS.</li>
+
+                <li>What are the types of CSS?</li>
+
+                <li>What is the CSS Box Model?</li>
+
+            </ul>
+
+
+            <h3>
+                Long Answer Questions
+            </h3>
+
+            <ul>
+
+                <li>
+                    Explain Internet and World Wide Web.
+                </li>
+
+                <li>
+                    Explain the basic structure of HTML with example.
+                </li>
+
+                <li>
+                    Explain HTML5 features and advantages.
+                </li>
+
+                <li>
+                    Explain semantic elements of HTML5.
+                </li>
+
+                <li>
+                    Explain different types of CSS with examples.
+                </li>
+
+                <li>
+                    Explain CSS Box Model.
+                </li>
+
+                <li>
+                    Explain CSS positioning and display properties.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 College Resource Hub
+        </p>
+
+        <p>
+            Web Technology Detailed Notes
+        </p>
+
+        <p>
+            Created by Nitin Singh
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

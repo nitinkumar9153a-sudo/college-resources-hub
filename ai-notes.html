@@ -1,0 +1,2869 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI & ML Detailed Notes | College Resource Hub</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top left, #dbeafe 0%, transparent 30%),
+                radial-gradient(circle at bottom right, #e0e7ff 0%, transparent 30%),
+                #f5f8ff;
+            color: #172033;
+            line-height: 1.7;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            padding: 14px 20px;
+
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid #dbe4f0;
+
+            box-shadow: 0 5px 25px rgba(30,60,100,0.08);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #334155;
+
+            padding: 9px 16px;
+
+            border-radius: 25px;
+
+            font-weight: 600;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: linear-gradient(135deg,#2563eb,#06b6d4);
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 18px rgba(37,99,235,0.25);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            width: min(1150px,92%);
+            margin: 35px auto;
+
+            padding: 70px 30px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f3c91,
+                    #2563eb,
+                    #0891b2
+                );
+
+            color: white;
+
+            box-shadow:
+                0 25px 60px rgba(37,99,235,0.25);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.09);
+
+            top: -130px;
+            left: -100px;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+
+            right: -140px;
+            bottom: -170px;
+        }
+
+        .hero-icon {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px,6vw,62px);
+
+            margin-bottom: 12px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 19px;
+
+            opacity: 0.92;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 8px 18px;
+
+            border: 1px solid rgba(255,255,255,0.4);
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.12);
+
+            font-size: 14px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ================= PAGE ================= */
+
+        .page {
+            width: min(1150px,92%);
+            margin: auto;
+            padding-bottom: 80px;
+        }
+
+        /* ================= UNIT NAV ================= */
+
+        .unit-nav {
+            display: grid;
+
+            grid-template-columns: repeat(5,1fr);
+
+            gap: 12px;
+
+            margin: 35px 0;
+        }
+
+        .unit-nav a {
+            text-decoration: none;
+
+            background: white;
+
+            border: 1px solid #dbe4f0;
+
+            padding: 16px 10px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            color: #1e3a8a;
+
+            font-weight: bold;
+
+            box-shadow: 0 5px 15px rgba(30,60,100,0.06);
+
+            transition: 0.3s;
+        }
+
+        .unit-nav a:hover {
+            transform: translateY(-5px);
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #06b6d4
+            );
+
+            color: white;
+
+            box-shadow: 0 12px 30px rgba(37,99,235,0.2);
+        }
+
+        /* ================= SLIDE ================= */
+
+        .slide {
+            background: white;
+
+            margin: 45px 0;
+
+            padding: 42px;
+
+            border-radius: 25px;
+
+            border: 1px solid #dce5f0;
+
+            box-shadow:
+                0 15px 45px rgba(30,60,100,0.08);
+
+            scroll-margin-top: 90px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 7px;
+            height: 100%;
+
+            background: linear-gradient(
+                #2563eb,
+                #06b6d4
+            );
+        }
+
+        .slide-number {
+            display: inline-block;
+
+            padding: 6px 13px;
+
+            border-radius: 20px;
+
+            background: #e0edff;
+
+            color: #1d4ed8;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+        .slide-title {
+            font-size: 32px;
+
+            color: #0f2d66;
+
+            margin-bottom: 10px;
+        }
+
+        .slide-subtitle {
+            color: #64748b;
+
+            margin-bottom: 25px;
+        }
+
+        /* ================= CONTENT ================= */
+
+        .topic {
+            margin: 35px 0;
+        }
+
+        .topic h3 {
+            font-size: 23px;
+
+            color: #1d4ed8;
+
+            margin-bottom: 12px;
+        }
+
+        .topic h4 {
+            font-size: 18px;
+
+            color: #0f3c91;
+
+            margin: 20px 0 8px;
+        }
+
+        .topic p {
+            color: #334155;
+
+            margin-bottom: 12px;
+        }
+
+        .topic ul,
+        .topic ol {
+            padding-left: 25px;
+
+            color: #334155;
+        }
+
+        .topic li {
+            margin: 7px 0;
+        }
+
+        /* ================= DEFINITION ================= */
+
+        .definition {
+            background: linear-gradient(
+                135deg,
+                #eff6ff,
+                #ecfeff
+            );
+
+            border-left: 5px solid #2563eb;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            margin: 18px 0;
+        }
+
+        .definition strong {
+            color: #1d4ed8;
+        }
+
+        /* ================= EXAMPLE ================= */
+
+        .example {
+            margin: 18px 0;
+
+            padding: 20px;
+
+            border-radius: 14px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e2e8f0;
+        }
+
+        .example-title {
+            color: #0891b2;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        /* ================= INFO CARDS ================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 18px;
+
+            margin: 20px 0;
+        }
+
+        .card {
+            padding: 22px;
+
+            background: #ffffff;
+
+            border: 1px solid #dbe4f0;
+
+            border-radius: 18px;
+
+            box-shadow: 0 7px 20px rgba(30,60,100,0.06);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+
+            border-color: #93c5fd;
+
+            box-shadow:
+                0 15px 30px rgba(37,99,235,0.12);
+        }
+
+        .card-icon {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .card h4 {
+            color: #1e3a8a;
+
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+
+            color: #64748b;
+        }
+
+        /* ================= DIAGRAM ================= */
+
+        .diagram {
+            margin: 20px 0;
+
+            padding: 25px;
+
+            background: #0f172a;
+
+            color: #7dd3fc;
+
+            border-radius: 16px;
+
+            text-align: center;
+
+            font-family: "Courier New", monospace;
+
+            white-space: pre-line;
+
+            overflow-x: auto;
+
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.25);
+        }
+
+        /* ================= TABLE ================= */
+
+        .table-wrap {
+            overflow-x: auto;
+
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 650px;
+        }
+
+        th,
+        td {
+            padding: 14px;
+
+            border: 1px solid #dbe4f0;
+
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(
+                135deg,
+                #dbeafe,
+                #cffafe
+            );
+
+            color: #173b82;
+        }
+
+        td {
+            background: #ffffff;
+
+            color: #334155;
+        }
+
+        tr:hover td {
+            background: #f8fbff;
+        }
+
+        /* ================= CODE ================= */
+
+        .code {
+            background: #111827;
+
+            color: #d1fae5;
+
+            padding: 20px;
+
+            border-radius: 14px;
+
+            font-family: "Courier New", monospace;
+
+            overflow-x: auto;
+
+            margin: 15px 0;
+        }
+
+        /* ================= EXAM BOX ================= */
+
+        .exam-box {
+            margin-top: 25px;
+
+            padding: 22px;
+
+            border-radius: 16px;
+
+            background: linear-gradient(
+                135deg,
+                #fff7ed,
+                #fefce8
+            );
+
+            border: 1px solid #fed7aa;
+        }
+
+        .exam-box h4 {
+            color: #c2410c;
+
+            margin-bottom: 10px;
+        }
+
+        /* ================= QUICK REVISION ================= */
+
+        .revision {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f3c91,
+                    #2563eb,
+                    #0891b2
+                );
+
+            color: white;
+
+            border: none;
+        }
+
+        .revision .slide-title,
+        .revision p,
+        .revision li {
+            color: white;
+        }
+
+        .revision .slide-number {
+            background: rgba(255,255,255,0.15);
+
+            color: white;
+        }
+
+        .revision li {
+            margin: 10px 0;
+        }
+
+        /* ================= BACK ================= */
+
+        .back {
+            text-align: center;
+
+            margin: 50px 0;
+        }
+
+        .back a {
+            display: inline-block;
+
+            text-decoration: none;
+
+            padding: 13px 26px;
+
+            border-radius: 30px;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #06b6d4
+            );
+
+            color: white;
+
+            font-weight: bold;
+
+            box-shadow: 0 8px 25px rgba(37,99,235,0.2);
+
+            transition: 0.3s;
+        }
+
+        .back a:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 30px rgba(37,99,235,0.3);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            background: #0f172a;
+
+            color: #94a3b8;
+        }
+
+        footer strong {
+            color: #67e8f9;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:900px) {
+
+            .unit-nav {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .cards {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .slide {
+                padding: 32px 25px;
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .unit-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .slide {
+                padding: 28px 20px;
+            }
+
+            .slide-title {
+                font-size: 26px;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 7px 10px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <a href="index.html">🏠 Home</a>
+
+    <a href="ai-introduction.html">🤖 Introduction</a>
+
+    <a href="ai-notes.html" class="active">📚 Notes</a>
+
+    <a href="ai-important.html">⭐ Important</a>
+
+    <a href="ai-pyq.html">📝 PYQs</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-icon">
+        🤖
+    </div>
+
+    <h1>
+        Artificial Intelligence & Machine Learning
+    </h1>
+
+    <p>
+        Complete Detailed Notes • Unit 1 to Unit 4
+    </p>
+
+    <div class="hero-badge">
+        B.Tech CSE • Semester 1 • Exam Preparation
+    </div>
+
+</header>
+
+
+<main class="page">
+
+
+<!-- ================= UNIT NAVIGATION ================= -->
+
+<div class="unit-nav">
+
+    <a href="#unit1">
+        📘 UNIT 1
+    </a>
+
+    <a href="#unit2">
+        📗 UNIT 2
+    </a>
+
+    <a href="#unit3">
+        📙 UNIT 3
+    </a>
+
+    <a href="#unit4">
+        📕 UNIT 4
+    </a>
+
+    <a href="#revision">
+        ⚡ REVISION
+    </a>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- UNIT 1 -->
+<!-- ================================================= -->
+
+<section class="slide" id="unit1">
+
+    <span class="slide-number">
+        UNIT 1 • FOUNDATIONS
+    </span>
+
+    <h2 class="slide-title">
+        📘 Foundations of Artificial Intelligence
+    </h2>
+
+    <p class="slide-subtitle">
+        Introduction, evolution, types, domains, characteristics and applications of AI.
+    </p>
+
+
+    <!-- AI DEFINITION -->
+
+    <div class="topic">
+
+        <h3>
+            1. What is Artificial Intelligence?
+        </h3>
+
+        <div class="definition">
+
+            <strong>Definition:</strong>
+
+            Artificial Intelligence is a branch of computer science
+            that focuses on creating machines and computer systems
+            capable of performing tasks that normally require human
+            intelligence.
+
+        </div>
+
+        <p>
+            AI systems can perform tasks such as learning, reasoning,
+            problem solving, decision making, language understanding,
+            perception and pattern recognition.
+        </p>
+
+    </div>
+
+
+    <!-- CHARACTERISTICS -->
+
+    <div class="topic">
+
+        <h3>
+            2. Characteristics of AI
+        </h3>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h4>Learning</h4>
+                <p>
+                    Ability to learn patterns from data and experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h4>Reasoning</h4>
+                <p>
+                    Ability to use logic and available information.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h4>Decision Making</h4>
+                <p>
+                    Selecting suitable actions based on information.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👁️</div>
+                <h4>Perception</h4>
+                <p>
+                    Understanding images, sounds and environmental input.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <h4>Language</h4>
+                <p>
+                    Processing and understanding human language.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h4>Automation</h4>
+                <p>
+                    Performing tasks with reduced human intervention.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EVOLUTION -->
+
+    <div class="topic">
+
+        <h3>
+            3. Evolution of Artificial Intelligence
+        </h3>
+
+        <ul>
+
+            <li>
+                <strong>1950s:</strong>
+                Early research on machine intelligence began.
+            </li>
+
+            <li>
+                <strong>1956:</strong>
+                The Dartmouth workshop helped establish AI as a field
+                of research.
+            </li>
+
+            <li>
+                <strong>1960s–1970s:</strong>
+                Early problem-solving programs and language systems
+                were developed.
+            </li>
+
+            <li>
+                <strong>1980s:</strong>
+                Expert systems became popular.
+            </li>
+
+            <li>
+                <strong>1990s–2000s:</strong>
+                Machine learning became increasingly important.
+            </li>
+
+            <li>
+                <strong>2010s:</strong>
+                Deep learning achieved major improvements in image,
+                speech and language tasks.
+            </li>
+
+            <li>
+                <strong>Today:</strong>
+                AI is widely used in healthcare, education, finance,
+                transportation, agriculture and entertainment.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- TYPES -->
+
+    <div class="topic">
+
+        <h3>
+            4. Types of Artificial Intelligence
+        </h3>
+
+        <h4>
+            A. Based on Capability
+        </h4>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🎯
+                </div>
+
+                <h4>
+                    Narrow AI
+                </h4>
+
+                <p>
+                    Designed to perform a specific task or a limited
+                    group of tasks.
+                </p>
+
+                <p>
+                    Example: recommendation systems and voice assistants.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🧠
+                </div>
+
+                <h4>
+                    General AI
+                </h4>
+
+                <p>
+                    A theoretical AI capable of performing a broad range
+                    of intellectual tasks.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h4>
+                    Super AI
+                </h4>
+
+                <p>
+                    A hypothetical form of AI that would exceed human
+                    intelligence across many areas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h4>
+            B. Based on Functionality
+        </h4>
+
+        <ol>
+
+            <li>
+                <strong>Reactive Machines:</strong>
+                Respond only to current input.
+            </li>
+
+            <li>
+                <strong>Limited Memory:</strong>
+                Uses past information for a limited purpose.
+            </li>
+
+            <li>
+                <strong>Theory of Mind:</strong>
+                A theoretical concept involving understanding emotions
+                and intentions.
+            </li>
+
+            <li>
+                <strong>Self-Aware AI:</strong>
+                A hypothetical AI possessing self-awareness.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- DOMAINS -->
+
+    <div class="topic">
+
+        <h3>
+            5. Major Domains of AI
+        </h3>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">💬</div>
+
+                <h4>
+                    Natural Language Processing
+                </h4>
+
+                <p>
+                    Enables computers to process and understand
+                    human language.
+                </p>
+
+                <p>
+                    Examples: chatbots, translation and speech systems.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">👁️</div>
+
+                <h4>
+                    Computer Vision
+                </h4>
+
+                <p>
+                    Enables computers to understand images and videos.
+                </p>
+
+                <p>
+                    Examples: face recognition and object detection.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🧑‍⚕️</div>
+
+                <h4>
+                    Expert Systems
+                </h4>
+
+                <p>
+                    Uses stored knowledge and rules to solve
+                    domain-specific problems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AI ML DL -->
+
+    <div class="topic">
+
+        <h3>
+            6. AI vs Machine Learning vs Deep Learning
+        </h3>
+
+        <div class="table-wrap">
+
+            <table>
+
+                <tr>
+                    <th>Feature</th>
+                    <th>AI</th>
+                    <th>Machine Learning</th>
+                    <th>Deep Learning</th>
+                </tr>
+
+                <tr>
+                    <td>Meaning</td>
+                    <td>Broad field of intelligent systems</td>
+                    <td>Subset of AI</td>
+                    <td>Subset of ML</td>
+                </tr>
+
+                <tr>
+                    <td>Main idea</td>
+                    <td>Make machines intelligent</td>
+                    <td>Learn patterns from data</td>
+                    <td>Learn using deep neural networks</td>
+                </tr>
+
+                <tr>
+                    <td>Data requirement</td>
+                    <td>May or may not require data</td>
+                    <td>Usually requires data</td>
+                    <td>Often requires large datasets</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <div class="diagram">
+
+Artificial Intelligence
+        ↓
+Machine Learning
+        ↓
+Deep Learning
+
+        </div>
+
+    </div>
+
+
+    <!-- APPLICATIONS -->
+
+    <div class="topic">
+
+        <h3>
+            7. Applications of AI
+        </h3>
+
+        <ul>
+
+            <li>
+                <strong>Healthcare:</strong>
+                Medical image analysis and decision support.
+            </li>
+
+            <li>
+                <strong>Education:</strong>
+                Personalized learning and automated assistance.
+            </li>
+
+            <li>
+                <strong>Finance:</strong>
+                Fraud detection and risk analysis.
+            </li>
+
+            <li>
+                <strong>Agriculture:</strong>
+                Crop monitoring and smart farming.
+            </li>
+
+            <li>
+                <strong>Transportation:</strong>
+                Navigation and autonomous systems.
+            </li>
+
+            <li>
+                <strong>Entertainment:</strong>
+                Content and recommendation systems.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="exam-box">
+
+        <h4>
+            ⭐ Exam Focus
+        </h4>
+
+        <p>
+            Define AI, explain characteristics of AI, write applications
+            of AI and differentiate between AI, ML and Deep Learning.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- UNIT 2 -->
+<!-- ================================================= -->
+
+<section class="slide" id="unit2">
+
+    <span class="slide-number">
+        UNIT 2 • SEARCH & KNOWLEDGE
+    </span>
+
+    <h2 class="slide-title">
+        📗 Searching Algorithms & Knowledge Representation
+    </h2>
+
+    <p class="slide-subtitle">
+        Search strategies, BFS, DFS, heuristic search and methods of representing knowledge.
+    </p>
+
+
+    <!-- SEARCH -->
+
+    <div class="topic">
+
+        <h3>
+            1. Searching for Solutions
+        </h3>
+
+        <div class="definition">
+
+            Searching is the process of finding a sequence of actions
+            that transforms an initial state into a desired goal state.
+
+        </div>
+
+        <div class="diagram">
+
+Initial State
+      ↓
+Possible Actions
+      ↓
+Search Space
+      ↓
+Search Strategy
+      ↓
+Goal State
+
+        </div>
+
+    </div>
+
+
+    <!-- BFS -->
+
+    <div class="topic">
+
+        <h3>
+            2. Breadth First Search (BFS)
+        </h3>
+
+        <p>
+            BFS explores nodes level by level. It first visits all
+            neighbouring nodes before moving to the next level.
+        </p>
+
+        <p>
+            BFS generally uses a <strong>Queue</strong> data structure.
+        </p>
+
+        <div class="diagram">
+
+            A
+          /   \
+         B     C
+        / \   / \
+       D   E F   G
+
+BFS:
+A → B → C → D → E → F → G
+
+        </div>
+
+        <div class="example">
+
+            <div class="example-title">
+                Example
+            </div>
+
+            If we want to find a nearby node in an unweighted graph,
+            BFS explores the graph level by level.
+
+        </div>
+
+    </div>
+
+
+    <!-- DFS -->
+
+    <div class="topic">
+
+        <h3>
+            3. Depth First Search (DFS)
+        </h3>
+
+        <p>
+            DFS explores one branch as deeply as possible before
+            returning and exploring another branch.
+        </p>
+
+        <p>
+            DFS uses a <strong>Stack</strong> or recursion.
+        </p>
+
+        <div class="diagram">
+
+            A
+          /   \
+         B     C
+        / \   / \
+       D   E F   G
+
+DFS:
+A → B → D → E → C → F → G
+
+        </div>
+
+    </div>
+
+
+    <!-- BFS DFS -->
+
+    <div class="topic">
+
+        <h3>
+            4. BFS vs DFS
+        </h3>
+
+        <div class="table-wrap">
+
+            <table>
+
+                <tr>
+                    <th>Feature</th>
+                    <th>BFS</th>
+                    <th>DFS</th>
+                </tr>
+
+                <tr>
+                    <td>Traversal</td>
+                    <td>Level by level</td>
+                    <td>Depth first</td>
+                </tr>
+
+                <tr>
+                    <td>Data structure</td>
+                    <td>Queue</td>
+                    <td>Stack / Recursion</td>
+                </tr>
+
+                <tr>
+                    <td>Memory</td>
+                    <td>Usually higher</td>
+                    <td>Usually lower</td>
+                </tr>
+
+                <tr>
+                    <td>Shortest path</td>
+                    <td>Can find shortest path in an unweighted graph</td>
+                    <td>Does not generally guarantee shortest path</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- DATA GOAL -->
+
+    <div class="topic">
+
+        <h3>
+            5. Data-Driven and Goal-Driven Search
+        </h3>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">📊</div>
+
+                <h4>
+                    Data-Driven Search
+                </h4>
+
+                <p>
+                    Starts with available facts or data and moves toward
+                    a desired conclusion.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">🎯</div>
+
+                <h4>
+                    Goal-Driven Search
+                </h4>
+
+                <p>
+                    Starts with the goal and works backward to determine
+                    the required facts or actions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HEURISTIC -->
+
+    <div class="topic">
+
+        <h3>
+            6. Heuristic Search
+        </h3>
+
+        <p>
+            Heuristic search uses additional problem-specific knowledge
+            to guide the search toward promising solutions.
+        </p>
+
+        <div class="definition">
+
+            A heuristic function provides an estimate of how close
+            a state is to the goal.
+
+        </div>
+
+        <div class="example">
+
+            <div class="example-title">
+                Example: Route Finding
+            </div>
+
+            If a car has to travel from City A to City B,
+            estimated distance to City B can help select a promising route.
+
+        </div>
+
+    </div>
+
+
+    <!-- KNOWLEDGE REPRESENTATION -->
+
+    <div class="topic">
+
+        <h3>
+            7. Knowledge Representation
+        </h3>
+
+        <p>
+            Knowledge Representation is the process of storing information
+            in a form that an AI system can use for reasoning and problem solving.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h4>Propositional Calculus</h4>
+                <p>Represents statements as true or false.</p>
+            </div>
+
+            <div class="card">
+                <h4>Predicate Calculus</h4>
+                <p>Represents objects, properties and relationships.</p>
+            </div>
+
+            <div class="card">
+                <h4>Production Systems</h4>
+                <p>Represents knowledge using IF-THEN rules.</p>
+            </div>
+
+            <div class="card">
+                <h4>Semantic Networks</h4>
+                <p>Represents concepts and relationships as graphs.</p>
+            </div>
+
+            <div class="card">
+                <h4>Frames</h4>
+                <p>Stores structured information using slots and values.</p>
+            </div>
+
+            <div class="card">
+                <h4>Scripts</h4>
+                <p>Represents a sequence of events in a situation.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROPOSITIONAL -->
+
+    <div class="topic">
+
+        <h3>
+            8. Propositional Calculus
+        </h3>
+
+        <p>
+            Propositional calculus works with propositions or statements
+            that have a truth value: True or False.
+        </p>
+
+        <div class="example">
+
+            P = "It is raining."<br><br>
+
+            Q = "The road is wet."<br><br>
+
+            P → Q
+
+        </div>
+
+    </div>
+
+
+    <!-- PREDICATE -->
+
+    <div class="topic">
+
+        <h3>
+            9. Predicate Calculus
+        </h3>
+
+        <p>
+            Predicate calculus represents objects, their properties and
+            relationships using predicates and variables.
+        </p>
+
+        <div class="example">
+
+            Human(Nitin)
+
+            <br><br>
+
+            This means that Nitin is a human.
+
+        </div>
+
+    </div>
+
+
+    <!-- UNIFICATION -->
+
+    <div class="topic">
+
+        <h3>
+            10. Unification
+        </h3>
+
+        <p>
+            Unification is the process of finding substitutions that
+            make two logical expressions identical.
+        </p>
+
+        <div class="example">
+
+            Student(x)
+
+            <br><br>
+
+            Student(Nitin)
+
+            <br><br>
+
+            Therefore:
+
+            <strong>x = Nitin</strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESOLUTION -->
+
+    <div class="topic">
+
+        <h3>
+            11. Resolution
+        </h3>
+
+        <p>
+            Resolution is a rule of inference used to derive new conclusions
+            from logical statements. It is widely used in automated reasoning.
+        </p>
+
+    </div>
+
+
+    <!-- PRODUCTION -->
+
+    <div class="topic">
+
+        <h3>
+            12. Production System
+        </h3>
+
+        <p>
+            A production system represents knowledge using IF-THEN rules.
+        </p>
+
+        <div class="example">
+
+            <strong>IF</strong> temperature is high
+
+            <br>
+
+            <strong>THEN</strong> turn ON the fan.
+
+        </div>
+
+        <p>
+            Main components include:
+        </p>
+
+        <ul>
+
+            <li>Rule set</li>
+            <li>Working memory</li>
+            <li>Control strategy</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- SEMANTIC -->
+
+    <div class="topic">
+
+        <h3>
+            13. Semantic Network
+        </h3>
+
+        <p>
+            A semantic network represents concepts using nodes and
+            relationships using links.
+        </p>
+
+        <div class="diagram">
+
+Animal
+  ↓
+IS-A
+  ↓
+Dog
+  ↓
+HAS
+  ↓
+Tail
+
+        </div>
+
+    </div>
+
+
+    <!-- CONCEPTUAL GRAPH -->
+
+    <div class="topic">
+
+        <h3>
+            14. Conceptual Graph
+        </h3>
+
+        <p>
+            A conceptual graph represents concepts and relationships
+            using a graph structure.
+        </p>
+
+        <div class="example">
+
+            Person → drives → Car
+
+        </div>
+
+    </div>
+
+
+    <!-- FRAMES -->
+
+    <div class="topic">
+
+        <h3>
+            15. Frames
+        </h3>
+
+        <p>
+            A frame is a structured representation containing information
+            about an object or concept.
+        </p>
+
+        <div class="example">
+
+            <strong>Frame: Student</strong>
+
+            <br><br>
+
+            Name → Nitin
+
+            <br>
+
+            Course → B.Tech CSE
+
+            <br>
+
+            Semester → 1st
+
+        </div>
+
+    </div>
+
+
+    <!-- SCRIPTS -->
+
+    <div class="topic">
+
+        <h3>
+            16. Scripts
+        </h3>
+
+        <p>
+            A script represents a normal sequence of events in a particular
+            situation.
+        </p>
+
+        <div class="example">
+
+            <strong>Restaurant Script</strong>
+
+            <ol>
+
+                <li>Enter restaurant</li>
+                <li>Choose table</li>
+                <li>Order food</li>
+                <li>Eat food</li>
+                <li>Pay bill</li>
+                <li>Leave restaurant</li>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+
+    <div class="exam-box">
+
+        <h4>
+            ⭐ Exam Focus
+        </h4>
+
+        <p>
+            BFS, DFS, heuristic search, knowledge representation,
+            propositional calculus, predicate calculus, unification,
+            resolution, production systems, semantic networks,
+            frames and scripts are important topics.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- UNIT 3 -->
+<!-- ================================================= -->
+
+<section class="slide" id="unit3">
+
+    <span class="slide-number">
+        UNIT 3 • EXPERT SYSTEMS
+    </span>
+
+    <h2 class="slide-title">
+        📙 Expert Systems
+    </h2>
+
+    <p class="slide-subtitle">
+        Concepts, architecture, components, knowledge engineering and applications.
+    </p>
+
+
+    <!-- INTRO -->
+
+    <div class="topic">
+
+        <h3>
+            1. What is an Expert System?
+        </h3>
+
+        <div class="definition">
+
+            An Expert System is an AI-based computer system that uses
+            stored knowledge and reasoning methods to solve problems
+            in a specific domain.
+
+        </div>
+
+        <p>
+            It attempts to provide solutions similar to those provided
+            by a human expert.
+        </p>
+
+    </div>
+
+
+    <!-- COMPONENTS -->
+
+    <div class="topic">
+
+        <h3>
+            2. Components of Expert System
+        </h3>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🗄️
+                </div>
+
+                <h4>
+                    Knowledge Base
+                </h4>
+
+                <p>
+                    Stores facts, rules and domain-specific knowledge.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ⚙️
+                </div>
+
+                <h4>
+                    Inference Engine
+                </h4>
+
+                <p>
+                    Applies rules to available knowledge to derive conclusions.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🖥️
+                </div>
+
+                <h4>
+                    User Interface
+                </h4>
+
+                <p>
+                    Allows users to communicate with the expert system.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🧠
+                </div>
+
+                <h4>
+                    Working Memory
+                </h4>
+
+                <p>
+                    Stores information related to the current problem.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STRUCTURE -->
+
+    <div class="topic">
+
+        <h3>
+            3. Structure of Expert System
+        </h3>
+
+        <div class="diagram">
+
+USER
+  ↓
+User Interface
+  ↓
+Inference Engine
+ ↙          ↘
+Knowledge    Working
+Base         Memory
+  ↓
+Solution
+
+        </div>
+
+    </div>
+
+
+    <!-- ARCHITECTURE -->
+
+    <div class="topic">
+
+        <h3>
+            4. Architecture of Expert System
+        </h3>
+
+        <div class="diagram">
+
+Domain Expert
+     ↓
+Knowledge Engineer
+     ↓
+Knowledge Base
+     ↓
+Inference Engine
+     ↓
+User Interface
+     ↓
+User
+
+        </div>
+
+    </div>
+
+
+    <!-- HUMAN ELEMENT -->
+
+    <div class="topic">
+
+        <h3>
+            5. Human Element in Expert Systems
+        </h3>
+
+        <ul>
+
+            <li>
+                <strong>Domain Expert:</strong>
+                Provides specialized knowledge.
+            </li>
+
+            <li>
+                <strong>Knowledge Engineer:</strong>
+                Collects and represents expert knowledge.
+            </li>
+
+            <li>
+                <strong>User:</strong>
+                Uses the system to obtain advice or solutions.
+            </li>
+
+            <li>
+                <strong>Developer:</strong>
+                Develops and maintains the software.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- KNOWLEDGE ENGINEERING -->
+
+    <div class="topic">
+
+        <h3>
+            6. Knowledge Engineering
+        </h3>
+
+        <p>
+            Knowledge Engineering is the process of collecting,
+            organizing, representing and maintaining knowledge
+            for an AI system.
+        </p>
+
+        <div class="diagram">
+
+Knowledge Acquisition
+        ↓
+Knowledge Representation
+        ↓
+Knowledge Storage
+        ↓
+Inference
+        ↓
+Decision / Solution
+
+        </div>
+
+    </div>
+
+
+    <!-- KNOWLEDGE ACQUISITION -->
+
+    <div class="topic">
+
+        <h3>
+            7. Knowledge Acquisition
+        </h3>
+
+        <p>
+            Knowledge acquisition is the process of obtaining knowledge
+            from experts, documents, databases and other sources.
+        </p>
+
+        <h4>
+            Methods
+        </h4>
+
+        <ul>
+
+            <li>Interviews</li>
+            <li>Observation</li>
+            <li>Questionnaires</li>
+            <li>Document analysis</li>
+            <li>Data analysis</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- DIFFICULTIES -->
+
+    <div class="topic">
+
+        <h3>
+            8. Difficulties in Knowledge Acquisition
+        </h3>
+
+        <ul>
+
+            <li>
+                Experts may find it difficult to explain their knowledge.
+            </li>
+
+            <li>
+                Knowledge may be incomplete.
+            </li>
+
+            <li>
+                Knowledge may change with time.
+            </li>
+
+            <li>
+                Different experts may have different opinions.
+            </li>
+
+            <li>
+                Knowledge collection can be expensive and time-consuming.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- PROBLEM AREAS -->
+
+    <div class="topic">
+
+        <h3>
+            9. Problem Areas of Expert Systems
+        </h3>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <h4>Medical Diagnosis</h4>
+                <p>Assists in analysing symptoms and possible diseases.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h4>Finance</h4>
+                <p>Supports financial analysis and risk assessment.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔧</div>
+                <h4>Equipment Diagnosis</h4>
+                <p>Helps identify faults in machines and equipment.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📞</div>
+                <h4>Customer Support</h4>
+                <p>Provides automated assistance and troubleshooting.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TYPES -->
+
+    <div class="topic">
+
+        <h3>
+            10. Types of Expert Systems
+        </h3>
+
+        <ol>
+
+            <li>Rule-Based Expert Systems</li>
+
+            <li>Frame-Based Expert Systems</li>
+
+            <li>Fuzzy Expert Systems</li>
+
+            <li>Case-Based Reasoning Systems</li>
+
+            <li>Neural Expert Systems</li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- SUCCESS -->
+
+    <div class="topic">
+
+        <h3>
+            11. Success Factors
+        </h3>
+
+        <ul>
+
+            <li>High-quality knowledge</li>
+            <li>Accurate rules</li>
+            <li>Suitable problem domain</li>
+            <li>Reliable inference mechanism</li>
+            <li>Good user interface</li>
+            <li>Proper maintenance</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="exam-box">
+
+        <h4>
+            ⭐ Exam Focus
+        </h4>
+
+        <p>
+            Definition of expert system, components, architecture,
+            knowledge base, inference engine, knowledge acquisition,
+            knowledge engineering and applications are important
+            examination topics.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- UNIT 4 -->
+<!-- ================================================= -->
+
+<section class="slide" id="unit4">
+
+    <span class="slide-number">
+        UNIT 4 • MACHINE LEARNING
+    </span>
+
+    <h2 class="slide-title">
+        📕 Introduction to Machine Learning Concepts
+    </h2>
+
+    <p class="slide-subtitle">
+        ML fundamentals, categories, workflow, applications and learning techniques.
+    </p>
+
+
+    <!-- ML -->
+
+    <div class="topic">
+
+        <h3>
+            1. What is Machine Learning?
+        </h3>
+
+        <div class="definition">
+
+            Machine Learning is a branch of AI that enables computers
+            to learn patterns from data and improve their performance
+            without requiring explicit programming for every task.
+
+        </div>
+
+    </div>
+
+
+    <!-- SIGNIFICANCE -->
+
+    <div class="topic">
+
+        <h3>
+            2. Significance of Machine Learning
+        </h3>
+
+        <ul>
+
+            <li>Automates decision making.</li>
+
+            <li>Finds useful patterns in data.</li>
+
+            <li>Helps make predictions.</li>
+
+            <li>Improves systems using experience and data.</li>
+
+            <li>Supports intelligent applications.</li>
+
+            <li>Can process large datasets efficiently.</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- TYPES -->
+
+    <div class="topic">
+
+        <h3>
+            3. Categories of Machine Learning
+        </h3>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    👨‍🏫
+                </div>
+
+                <h4>
+                    Supervised Learning
+                </h4>
+
+                <p>
+                    Learns from labelled data where the desired output
+                    is known.
+                </p>
+
+                <p>
+                    Examples: Classification and Regression.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🔎
+                </div>
+
+                <h4>
+                    Unsupervised Learning
+                </h4>
+
+                <p>
+                    Finds hidden patterns in unlabelled data.
+                </p>
+
+                <p>
+                    Examples: Clustering and Association.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🎮
+                </div>
+
+                <h4>
+                    Reinforcement Learning
+                </h4>
+
+                <p>
+                    An agent learns by interacting with an environment
+                    using rewards and penalties.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="diagram">
+
+                    MACHINE LEARNING
+                          |
+             -------------------------
+             |           |           |
+        Supervised   Unsupervised  Reinforcement
+             |           |           |
+          Labelled    Unlabelled   Reward /
+            Data         Data      Penalty
+
+        </div>
+
+    </div>
+
+
+    <!-- WORKFLOW -->
+
+    <div class="topic">
+
+        <h3>
+            4. Machine Learning Workflow
+        </h3>
+
+        <div class="diagram">
+
+Collect Data
+     ↓
+Clean Data
+     ↓
+Prepare Data
+     ↓
+Select Features
+     ↓
+Select Model
+     ↓
+Train Model
+     ↓
+Test Model
+     ↓
+Evaluate Model
+     ↓
+Deploy Model
+     ↓
+Monitor & Improve
+
+        </div>
+
+    </div>
+
+
+    <!-- CLASSIFICATION -->
+
+    <div class="topic">
+
+        <h3>
+            5. Classification
+        </h3>
+
+        <p>
+            Classification is a supervised learning technique used
+            to assign data into predefined categories.
+        </p>
+
+        <div class="example">
+
+            <div class="example-title">
+                Example
+            </div>
+
+            Email → Spam / Not Spam
+
+            <br><br>
+
+            The output is a category.
+
+        </div>
+
+    </div>
+
+
+    <!-- REGRESSION -->
+
+    <div class="topic">
+
+        <h3>
+            6. Regression
+        </h3>
+
+        <p>
+            Regression is a supervised learning technique used
+            to predict continuous numerical values.
+        </p>
+
+        <div class="example">
+
+            <div class="example-title">
+                Example
+            </div>
+
+            House Area + Location → Predicted House Price
+
+        </div>
+
+    </div>
+
+
+    <!-- CLUSTERING -->
+
+    <div class="topic">
+
+        <h3>
+            7. Clustering
+        </h3>
+
+        <p>
+            Clustering is an unsupervised learning technique that
+            groups similar data objects together.
+        </p>
+
+        <div class="example">
+
+            <div class="example-title">
+                Example
+            </div>
+
+            Customers
+
+            <br>
+
+            ↓
+
+            <br>
+
+            Group 1 • Group 2 • Group 3
+
+            <br><br>
+
+            based on similar purchasing behaviour.
+
+        </div>
+
+    </div>
+
+
+    <!-- ASSOCIATION -->
+
+    <div class="topic">
+
+        <h3>
+            8. Association
+        </h3>
+
+        <p>
+            Association learning discovers relationships between
+            different items in a dataset.
+        </p>
+
+        <div class="example">
+
+            <div class="example-title">
+                Example
+            </div>
+
+            Customers who buy Bread may also buy Butter.
+
+        </div>
+
+    </div>
+
+
+    <!-- SUPERVISED VS UNSUPERVISED -->
+
+    <div class="topic">
+
+        <h3>
+            9. Supervised vs Unsupervised Learning
+        </h3>
+
+        <div class="table-wrap">
+
+            <table>
+
+                <tr>
+
+                    <th>
+                        Feature
+                    </th>
+
+                    <th>
+                        Supervised
+                    </th>
+
+                    <th>
+                        Unsupervised
+                    </th>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Data
+                    </td>
+
+                    <td>
+                        Labelled
+                    </td>
+
+                    <td>
+                        Unlabelled
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Output
+                    </td>
+
+                    <td>
+                        Known
+                    </td>
+
+                    <td>
+                        Not predefined
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Examples
+                    </td>
+
+                    <td>
+                        Classification, Regression
+                    </td>
+
+                    <td>
+                        Clustering, Association
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- REINFORCEMENT -->
+
+    <div class="topic">
+
+        <h3>
+            10. Reinforcement Learning
+        </h3>
+
+        <p>
+            Reinforcement Learning is a learning method where an
+            agent interacts with an environment and learns from
+            rewards and penalties.
+        </p>
+
+        <div class="diagram">
+
+Environment
+     ↓
+   State
+     ↓
+   Agent
+     ↓
+  Action
+     ↓
+  Reward
+     ↓
+Learning
+     ↓
+Better Action
+
+        </div>
+
+        <p>
+            The objective is to learn a strategy that maximizes
+            the total reward over time.
+        </p>
+
+    </div>
+
+
+    <!-- ML APPLICATIONS -->
+
+    <div class="topic">
+
+        <h3>
+            11. Applications of Machine Learning
+        </h3>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🎬</div>
+                <h4>Recommendation</h4>
+                <p>Movie, music and product recommendations.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📧</div>
+                <h4>Spam Detection</h4>
+                <p>Identifies unwanted or suspicious messages.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏦</div>
+                <h4>Fraud Detection</h4>
+                <p>Identifies unusual financial transactions.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <h4>Healthcare</h4>
+                <p>Supports diagnosis and prediction tasks.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MODEL LIFECYCLE -->
+
+    <div class="topic">
+
+        <h3>
+            12. Machine Learning Model Lifecycle
+        </h3>
+
+        <ol>
+
+            <li>Define the problem.</li>
+
+            <li>Collect relevant data.</li>
+
+            <li>Clean and prepare data.</li>
+
+            <li>Select an appropriate algorithm.</li>
+
+            <li>Train the model.</li>
+
+            <li>Evaluate the model.</li>
+
+            <li>Deploy the model.</li>
+
+            <li>Monitor and improve the model.</li>
+
+        </ol>
+
+    </div>
+
+
+    <div class="exam-box">
+
+        <h4>
+            ⭐ Exam Focus
+        </h4>
+
+        <p>
+            Definition of Machine Learning, types of ML,
+            supervised vs unsupervised learning, classification,
+            regression, clustering, association and reinforcement
+            learning are important topics.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- QUICK REVISION -->
+<!-- ================================================= -->
+
+<section class="slide revision" id="revision">
+
+    <span class="slide-number">
+        FINAL SLIDE
+    </span>
+
+    <h2 class="slide-title">
+        ⚡ Quick Revision
+    </h2>
+
+    <p>
+        One-minute revision before examination.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>AI:</strong>
+            Makes machines capable of performing intelligent tasks.
+        </li>
+
+        <li>
+            <strong>ML:</strong>
+            Enables machines to learn patterns from data.
+        </li>
+
+        <li>
+            <strong>Deep Learning:</strong>
+            Uses multi-layer neural networks.
+        </li>
+
+        <li>
+            <strong>BFS:</strong>
+            Level-by-level search using a queue.
+        </li>
+
+        <li>
+            <strong>DFS:</strong>
+            Depth-wise search using stack or recursion.
+        </li>
+
+        <li>
+            <strong>Heuristic Search:</strong>
+            Uses problem-specific knowledge to guide search.
+        </li>
+
+        <li>
+            <strong>Knowledge Representation:</strong>
+            Represents knowledge so AI can reason with it.
+        </li>
+
+        <li>
+            <strong>Expert System:</strong>
+            Uses knowledge and inference to solve domain-specific problems.
+        </li>
+
+        <li>
+            <strong>Supervised Learning:</strong>
+            Learns from labelled data.
+        </li>
+
+        <li>
+            <strong>Unsupervised Learning:</strong>
+            Finds patterns in unlabelled data.
+        </li>
+
+        <li>
+            <strong>Reinforcement Learning:</strong>
+            Learns using rewards and penalties.
+        </li>
+
+        <li>
+            <strong>Classification:</strong>
+            Predicts categories.
+        </li>
+
+        <li>
+            <strong>Regression:</strong>
+            Predicts continuous numerical values.
+        </li>
+
+        <li>
+            <strong>Clustering:</strong>
+            Groups similar data.
+        </li>
+
+        <li>
+            <strong>Association:</strong>
+            Finds relationships between items.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- ================= BACK ================= -->
+
+<div class="back">
+
+    <a href="index.html#resources">
+        🏠 Back to AI & ML Resources
+    </a>
+
+</div>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>College Resource Hub</strong>
+    </p>
+
+    <p>
+        Created by <strong>Nitin Singh</strong> ❤️
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```

@@ -1,0 +1,4190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics Detailed Notes | College Resource Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================================
+           PHYSICS NOTES - COMPLETE PAGE
+           LIGHT + DARK MODE
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            transition:
+                background .3s ease,
+                color .3s ease;
+        }
+
+
+        /* =========================================================
+           NOTES CONTAINER
+           ========================================================= */
+
+        .notes-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 45px 20px 80px;
+        }
+
+
+        /* =========================================================
+           PAGE HEADER
+           ========================================================= */
+
+        .notes-header {
+            text-align: center;
+            padding: 45px 25px;
+            margin-bottom: 35px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #ffffff,
+                    #f0f9ff
+                );
+
+            border: 1px solid #dbeafe;
+
+            box-shadow:
+                0 15px 45px rgba(37, 99, 235, .10);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notes-header::before {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            top: -120px;
+            right: -90px;
+
+            background:
+                rgba(59, 130, 246, .13);
+
+            border-radius: 50%;
+
+            filter: blur(20px);
+        }
+
+        .notes-header::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            bottom: -110px;
+            left: -80px;
+
+            background:
+                rgba(14, 165, 233, .10);
+
+            border-radius: 50%;
+
+            filter: blur(20px);
+        }
+
+        .notes-header > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .notes-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 15px;
+
+            border-radius: 30px;
+
+            background: #dbeafe;
+            color: #1d4ed8;
+
+            border: 1px solid #bfdbfe;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: .5px;
+
+            margin-bottom: 18px;
+        }
+
+        .notes-header h1 {
+            margin: 0 0 15px;
+
+            font-size: clamp(32px, 5vw, 52px);
+
+            color: #0f172a;
+
+            line-height: 1.1;
+        }
+
+        .notes-header p {
+            max-width: 760px;
+            margin: auto;
+
+            color: #475569;
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .notes-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .notes-meta span {
+            padding: 8px 13px;
+
+            border-radius: 20px;
+
+            background: #ffffff;
+
+            border: 1px solid #dbeafe;
+
+            color: #334155;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           QUICK NAVIGATION
+           ========================================================= */
+
+        .quick-nav {
+            position: sticky;
+            top: 75px;
+
+            z-index: 50;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            padding: 12px;
+
+            margin-bottom: 30px;
+
+            background:
+                rgba(255,255,255,.90);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border:
+                1px solid #dbeafe;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 25px rgba(15,23,42,.08);
+        }
+
+        .quick-nav a {
+            text-decoration: none;
+
+            padding: 8px 13px;
+
+            border-radius: 20px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e2e8f0;
+
+            color: #334155;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: .25s;
+        }
+
+        .quick-nav a:hover {
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #0284c7
+                );
+
+            color: white;
+
+            border-color: #2563eb;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           UNIT
+           ========================================================= */
+
+        .unit {
+            position: relative;
+
+            background: #ffffff;
+
+            margin: 30px 0;
+
+            padding: 32px;
+
+            border-radius: 24px;
+
+            border:
+                1px solid #e2e8f0;
+
+            box-shadow:
+                0 8px 30px rgba(15,23,42,.07);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
+
+            overflow: hidden;
+        }
+
+        .unit::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 5px;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #2563eb,
+                    #06b6d4
+                );
+
+            opacity: .9;
+        }
+
+        .unit:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 40px rgba(37,99,235,.10);
+
+            border-color:
+                #bfdbfe;
+        }
+
+
+        /* =========================================================
+           UNIT HEADING
+           ========================================================= */
+
+        .unit > h2 {
+            margin: 0 0 25px;
+
+            padding-bottom: 16px;
+
+            border-bottom:
+                2px solid #dbeafe;
+
+            color: #0f172a;
+
+            font-size:
+                clamp(22px, 3vw, 30px);
+
+            line-height: 1.3;
+        }
+
+        .unit-number {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-width: 36px;
+            height: 36px;
+
+            margin-right: 8px;
+
+            border-radius: 11px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #0284c7
+                );
+
+            color: white;
+
+            font-size: 14px;
+
+            box-shadow:
+                0 5px 15px rgba(37,99,235,.25);
+        }
+
+
+        /* =========================================================
+           TOPIC
+           ========================================================= */
+
+        .topic {
+            margin-top: 34px;
+
+            padding-top: 5px;
+        }
+
+        .topic + .topic {
+            border-top:
+                1px dashed #cbd5e1;
+
+            padding-top: 30px;
+        }
+
+        .topic h3 {
+            margin: 0 0 14px;
+
+            color: #1e3a8a;
+
+            font-size: 21px;
+
+            line-height: 1.4;
+        }
+
+        .topic h4 {
+            margin: 22px 0 10px;
+
+            color: #334155;
+
+            font-size: 16px;
+        }
+
+        .topic p {
+            color: #334155;
+
+            font-size: 15px;
+
+            line-height: 1.85;
+
+            margin: 10px 0;
+        }
+
+        .topic strong,
+        .topic b {
+            color: #1e40af;
+        }
+
+
+        /* =========================================================
+           LISTS
+           ========================================================= */
+
+        .topic ul,
+        .topic ol,
+        .unit > ul,
+        .unit > ol {
+            margin: 12px 0 18px;
+
+            padding-left: 25px;
+        }
+
+        .topic li,
+        .unit li {
+            color: #334155;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin: 6px 0;
+        }
+
+        .topic li::marker {
+            color: #2563eb;
+        }
+
+
+        /* =========================================================
+           DEFINITION BOX
+           ========================================================= */
+
+        .definition {
+            background:
+                #eff6ff;
+
+            color: #1e3a8a;
+
+            padding: 18px 20px;
+
+            border-left:
+                5px solid #2563eb;
+
+            border-radius: 12px;
+
+            margin: 16px 0 20px;
+
+            line-height: 1.7;
+
+            box-shadow:
+                0 5px 18px rgba(37,99,235,.06);
+        }
+
+        .definition p {
+            color: #334155;
+
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+           IMPORTANT BOX
+           ========================================================= */
+
+        .important {
+            background:
+                #fffbeb;
+
+            color: #78350f;
+
+            padding: 18px 20px;
+
+            border-left:
+                5px solid #f59e0b;
+
+            margin: 18px 0;
+
+            border-radius: 12px;
+
+            line-height: 1.7;
+
+            box-shadow:
+                0 5px 18px rgba(245,158,11,.07);
+        }
+
+        .important b {
+            color: #92400e;
+        }
+
+
+        /* =========================================================
+           EXAM BOX
+           ========================================================= */
+
+        .exam-box {
+            margin: 20px 0;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0fdf4,
+                    #ecfeff
+                );
+
+            border:
+                1px solid #a7f3d0;
+
+            border-left:
+                5px solid #10b981;
+        }
+
+        .exam-box h4 {
+            margin-top: 0;
+
+            color: #047857;
+        }
+
+        .exam-box p,
+        .exam-box li {
+            color: #334155;
+        }
+
+
+        /* =========================================================
+           FORMULA
+           ========================================================= */
+
+        .formula {
+            position: relative;
+
+            background:
+                #f1f5f9;
+
+            color: #0f172a;
+
+            padding: 17px 20px;
+
+            margin: 15px 0;
+
+            border-left:
+                5px solid #2563eb;
+
+            border-radius: 10px;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            font-family:
+                "Times New Roman",
+                Georgia,
+                serif;
+
+            overflow-x: auto;
+
+            box-shadow:
+                inset 0 0 20px rgba(37,99,235,.03);
+        }
+
+        .formula::before {
+            content: "FORMULA";
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            color: #2563eb;
+        }
+
+
+        /* =========================================================
+           DIAGRAM
+           ========================================================= */
+
+        .diagram {
+            background:
+                #f8fafc;
+
+            color: #1e293b;
+
+            border:
+                1px solid #cbd5e1;
+
+            padding: 22px;
+
+            margin: 18px 0;
+
+            text-align: center;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            white-space: pre;
+
+            overflow-x: auto;
+
+            border-radius: 13px;
+
+            line-height: 1.5;
+
+            box-shadow:
+                inset 0 0 25px rgba(15,23,42,.03);
+        }
+
+
+        /* =========================================================
+           TABLE
+           ========================================================= */
+
+        .comparison-table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            margin: 20px 0;
+
+            overflow: hidden;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+        }
+
+        .comparison-table th {
+            background:
+                #dbeafe;
+
+            color: #1e3a8a;
+
+            padding: 13px;
+
+            text-align: left;
+
+            border: 1px solid #bfdbfe;
+        }
+
+        .comparison-table td {
+            background: #ffffff;
+
+            color: #334155;
+
+            padding: 12px;
+
+            border: 1px solid #e2e8f0;
+
+            line-height: 1.6;
+        }
+
+        .comparison-table tr:hover td {
+            background: #f8fafc;
+        }
+
+
+        /* =========================================================
+           QUICK REVISION
+           ========================================================= */
+
+        .revision-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #f0fdfa
+                );
+
+            border:
+                1px solid #bfdbfe;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            margin-top: 30px;
+        }
+
+        .revision-card h2 {
+            color: #1e3a8a;
+
+            margin-bottom: 18px;
+        }
+
+        .revision-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+        }
+
+        .revision-item {
+            background: #ffffff;
+
+            border:
+                1px solid #dbeafe;
+
+            padding: 14px;
+
+            border-radius: 12px;
+
+            color: #334155;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            transition: .25s;
+        }
+
+        .revision-item:hover {
+            transform: translateY(-3px);
+
+            border-color:
+                #60a5fa;
+
+            box-shadow:
+                0 8px 20px rgba(37,99,235,.08);
+        }
+
+        .revision-item strong {
+            display: block;
+
+            color: #1d4ed8;
+
+            margin-bottom: 4px;
+        }
+
+
+        /* =========================================================
+           FINAL SECTION
+           ========================================================= */
+
+        .final-section {
+            text-align: center;
+
+            padding: 40px 25px;
+
+            margin-top: 35px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #f0f9ff
+                );
+
+            border:
+                1px solid #bfdbfe;
+        }
+
+        .final-section h2 {
+            color: #0f172a;
+
+            margin-bottom: 12px;
+        }
+
+        .final-section p {
+            color: #475569;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+        .final-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            text-decoration: none;
+
+            padding: 12px 20px;
+
+            border-radius: 25px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #0284c7
+                );
+
+            box-shadow:
+                0 8px 25px rgba(37,99,235,.25);
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .final-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(37,99,235,.35);
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #475569;
+
+            border-top:
+                1px solid #e2e8f0;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+           ========================================================= */
+
+        .back-to-top {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 48px;
+            height: 48px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #0284c7
+                );
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform: translateY(15px);
+
+            transition: .3s;
+
+            z-index: 9999;
+
+            box-shadow:
+                0 10px 25px rgba(37,99,235,.3);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform:
+                translateY(-4px);
+        }
+
+
+        /* =========================================================
+           DARK MODE
+           ========================================================= */
+
+        body.dark-mode {
+            background: #020617 !important;
+            color: #e2e8f0 !important;
+        }
+
+        body.dark-mode .notes-header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #111827,
+                    #082f49
+                );
+
+            border-color:
+                #1e3a8a;
+
+            box-shadow:
+                0 15px 45px rgba(0,0,0,.35);
+        }
+
+        body.dark-mode .notes-header h1 {
+            color: #f8fafc;
+        }
+
+        body.dark-mode .notes-header p {
+            color: #cbd5e1;
+        }
+
+        body.dark-mode .notes-badge {
+            background:
+                #172554;
+
+            color:
+                #93c5fd;
+
+            border-color:
+                #1e40af;
+        }
+
+        body.dark-mode .notes-meta span {
+            background:
+                #0f172a;
+
+            color:
+                #cbd5e1;
+
+            border-color:
+                #334155;
+        }
+
+        body.dark-mode .quick-nav {
+            background:
+                rgba(2,6,23,.90);
+
+            border-color:
+                #334155;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.35);
+        }
+
+        body.dark-mode .quick-nav a {
+            background:
+                #0f172a;
+
+            color:
+                #cbd5e1;
+
+            border-color:
+                #334155;
+        }
+
+        body.dark-mode .unit {
+            background:
+                #0f172a;
+
+            color:
+                #e2e8f0;
+
+            border-color:
+                #1e293b;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,.35);
+        }
+
+        body.dark-mode .unit:hover {
+            border-color:
+                #1e40af;
+
+            box-shadow:
+                0 15px 40px rgba(37,99,235,.12);
+        }
+
+        body.dark-mode .unit > h2 {
+            color:
+                #f8fafc;
+
+            border-color:
+                #1e3a8a;
+        }
+
+        body.dark-mode .topic h3 {
+            color:
+                #93c5fd;
+        }
+
+        body.dark-mode .topic h4 {
+            color:
+                #cbd5e1;
+        }
+
+        body.dark-mode .topic p {
+            color:
+                #cbd5e1;
+        }
+
+        body.dark-mode .topic strong,
+        body.dark-mode .topic b {
+            color:
+                #93c5fd;
+        }
+
+        body.dark-mode .topic li,
+        body.dark-mode .unit li {
+            color:
+                #cbd5e1;
+        }
+
+        body.dark-mode .topic + .topic {
+            border-color:
+                #334155;
+        }
+
+        body.dark-mode .definition {
+            background:
+                #172554;
+
+            color:
+                #dbeafe;
+
+            border-color:
+                #2563eb;
+        }
+
+        body.dark-mode .definition p {
+            color:
+                #cbd5e1;
+        }
+
+        body.dark-mode .important {
+            background:
+                #422006;
+
+            color:
+                #fef3c7;
+
+            border-color:
+                #f59e0b;
+        }
+
+        body.dark-mode .important b {
+            color:
+                #fcd34d;
+        }
+
+        body.dark-mode .exam-box {
+            background:
+                #052e2b;
+
+            border-color:
+                #047857;
+        }
+
+        body.dark-mode .exam-box h4 {
+            color:
+                #6ee7b7;
+        }
+
+        body.dark-mode .exam-box p,
+        body.dark-mode .exam-box li {
+            color:
+                #d1fae5;
+        }
+
+        body.dark-mode .formula {
+            background:
+                #020617;
+
+            color:
+                #e2e8f0;
+
+            border-left-color:
+                #60a5fa;
+
+            box-shadow:
+                inset 0 0 20px rgba(96,165,250,.04);
+        }
+
+        body.dark-mode .formula::before {
+            color:
+                #60a5fa;
+        }
+
+        body.dark-mode .diagram {
+            background:
+                #020617;
+
+            color:
+                #cbd5e1;
+
+            border-color:
+                #334155;
+        }
+
+        body.dark-mode .comparison-table th {
+            background:
+                #172554;
+
+            color:
+                #bfdbfe;
+
+            border-color:
+                #1e40af;
+        }
+
+        body.dark-mode .comparison-table td {
+            background:
+                #0f172a;
+
+            color:
+                #cbd5e1;
+
+            border-color:
+                #334155;
+        }
+
+        body.dark-mode .comparison-table tr:hover td {
+            background:
+                #172033;
+        }
+
+        body.dark-mode .revision-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #082f49
+                );
+
+            border-color:
+                #1e40af;
+        }
+
+        body.dark-mode .revision-card h2 {
+            color:
+                #bfdbfe;
+        }
+
+        body.dark-mode .revision-item {
+            background:
+                #0f172a;
+
+            color:
+                #cbd5e1;
+
+            border-color:
+                #334155;
+        }
+
+        body.dark-mode .revision-item strong {
+            color:
+                #60a5fa;
+        }
+
+        body.dark-mode .final-section {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #082f49
+                );
+
+            border-color:
+                #1e40af;
+        }
+
+        body.dark-mode .final-section h2 {
+            color:
+                #f8fafc;
+        }
+
+        body.dark-mode .final-section p {
+            color:
+                #cbd5e1;
+        }
+
+        body.dark-mode footer {
+            color:
+                #94a3b8;
+
+            border-color:
+                #1e293b;
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .notes-container {
+                padding:
+                    25px 12px 70px;
+            }
+
+            .notes-header {
+                padding:
+                    32px 18px;
+            }
+
+            .notes-header p {
+                font-size: 14px;
+            }
+
+            .quick-nav {
+                top: 65px;
+
+                justify-content: flex-start;
+
+                overflow-x: auto;
+
+                flex-wrap: nowrap;
+
+                scrollbar-width: none;
+            }
+
+            .quick-nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .quick-nav a {
+                white-space: nowrap;
+            }
+
+            .unit {
+                padding: 23px 18px;
+            }
+
+            .topic h3 {
+                font-size: 19px;
+            }
+
+            .topic p {
+                font-size: 14px;
+            }
+
+            .formula {
+                font-size: 16px;
+
+                padding: 15px;
+            }
+
+            .diagram {
+                font-size: 11px;
+
+                padding: 14px;
+
+                text-align: left;
+            }
+
+            .revision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 9px;
+            }
+
+            .back-to-top {
+                right: 15px;
+                bottom: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="physics.html">
+            Physics
+        </a>
+
+        <a href="physics-notes.html">
+            Notes
+        </a>
+
+        <button
+            id="themeToggle"
+            class="theme-toggle">
+
+            🌙 Dark Mode
+
+        </button>
+
+    </nav>
+
+
+    <!-- =========================================================
+         MAIN CONTAINER
+         ========================================================= -->
+
+    <div class="notes-container">
+
+
+        <!-- =====================================================
+             HEADER
+             ===================================================== -->
+
+        <header class="notes-header">
+
+            <div class="notes-badge">
+                ⚛️ B.Tech CSE • Semester 1 • Physics
+            </div>
+
+            <h1>
+                Physics Detailed Notes
+            </h1>
+
+            <p>
+                Complete unit-wise Physics notes with
+                definitions, concepts, formulas, diagrams,
+                important points and exam-oriented questions.
+            </p>
+
+            <div class="notes-meta">
+
+                <span>
+                    📚 6 Units
+                </span>
+
+                <span>
+                    🧮 Important Formulas
+                </span>
+
+                <span>
+                    ✍️ Exam Oriented
+                </span>
+
+                <span>
+                    ⭐ Important Questions
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             QUICK NAVIGATION
+             ===================================================== -->
+
+        <div class="quick-nav">
+
+            <a href="#unit1">
+                Unit 1
+            </a>
+
+            <a href="#unit2">
+                Unit 2
+            </a>
+
+            <a href="#unit3">
+                Unit 3
+            </a>
+
+            <a href="#unit4">
+                Unit 4
+            </a>
+
+            <a href="#unit5">
+                Unit 5
+            </a>
+
+            <a href="#unit6">
+                Unit 6
+            </a>
+
+            <a href="#formulas">
+                Formulas
+            </a>
+
+            <a href="#questions">
+                Questions
+            </a>
+
+        </div>
+
+
+        <!-- =====================================================
+             UNIT 1
+             ===================================================== -->
+
+        <div class="unit" id="unit1">
+
+            <h2>
+                <span class="unit-number">1</span>
+                UNIT 1 - Wave Optics and Lasers
+            </h2>
+
+
+            <div class="topic">
+
+                <h3>
+                    1. Huygens Principle
+                </h3>
+
+                <div class="definition">
+
+                    <b>Definition:</b>
+
+                    <p>
+                        Huygens principle states that every point
+                        on a wavefront acts as a source of secondary
+                        wavelets which spread in all directions
+                        with the speed of light.
+                    </p>
+
+                </div>
+
+                <h4>
+                    Main Points
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Every point on a wavefront acts as a source
+                        of secondary wavelets.
+                    </li>
+
+                    <li>
+                        Secondary wavelets travel with the velocity
+                        of the wave.
+                    </li>
+
+                    <li>
+                        The new wavefront is the common tangent
+                        to the secondary wavelets.
+                    </li>
+
+                </ul>
+
+                <div class="diagram">
+
+             Secondary wavelets
+                  ○   ○   ○
+               ○           ○
+             ○               ○
+           ○                   ○
+        --------------------------
+             Old Wavefront
+
+        → → → → → → → → → → → →
+
+             New Wavefront
+        __________________________
+
+                </div>
+
+                <div class="important">
+
+                    <b>Exam Point:</b>
+
+                    Huygens principle is used to explain
+                    reflection, refraction and diffraction
+                    of waves.
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    2. Superposition of Waves
+                </h3>
+
+                <p>
+                    The principle of superposition states that when
+                    two or more waves overlap, the resultant displacement
+                    at any point is equal to the algebraic sum of the
+                    individual displacements.
+                </p>
+
+                <div class="formula">
+                    y = y₁ + y₂
+                </div>
+
+                <p>
+                    Superposition of coherent light waves produces
+                    the phenomenon of interference.
+                </p>
+
+                <div class="exam-box">
+
+                    <h4>
+                        ⭐ Exam Focus
+                    </h4>
+
+                    <p>
+                        Definition + principle + mathematical expression
+                        can be asked as a short-answer question.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    3. Interference of Light
+                </h3>
+
+                <p>
+                    Interference is the phenomenon of redistribution
+                    of light intensity produced due to superposition
+                    of two coherent light waves.
+                </p>
+
+                <h4>
+                    Conditions for Sustained Interference
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Sources must be coherent.
+                    </li>
+
+                    <li>
+                        Sources should have the same frequency.
+                    </li>
+
+                    <li>
+                        There should be a constant phase difference.
+                    </li>
+
+                    <li>
+                        Amplitudes should be comparable.
+                    </li>
+
+                </ul>
+
+                <h4>
+                    Constructive Interference
+                </h4>
+
+                <p>
+                    When two waves meet in the same phase,
+                    intensity becomes maximum and a bright fringe
+                    is produced.
+                </p>
+
+                <div class="formula">
+                    Path difference = nλ
+                </div>
+
+                <h4>
+                    Destructive Interference
+                </h4>
+
+                <p>
+                    When two waves meet in opposite phase,
+                    intensity becomes minimum and a dark fringe
+                    is produced.
+                </p>
+
+                <div class="formula">
+                    Path difference = (2n + 1)λ/2
+                </div>
+
+                <div class="diagram">
+
+        Wave 1:     ~~~~~~~~     ~~~~~~~~
+                       ↓
+        Wave 2:     ~~~~~~~~     ~~~~~~~~
+                       ↓
+                 SUPERPOSITION
+                       ↓
+        Result:     ~~~~~~~~~~~~~~~~
+
+        Bright → Constructive
+        Dark   → Destructive
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    4. Interference by Division of Wavefront
+                </h3>
+
+                <p>
+                    In division of wavefront, a single wavefront is
+                    divided into two or more parts which act as
+                    coherent sources.
+                </p>
+
+                <p>
+                    Important examples include Young's double-slit
+                    experiment and Fresnel's biprism.
+                </p>
+
+                <div class="diagram">
+
+                S
+                *
+               / \
+              /   \
+             /     \
+           S₁       S₂
+            \       /
+             \     /
+              \   /
+               \ /
+              Screen
+        | | | | | | | | | | |
+
+        Bright and dark fringes
+
+                </div>
+
+                <div class="exam-box">
+
+                    <h4>
+                        ⭐ 6-Mark Focus
+                    </h4>
+
+                    <p>
+                        Explain interference by division of wavefront
+                        with suitable diagram and examples.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    5. Interference by Division of Amplitude
+                </h3>
+
+                <p>
+                    In division of amplitude, the amplitude of a single
+                    light beam is divided into two or more parts by
+                    partial reflection and transmission.
+                </p>
+
+                <p>
+                    Examples include thin films, Newton's rings and
+                    Michelson interferometer.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    6. Newton's Rings
+                </h3>
+
+                <p>
+                    Newton's rings are concentric circular bright and
+                    dark rings produced due to interference between
+                    the rays reflected from the upper and lower surfaces
+                    of a thin air film.
+                </p>
+
+                <div class="diagram">
+
+                 Plano-convex lens
+                    _________
+                  /           \
+                /               \
+              /                   \
+             -----------------------
+                 Air film
+             -----------------------
+                  Glass plate
+
+                  ↓ reflected light
+
+             ◎ ◎ ◎ ◎ ◎ ◎ ◎
+             ◎ ◎ ◎ ◎ ◎ ◎ ◎
+             ◎ ◎ ◎ ◎ ◎ ◎ ◎
+
+                  Rings
+
+                </div>
+
+                <h4>
+                    Applications
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Determination of wavelength of light.
+                    </li>
+
+                    <li>
+                        Determination of radius of curvature.
+                    </li>
+
+                    <li>
+                        Determination of refractive index of liquid.
+                    </li>
+
+                </ul>
+
+                <div class="important">
+
+                    <b>Remember:</b>
+
+                    Newton's rings are circular fringes caused
+                    by interference in a thin air film.
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    7. Fraunhofer Diffraction from a Single Slit
+                </h3>
+
+                <p>
+                    Diffraction is the bending or spreading of waves
+                    when they pass through a narrow aperture or around
+                    an obstacle.
+                </p>
+
+                <div class="diagram">
+
+        Parallel light
+        → → → → → → → →
+
+              ┌───────┐
+              │       │
+              │   |   │  ← Single slit
+              │       │
+              └───────┘
+
+                 \ | /
+                  \|/
+                   |
+                   |
+                Screen
+
+             Central maximum
+                  ███
+               ██   ██
+             ██       ██
+
+                </div>
+
+                <h4>
+                    Condition for Minima
+                </h4>
+
+                <div class="formula">
+                    a sin θ = mλ
+                </div>
+
+                <p>
+                    Here a is slit width, λ is wavelength and m is
+                    the order of minimum.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    8. Diffraction Grating
+                </h3>
+
+                <p>
+                    A diffraction grating consists of a large number
+                    of equally spaced parallel slits separated by
+                    opaque spaces.
+                </p>
+
+                <div class="formula">
+                    d sin θ = nλ
+                </div>
+
+                <p>
+                    Here d is grating element, θ is diffraction angle,
+                    n is order and λ is wavelength.
+                </p>
+
+                <h4>
+                    Resolving Power
+                </h4>
+
+                <p>
+                    Resolving power is the ability of an optical
+                    instrument to distinguish two closely spaced
+                    spectral lines.
+                </p>
+
+                <div class="formula">
+                    Resolving Power = λ / Δλ = nN
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    9. Polarization
+                </h3>
+
+                <p>
+                    Polarization is the phenomenon of restricting
+                    vibrations of light to a particular direction.
+                </p>
+
+                <h4>
+                    Unpolarized Light
+                </h4>
+
+                <p>
+                    In unpolarized light, electric field vibrations
+                    occur in all directions perpendicular to the
+                    direction of propagation.
+                </p>
+
+                <h4>
+                    Polarized Light
+                </h4>
+
+                <p>
+                    In polarized light, vibrations are restricted
+                    to one particular direction.
+                </p>
+
+                <div class="diagram">
+
+        UNPOLARIZED LIGHT
+
+          ↗  ↑  ↘
+        → → → → → → →
+          ↘  ↓  ↗
+
+        Many directions of vibration
+
+
+        POLARIZED LIGHT
+
+        → → → → → → →
+
+        ↑
+        ↑
+        ↑
+
+        Only one direction
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    10. Characteristics of Lasers
+                </h3>
+
+                <p>
+                    LASER stands for:
+                    <b>Light Amplification by Stimulated Emission
+                    of Radiation.</b>
+                </p>
+
+                <h4>
+                    Characteristics
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Highly monochromatic.
+                    </li>
+
+                    <li>
+                        Highly coherent.
+                    </li>
+
+                    <li>
+                        Highly directional.
+                    </li>
+
+                    <li>
+                        Very high intensity.
+                    </li>
+
+                    <li>
+                        Highly focused.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    11. Spontaneous Emission
+                </h3>
+
+                <p>
+                    When an excited atom returns to a lower energy
+                    state by itself and emits a photon, the process
+                    is called spontaneous emission.
+                </p>
+
+                <div class="diagram">
+
+             E₂ ─────────────
+                  ↓
+                  ↓ Photon
+                  ↓
+             E₁ ─────────────
+
+             Spontaneous emission
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    12. Stimulated Emission
+                </h3>
+
+                <p>
+                    When an incoming photon interacts with an excited
+                    atom and causes it to emit a second photon having
+                    the same frequency, phase and direction, it is
+                    called stimulated emission.
+                </p>
+
+                <div class="diagram">
+
+              Incoming photon
+                    →
+                    →
+             E₂ ─────────────
+                    ↓
+                    ↓
+             E₁ ─────────────
+
+              →  →
+              Two identical photons
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    13. Meta-stable State
+                </h3>
+
+                <p>
+                    A meta-stable state is an excited energy state
+                    in which atoms remain for a comparatively longer
+                    time before returning to the lower energy state.
+                </p>
+
+                <p>
+                    It helps in achieving population inversion,
+                    which is necessary for laser action.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    14. Population Inversion and Pumping
+                </h3>
+
+                <p>
+                    Population inversion is the condition in which
+                    the number of atoms in the higher energy state
+                    is greater than the number of atoms in the lower
+                    energy state.
+                </p>
+
+                <div class="formula">
+                    N₂ > N₁
+                </div>
+
+                <p>
+                    Pumping is the process of supplying external
+                    energy to atoms to achieve population inversion.
+                </p>
+
+                <div class="diagram">
+
+                  E₃ ─────────────
+                       ↑
+                       ↑ Pumping
+                       ↑
+                  E₂ ─────────────
+                   Meta-stable
+                       ↓
+                       ↓ Laser
+                       ↓
+                  E₁ ─────────────
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    15. Einstein's Coefficients
+                </h3>
+
+                <p>
+                    Einstein introduced three coefficients to explain
+                    the interaction between radiation and atoms.
+                </p>
+
+                <ol>
+
+                    <li>
+                        A₂₁ - coefficient of spontaneous emission.
+                    </li>
+
+                    <li>
+                        B₁₂ - coefficient of absorption.
+                    </li>
+
+                    <li>
+                        B₂₁ - coefficient of stimulated emission.
+                    </li>
+
+                </ol>
+
+                <div class="formula">
+                    B₁₂ = B₂₁
+                </div>
+
+                <div class="formula">
+                    A₂₁ / B₂₁ = 8πhν³ / c³
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    16. Ruby Laser
+                </h3>
+
+                <p>
+                    Ruby laser is a solid-state laser. Its active
+                    medium is a ruby crystal containing chromium ions.
+                </p>
+
+                <h4>
+                    Main Components
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Ruby rod
+                    </li>
+
+                    <li>
+                        Flash lamp
+                    </li>
+
+                    <li>
+                        Reflecting mirrors
+                    </li>
+
+                    <li>
+                        Power supply
+                    </li>
+
+                </ul>
+
+                <div class="diagram">
+
+              Flash Lamp
+          ┌─────────────────┐
+          │   ~~~~~~~~~~~   │
+          │   Ruby Rod      │
+          │   ██████████    │
+          │   ██████████    │
+          └─────────────────┘
+
+        Mirror                 Mirror
+          │                       │
+          ▼                       ▼
+        |████|=================|███|
+                              →
+                         LASER OUTPUT
+
+                </div>
+
+                <div class="exam-box">
+
+                    <h4>
+                        ⭐ 6-Mark Answer Structure
+                    </h4>
+
+                    <p>
+                        Principle → Construction → Working →
+                        Energy levels → Output → Applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    17. He-Ne Laser
+                </h3>
+
+                <p>
+                    He-Ne laser is a gas laser which uses a mixture
+                    of helium and neon gases as the active medium.
+                </p>
+
+                <div class="diagram">
+
+        Fully Reflecting       Partially Reflecting
+             Mirror                  Mirror
+               │                       │
+               ▼                       ▼
+             |████|=================|███|
+                  He + Ne Gas
+                        →
+                   LASER OUTPUT
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    18. Applications of Lasers
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Laser cutting and welding.
+                    </li>
+
+                    <li>
+                        Industrial measurements.
+                    </li>
+
+                    <li>
+                        Optical communication.
+                    </li>
+
+                    <li>
+                        Holography.
+                    </li>
+
+                    <li>
+                        Barcode scanning.
+                    </li>
+
+                    <li>
+                        Medical instruments.
+                    </li>
+
+                    <li>
+                        Material processing.
+                    </li>
+
+                    <li>
+                        Surveying and alignment.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             UNIT 2
+             ===================================================== -->
+
+        <div class="unit" id="unit2">
+
+            <h2>
+                <span class="unit-number">2</span>
+                UNIT 2 - Electrostatics, Magnetostatics and EM Waves
+            </h2>
+
+
+            <div class="topic">
+
+                <h3>
+                    1. Divergence of Electrostatic Field
+                </h3>
+
+                <p>
+                    Divergence represents the net outward flow of
+                    an electric field from a small volume.
+                </p>
+
+                <div class="formula">
+                    ∇ · E = ρ / ε₀
+                </div>
+
+                <p>
+                    This is the differential form of Gauss's law.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    2. Curl of Electrostatic Field
+                </h3>
+
+                <p>
+                    For an electrostatic field, the curl is zero.
+                </p>
+
+                <div class="formula">
+                    ∇ × E = 0
+                </div>
+
+                <p>
+                    Therefore, an electrostatic field is conservative.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    3. Laplace's Equation
+                </h3>
+
+                <p>
+                    In a charge-free region, the electrostatic potential
+                    satisfies Laplace's equation.
+                </p>
+
+                <div class="formula">
+                    ∇²V = 0
+                </div>
+
+                <div class="important">
+
+                    <b>Exam Point:</b>
+
+                    Laplace equation is applicable when charge density
+                    inside the region is zero.
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    4. Poisson's Equation
+                </h3>
+
+                <p>
+                    In a region containing charge density ρ, the
+                    electrostatic potential satisfies Poisson's equation.
+                </p>
+
+                <div class="formula">
+                    ∇²V = -ρ / ε₀
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    5. Biot-Savart Law
+                </h3>
+
+                <p>
+                    Biot-Savart law gives the magnetic field produced
+                    by a current carrying conductor.
+                </p>
+
+                <div class="formula">
+                    dB = (μ₀ / 4π) (I dl sinθ / r²)
+                </div>
+
+                <div class="diagram">
+
+                   P
+                   *
+                  /|
+                 / |
+                /  | r
+               /   |
+        -------*---|---------
+              dl
+              →
+           Current I
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    6. Divergence of Magnetic Field
+                </h3>
+
+                <p>
+                    Magnetic field lines always form closed loops.
+                    Therefore magnetic monopoles do not exist.
+                </p>
+
+                <div class="formula">
+                    ∇ · B = 0
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    7. Curl of Static Magnetic Field
+                </h3>
+
+                <p>
+                    For a steady current distribution:
+                </p>
+
+                <div class="formula">
+                    ∇ × B = μ₀J
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    8. Scalar and Vector Potential
+                </h3>
+
+                <p>
+                    Electric and magnetic fields can be represented
+                    using scalar and vector potentials.
+                </p>
+
+                <div class="formula">
+                    E = -∇V
+                </div>
+
+                <div class="formula">
+                    B = ∇ × A
+                </div>
+
+                <p>
+                    Stokes' theorem relates a surface integral to
+                    a line integral around its boundary.
+                </p>
+
+                <div class="formula">
+                    ∮ A · dl = ∫ (∇ × A) · dS
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    9. Continuity Equation
+                </h3>
+
+                <p>
+                    The continuity equation expresses conservation
+                    of electric charge.
+                </p>
+
+                <div class="formula">
+                    ∇ · J + ∂ρ/∂t = 0
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    10. Maxwell's Equations
+                </h3>
+
+                <p>
+                    Maxwell's equations describe electric and magnetic
+                    fields and their interaction.
+                </p>
+
+                <div class="formula">
+                    ∇ · E = ρ/ε₀
+                </div>
+
+                <div class="formula">
+                    ∇ · B = 0
+                </div>
+
+                <div class="formula">
+                    ∇ × E = -∂B/∂t
+                </div>
+
+                <div class="formula">
+                    ∇ × B = μ₀J + μ₀ε₀∂E/∂t
+                </div>
+
+                <div class="exam-box">
+
+                    <h4>
+                        ⭐ Very Important
+                    </h4>
+
+                    <p>
+                        Maxwell's four equations are highly important
+                        for long-answer questions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    11. Electromagnetic Waves
+                </h3>
+
+                <p>
+                    Electromagnetic waves consist of oscillating
+                    electric and magnetic fields which propagate
+                    through space.
+                </p>
+
+                <p>
+                    Electric field, magnetic field and direction of
+                    propagation are mutually perpendicular.
+                </p>
+
+                <div class="diagram">
+
+                    E
+                    ↑
+                    │
+                    │
+                    │
+                    └────────────→ Direction
+                   /
+                  /
+                 B
+
+            E ⟂ B ⟂ Direction
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    12. Plane EM Waves in Vacuum
+                </h3>
+
+                <p>
+                    In vacuum, electromagnetic waves travel with
+                    the speed of light.
+                </p>
+
+                <div class="formula">
+                    c = 1 / √(μ₀ε₀)
+                </div>
+
+                <div class="formula">
+                    E/B = c
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    13. Skin Depth
+                </h3>
+
+                <p>
+                    Skin depth is the distance inside a conductor
+                    at which the amplitude of an electromagnetic
+                    field falls to 1/e of its surface value.
+                </p>
+
+                <div class="formula">
+                    δ = √(2 / ωμσ)
+                </div>
+
+                <p>
+                    At high frequencies, current tends to flow mainly
+                    near the surface of a conductor. This is called
+                    the skin effect.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    14. Poynting Vector
+                </h3>
+
+                <p>
+                    The Poynting vector represents the rate of flow
+                    of electromagnetic energy per unit area.
+                </p>
+
+                <div class="formula">
+                    S = E × H
+                </div>
+
+                <p>
+                    Its direction represents the direction of
+                    propagation of electromagnetic energy.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    15. Poynting Theorem
+                </h3>
+
+                <p>
+                    Poynting theorem represents the conservation
+                    of energy in an electromagnetic field.
+                </p>
+
+                <p>
+                    It states that the decrease in electromagnetic
+                    energy stored in a volume is equal to the energy
+                    flowing out plus the energy dissipated.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             UNIT 3
+             ===================================================== -->
+
+        <div class="unit" id="unit3">
+
+            <h2>
+                <span class="unit-number">3</span>
+                UNIT 3 - Wave Nature of Particles and Schrödinger Equation
+            </h2>
+
+
+            <div class="topic">
+
+                <h3>
+                    1. Introduction to Quantum Mechanics
+                </h3>
+
+                <p>
+                    Quantum mechanics is the branch of physics that
+                    deals with the behaviour of matter and radiation
+                    at atomic and subatomic scales.
+                </p>
+
+                <p>
+                    Classical physics cannot completely explain
+                    phenomena such as blackbody radiation,
+                    photoelectric effect and atomic spectra.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    2. Wave Nature of Particles
+                </h3>
+
+                <p>
+                    Louis de Broglie proposed that moving particles
+                    such as electrons possess wave nature.
+                </p>
+
+                <div class="formula">
+                    λ = h/p
+                </div>
+
+                <p>
+                    For a particle of momentum p = mv:
+                </p>
+
+                <div class="formula">
+                    λ = h/mv
+                </div>
+
+                <div class="important">
+
+                    <b>Remember:</b>
+
+                    Smaller momentum means larger de Broglie wavelength.
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    3. Time-Dependent Schrödinger Equation
+                </h3>
+
+                <p>
+                    The time-dependent Schrödinger equation describes
+                    the evolution of the quantum wave function with time.
+                </p>
+
+                <div class="formula">
+                    iℏ ∂ψ/∂t =
+                    -ℏ²/2m ∇²ψ + Vψ
+                </div>
+
+                <div class="exam-box">
+
+                    <h4>
+                        ⭐ 6-Mark Question
+                    </h4>
+
+                    <p>
+                        Derive the time-dependent Schrödinger equation
+                        and explain the significance of each term.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    4. Time-Independent Schrödinger Equation
+                </h3>
+
+                <p>
+                    For a stationary state, the Schrödinger equation
+                    becomes time independent.
+                </p>
+
+                <div class="formula">
+                    -ℏ²/2m ∇²ψ + Vψ = Eψ
+                </div>
+
+                <p>
+                    Here ψ is the wave function, V is potential energy
+                    and E is total energy.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    5. Born Interpretation
+                </h3>
+
+                <p>
+                    According to Born's interpretation, the square of
+                    the magnitude of the wave function represents
+                    probability density.
+                </p>
+
+                <div class="formula">
+                    Probability Density = |ψ|²
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    6. Probability Current
+                </h3>
+
+                <p>
+                    Probability current represents the flow of
+                    probability associated with a quantum particle.
+                </p>
+
+                <div class="formula">
+                    J = (ℏ/2mi)
+                    [ψ*∇ψ - ψ∇ψ*]
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    7. Expectation Value
+                </h3>
+
+                <p>
+                    Expectation value represents the average value
+                    of a physical quantity obtained from repeated
+                    measurements on identically prepared systems.
+                </p>
+
+                <div class="formula">
+                    ⟨A⟩ = ∫ ψ* A ψ dτ
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    8. Free Particle Wave Function
+                </h3>
+
+                <p>
+                    For a free particle, the potential energy is zero.
+                    The wave function can be represented as a plane wave.
+                </p>
+
+                <div class="formula">
+                    ψ = A e<sup>i(kx-ωt)</sup>
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    9. Wave Packets
+                </h3>
+
+                <p>
+                    A wave packet is formed by the superposition of
+                    waves having different wavelengths and frequencies.
+                </p>
+
+                <div class="diagram">
+
+            Wave packet
+
+              /\      /\
+             /  \    /  \
+        ____/____\__/____\____
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    10. Heisenberg Uncertainty Principle
+                </h3>
+
+                <p>
+                    It is impossible to simultaneously determine the
+                    exact position and exact momentum of a particle.
+                </p>
+
+                <div class="formula">
+                    Δx Δp ≥ ℏ/2
+                </div>
+
+                <p>
+                    Similarly:
+                </p>
+
+                <div class="formula">
+                    ΔE Δt ≥ ℏ/2
+                </div>
+
+                <div class="exam-box">
+
+                    <h4>
+                        ⭐ Exam Point
+                    </h4>
+
+                    <p>
+                        State the principle, write mathematical expression
+                        and explain its physical significance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             UNIT 4
+             ===================================================== -->
+
+        <div class="unit" id="unit4">
+
+            <h2>
+                <span class="unit-number">4</span>
+                UNIT 4 - Applications of Schrödinger Equation
+            </h2>
+
+
+            <div class="topic">
+
+                <h3>
+                    1. Particle in a One-Dimensional Box
+                </h3>
+
+                <p>
+                    Consider a particle confined inside a one-dimensional
+                    box of length L. The potential energy inside the box
+                    is zero and outside the box is infinite.
+                </p>
+
+                <div class="diagram">
+
+        Infinite Wall                       Infinite Wall
+             │                                   │
+             │       Particle                    │
+             │          ●                        │
+             │                                   │
+        ─────┴───────────────────────────────────┴─────
+                         Length = L
+
+                </div>
+
+                <h4>
+                    Energy Eigenvalues
+                </h4>
+
+                <div class="formula">
+                    Eₙ = n²h² / 8mL²
+                </div>
+
+                <p>
+                    where n = 1, 2, 3, ... represents the quantum number.
+                </p>
+
+                <h4>
+                    Wave Function
+                </h4>
+
+                <div class="formula">
+                    ψₙ = √(2/L) sin(nπx/L)
+                </div>
+
+                <div class="exam-box">
+
+                    <h4>
+                        ⭐ Very Important 6-Mark Question
+                    </h4>
+
+                    <p>
+                        Derive the energy eigenvalues of a particle
+                        confined in a one-dimensional infinite potential box.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    2. Finite Potential Well
+                </h3>
+
+                <p>
+                    In a finite potential well, the potential energy
+                    outside the well is finite rather than infinite.
+                </p>
+
+                <div class="diagram">
+
+        V
+        │       ┌───────────────┐
+        │       │               │
+        │       │               │
+        │_______│               │_______
+        │       │               │
+        └───────┴───────────────┴──────── x
+
+                </div>
+
+                <p>
+                    Unlike the infinite well, the wave function
+                    penetrates slightly into the classically
+                    forbidden region.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    3. Quantum Tunneling
+                </h3>
+
+                <p>
+                    Quantum tunneling is the phenomenon in which a
+                    particle passes through a potential barrier even
+                    when its energy is less than the barrier height.
+                </p>
+
+                <div class="diagram">
+
+        Particle              Barrier
+           ●                    █████
+           → → → → → → → → →   █████   → → ●
+                                █████
+                                █████
+
+                       Tunneling
+
+                </div>
+
+                <h4>
+                    Applications
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Scanning tunneling microscope.
+                    </li>
+
+                    <li>
+                        Tunnel diode.
+                    </li>
+
+                    <li>
+                        Nuclear alpha decay.
+                    </li>
+
+                    <li>
+                        Semiconductor devices.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    4. Quantum Harmonic Oscillator
+                </h3>
+
+                <p>
+                    A quantum harmonic oscillator is a system in which
+                    the restoring force is proportional to displacement.
+                </p>
+
+                <div class="formula">
+                    Eₙ = (n + 1/2)ℏω
+                </div>
+
+                <p>
+                    where n = 0, 1, 2, 3, ...
+                </p>
+
+                <p>
+                    The lowest energy is not zero. It is called
+                    zero-point energy.
+                </p>
+
+                <div class="formula">
+                    E₀ = 1/2 ℏω
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             UNIT 5
+             ===================================================== -->
+
+        <div class="unit" id="unit5">
+
+            <h2>
+                <span class="unit-number">5</span>
+                UNIT 5 - Crystal Structures
+            </h2>
+
+
+            <div class="topic">
+
+                <h3>
+                    1. Lattice Points
+                </h3>
+
+                <p>
+                    Lattice points are imaginary points arranged in a
+                    regular periodic pattern representing the positions
+                    of atoms or groups of atoms in a crystal.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    2. Space Lattice
+                </h3>
+
+                <p>
+                    A space lattice is a three-dimensional periodic
+                    arrangement of lattice points.
+                </p>
+
+                <div class="diagram">
+
+        ●────●────●
+       /│   /│   /│
+      ●────●────● │
+      │ ●──│─●──│─●
+      │/   │/   │/
+      ●────●────●
+
+          3-D lattice
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    3. Basis
+                </h3>
+
+                <p>
+                    A basis is a group of atoms associated with
+                    each lattice point.
+                </p>
+
+                <div class="formula">
+                    Crystal Structure = Lattice + Basis
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    4. Bravais Lattice
+                </h3>
+
+                <p>
+                    Bravais lattices are the fourteen possible
+                    distinct three-dimensional lattice arrangements.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    5. Unit Cell and Lattice Parameters
+                </h3>
+
+                <p>
+                    A unit cell is the smallest repeating unit of
+                    a crystal lattice.
+                </p>
+
+                <p>
+                    Lattice parameters are a, b, c and the angles
+                    α, β, γ that describe the geometry of a unit cell.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    6. Simple Cubic (SC)
+                </h3>
+
+                <p>
+                    In simple cubic structure, atoms are present
+                    only at the eight corners of the cube.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Atoms per unit cell = 1
+                    </li>
+
+                    <li>
+                        Coordination number = 6
+                    </li>
+
+                    <li>
+                        Packing factor ≈ 52.4%
+                    </li>
+
+                </ul>
+
+                <div class="formula">
+                    r = a/2
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    7. Body Centered Cubic (BCC)
+                </h3>
+
+                <p>
+                    BCC has atoms at the eight corners and one atom
+                    at the centre of the cube.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Atoms per unit cell = 2
+                    </li>
+
+                    <li>
+                        Coordination number = 8
+                    </li>
+
+                    <li>
+                        Packing factor ≈ 68%
+                    </li>
+
+                </ul>
+
+                <div class="formula">
+                    √3a = 4r
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    8. Face Centered Cubic (FCC)
+                </h3>
+
+                <p>
+                    FCC has atoms at the eight corners and at the
+                    centre of each of the six faces.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Atoms per unit cell = 4
+                    </li>
+
+                    <li>
+                        Coordination number = 12
+                    </li>
+
+                    <li>
+                        Packing factor ≈ 74%
+                    </li>
+
+                </ul>
+
+                <div class="formula">
+                    √2a = 4r
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    9. SC vs BCC vs FCC
+                </h3>
+
+                <table class="comparison-table">
+
+                    <tr>
+                        <th>
+                            Property
+                        </th>
+
+                        <th>
+                            SC
+                        </th>
+
+                        <th>
+                            BCC
+                        </th>
+
+                        <th>
+                            FCC
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Atoms/unit cell
+                        </td>
+
+                        <td>
+                            1
+                        </td>
+
+                        <td>
+                            2
+                        </td>
+
+                        <td>
+                            4
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Coordination number
+                        </td>
+
+                        <td>
+                            6
+                        </td>
+
+                        <td>
+                            8
+                        </td>
+
+                        <td>
+                            12
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Packing factor
+                        </td>
+
+                        <td>
+                            52.4%
+                        </td>
+
+                        <td>
+                            68%
+                        </td>
+
+                        <td>
+                            74%
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    10. Defects in Crystals
+                </h3>
+
+                <p>
+                    A crystal defect is an irregularity or deviation
+                    from the perfect periodic arrangement of atoms.
+                </p>
+
+                <h4>
+                    Classification
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Point defects
+                    </li>
+
+                    <li>
+                        Line defects
+                    </li>
+
+                    <li>
+                        Surface defects
+                    </li>
+
+                    <li>
+                        Volume defects
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    11. Frenkel Defect
+                </h3>
+
+                <p>
+                    In Frenkel defect, a smaller ion leaves its normal
+                    lattice position and occupies an interstitial site.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    12. Schottky Defect
+                </h3>
+
+                <p>
+                    In Schottky defect, equal numbers of positive and
+                    negative ions are missing from their normal lattice
+                    positions.
+                </p>
+
+                <p>
+                    The crystal remains electrically neutral.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             UNIT 6
+             ===================================================== -->
+
+        <div class="unit" id="unit6">
+
+            <h2>
+                <span class="unit-number">6</span>
+                UNIT 6 - Free Electron Theory of Metals
+            </h2>
+
+
+            <div class="topic">
+
+                <h3>
+                    1. Classical Free Electron Theory
+                </h3>
+
+                <p>
+                    According to classical free electron theory,
+                    metals contain a large number of free electrons
+                    which move randomly inside the metal.
+                </p>
+
+                <h4>
+                    Postulates
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Metal contains free electrons.
+                    </li>
+
+                    <li>
+                        Positive ions remain fixed.
+                    </li>
+
+                    <li>
+                        Electrons move randomly.
+                    </li>
+
+                    <li>
+                        Electron collisions are assumed to be elastic.
+                    </li>
+
+                    <li>
+                        Electrons obey classical mechanics.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    2. Failures of Classical Free Electron Theory
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Could not explain specific heat of metals.
+                    </li>
+
+                    <li>
+                        Could not explain temperature dependence
+                        of conductivity.
+                    </li>
+
+                    <li>
+                        Could not explain electronic heat capacity correctly.
+                    </li>
+
+                    <li>
+                        Could not explain some magnetic properties.
+                    </li>
+
+                    <li>
+                        Could not explain the distribution of electrons.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    3. Quantum Free Electron Theory
+                </h3>
+
+                <p>
+                    Quantum free electron theory treats electrons
+                    according to quantum mechanics rather than
+                    classical mechanics.
+                </p>
+
+                <p>
+                    Electrons obey Fermi-Dirac statistics and the
+                    Pauli exclusion principle.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    4. Fermi-Dirac Distribution
+                </h3>
+
+                <p>
+                    Fermi-Dirac distribution gives the probability
+                    that an available energy state is occupied
+                    by an electron.
+                </p>
+
+                <div class="formula">
+                    f(E) =
+                    1 / [e<sup>(E-E<sub>F</sub>)/kT</sup> + 1]
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    5. Fermi Energy
+                </h3>
+
+                <p>
+                    Fermi energy is the highest occupied energy level
+                    of electrons in a metal at absolute zero temperature.
+                </p>
+
+                <div class="formula">
+                    E<sub>F</sub> =
+                    (ℏ²/2m)(3π²n)<sup>2/3</sup>
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    6. Density of States
+                </h3>
+
+                <p>
+                    Density of states represents the number of available
+                    electron states per unit energy interval.
+                </p>
+
+                <p>
+                    It helps in understanding the distribution of
+                    electrons among different energy levels.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    7. Thermionic Emission
+                </h3>
+
+                <p>
+                    Thermionic emission is the emission of electrons
+                    from a heated metal surface when sufficient thermal
+                    energy is supplied.
+                </p>
+
+                <div class="diagram">
+
+              Heated metal
+              ───────────
+              • • • • • •
+                 ↑ ↑ ↑
+                 ↑ ↑ ↑
+              Electrons
+                escaping
+
+                </div>
+
+            </div>
+
+
+            <div class="topic">
+
+                <h3>
+                    8. Richardson's Equation
+                </h3>
+
+                <p>
+                    Richardson's equation describes thermionic emission
+                    from a heated metal surface.
+                </p>
+
+                <div class="formula">
+                    J = A T² e<sup>-φ/kT</sup>
+                </div>
+
+                <p>
+                    Here J is thermionic emission current density,
+                    A is Richardson constant, T is absolute temperature,
+                    φ is work function and k is Boltzmann constant.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             IMPORTANT FORMULAS
+             ===================================================== -->
+
+        <div class="unit" id="formulas">
+
+            <h2>
+                ⚡ Important Physics Formulas
+            </h2>
+
+            <div class="revision-grid">
+
+                <div class="revision-item">
+                    <strong>Interference</strong>
+                    Δ = nλ
+                </div>
+
+                <div class="revision-item">
+                    <strong>Destructive Interference</strong>
+                    Δ = (2n + 1)λ/2
+                </div>
+
+                <div class="revision-item">
+                    <strong>Single Slit</strong>
+                    a sinθ = nλ
+                </div>
+
+                <div class="revision-item">
+                    <strong>Grating</strong>
+                    d sinθ = nλ
+                </div>
+
+                <div class="revision-item">
+                    <strong>Resolving Power</strong>
+                    R = nN
+                </div>
+
+                <div class="revision-item">
+                    <strong>Biot-Savart Law</strong>
+                    dB = (μ₀/4π)(Idl sinθ/r²)
+                </div>
+
+                <div class="revision-item">
+                    <strong>Laplace Equation</strong>
+                    ∇²V = 0
+                </div>
+
+                <div class="revision-item">
+                    <strong>Poisson Equation</strong>
+                    ∇²V = -ρ/ε₀
+                </div>
+
+                <div class="revision-item">
+                    <strong>Continuity Equation</strong>
+                    ∇·J + ∂ρ/∂t = 0
+                </div>
+
+                <div class="revision-item">
+                    <strong>EM Wave Speed</strong>
+                    c = 1/√(μ₀ε₀)
+                </div>
+
+                <div class="revision-item">
+                    <strong>Poynting Vector</strong>
+                    S = E × H
+                </div>
+
+                <div class="revision-item">
+                    <strong>de Broglie</strong>
+                    λ = h/p
+                </div>
+
+                <div class="revision-item">
+                    <strong>Uncertainty Principle</strong>
+                    ΔxΔp ≥ ℏ/2
+                </div>
+
+                <div class="revision-item">
+                    <strong>Particle in Box</strong>
+                    Eₙ = n²h²/8mL²
+                </div>
+
+                <div class="revision-item">
+                    <strong>Harmonic Oscillator</strong>
+                    Eₙ = (n+1/2)ℏω
+                </div>
+
+                <div class="revision-item">
+                    <strong>Fermi Energy</strong>
+                    E<sub>F</sub> = (ℏ²/2m)(3π²n)<sup>2/3</sup>
+                </div>
+
+                <div class="revision-item">
+                    <strong>Richardson Equation</strong>
+                    J = AT²e<sup>-φ/kT</sup>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             IMPORTANT QUESTIONS
+             ===================================================== -->
+
+        <div class="unit" id="questions">
+
+            <h2>
+                ⭐ Important Exam Questions
+            </h2>
+
+            <div class="exam-box">
+
+                <h4>
+                    🔥 High Priority 6-Mark Questions
+                </h4>
+
+                <ol>
+
+                    <li>
+                        Explain Huygens principle with suitable diagram.
+                    </li>
+
+                    <li>
+                        Explain interference by division of wavefront.
+                    </li>
+
+                    <li>
+                        Explain Newton's rings with diagram and applications.
+                    </li>
+
+                    <li>
+                        Explain Fraunhofer diffraction from a single slit.
+                    </li>
+
+                    <li>
+                        Explain diffraction grating and resolving power.
+                    </li>
+
+                    <li>
+                        Explain Ruby laser with construction and working.
+                    </li>
+
+                    <li>
+                        Explain He-Ne laser with construction and working.
+                    </li>
+
+                    <li>
+                        Explain Maxwell's equations.
+                    </li>
+
+                    <li>
+                        Explain electromagnetic waves and Poynting vector.
+                    </li>
+
+                    <li>
+                        Derive time-dependent Schrödinger equation.
+                    </li>
+
+                    <li>
+                        Explain Heisenberg uncertainty principle.
+                    </li>
+
+                    <li>
+                        Derive energy eigenvalues for a particle in
+                        one-dimensional box.
+                    </li>
+
+                    <li>
+                        Explain quantum tunneling.
+                    </li>
+
+                    <li>
+                        Explain SC, BCC and FCC crystal structures.
+                    </li>
+
+                    <li>
+                        Explain Frenkel and Schottky defects.
+                    </li>
+
+                    <li>
+                        Explain classical free electron theory and
+                        its limitations.
+                    </li>
+
+                    <li>
+                        Explain Fermi-Dirac distribution and Fermi energy.
+                    </li>
+
+                    <li>
+                        Explain thermionic emission and Richardson's equation.
+                    </li>
+
+                </ol>
+
+            </div>
+
+
+            <div class="revision-card">
+
+                <h2>
+                    🧠 One-Night Revision List
+                </h2>
+
+                <div class="revision-grid">
+
+                    <div class="revision-item">
+                        <strong>Unit 1</strong>
+                        Huygens, Interference, Newton Rings,
+                        Diffraction, Polarization, Lasers.
+                    </div>
+
+                    <div class="revision-item">
+                        <strong>Unit 2</strong>
+                        Gauss Law, Laplace, Poisson,
+                        Biot-Savart, Maxwell, EM Waves.
+                    </div>
+
+                    <div class="revision-item">
+                        <strong>Unit 3</strong>
+                        de Broglie, Schrödinger equations,
+                        Born interpretation, Uncertainty.
+                    </div>
+
+                    <div class="revision-item">
+                        <strong>Unit 4</strong>
+                        Particle in box, Finite well,
+                        Tunneling, Harmonic oscillator.
+                    </div>
+
+                    <div class="revision-item">
+                        <strong>Unit 5</strong>
+                        Lattice, Unit cell, SC, BCC,
+                        FCC, Crystal defects.
+                    </div>
+
+                    <div class="revision-item">
+                        <strong>Unit 6</strong>
+                        Free electron theory, Fermi energy,
+                        Density of states, Thermionic emission.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             FINAL
+             ===================================================== -->
+
+        <div class="final-section">
+
+            <h2>
+                🎓 Physics Preparation Complete
+            </h2>
+
+            <p>
+                Revise definitions first, then formulas,
+                diagrams and finally important questions.
+                For 6-mark questions follow:
+                <b>Definition → Explanation → Formula → Diagram → Applications.</b>
+            </p>
+
+            <a
+                href="physics-important.html"
+                class="final-btn">
+
+                ⭐ Open Important Questions →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 College Resource Hub
+        </p>
+
+        <p>
+            Physics Detailed Notes • Created by
+            <strong>Nitin Singh</strong>
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================================
+         BACK TO TOP
+         ========================================================= -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+
+        /* =====================================================
+           THEME
+           ===================================================== */
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+
+        function updateThemeButton() {
+
+            if (
+                document.body.classList.contains(
+                    "dark-mode"
+                )
+            ) {
+
+                themeToggle.innerHTML =
+                    "☀️ Light Mode";
+
+            } else {
+
+                themeToggle.innerHTML =
+                    "🌙 Dark Mode";
+
+            }
+
+        }
+
+
+        /* LOAD SAVED THEME */
+
+        const savedTheme =
+            localStorage.getItem(
+                "physicsNotesTheme"
+            );
+
+
+        if (
+            savedTheme === "dark"
+        ) {
+
+            document.body.classList.add(
+                "dark-mode"
+            );
+
+        }
+
+
+        updateThemeButton();
+
+
+        /* TOGGLE THEME */
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "dark-mode"
+                );
+
+
+                if (
+                    document.body.classList.contains(
+                        "dark-mode"
+                    )
+                ) {
+
+                    localStorage.setItem(
+                        "physicsNotesTheme",
+                        "dark"
+                    );
+
+                } else {
+
+                    localStorage.setItem(
+                        "physicsNotesTheme",
+                        "light"
+                    );
+
+                }
+
+
+                updateThemeButton();
+
+            }
+        );
+
+
+        /* =====================================================
+           BACK TO TOP
+           ===================================================== */
+
+        const backToTop =
+            document.getElementById(
+                "backToTop"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (
+                    window.scrollY > 500
+                ) {
+
+                    backToTop.classList.add(
+                        "show"
+                    );
+
+                } else {
+
+                    backToTop.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+        /* =====================================================
+           SMOOTH QUICK NAVIGATION
+           ===================================================== */
+
+        document
+            .querySelectorAll(".quick-nav a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function (event) {
+
+                        const targetId =
+                            link.getAttribute("href");
+
+                        const target =
+                            document.querySelector(
+                                targetId
+                            );
+
+                        if (target) {
+
+                            event.preventDefault();
+
+                            target.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+    </script>
+
+
+</body>
+
+</html>

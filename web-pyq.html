@@ -1,0 +1,1195 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Technology PYQs | College Resource Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #eef5ff, #f8fbff);
+            color: #172033;
+            font-family: Arial, sans-serif;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .pyq-nav {
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            padding: 15px 20px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .pyq-nav a {
+
+            text-decoration: none;
+
+            color: #123d63;
+
+            background: #eef5ff;
+
+            padding: 10px 17px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .pyq-nav a:hover {
+
+            background: #123d63;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .pyq-hero {
+
+            max-width: 1150px;
+
+            margin: 30px auto;
+
+            padding: 65px 25px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a33,
+                    #123d63,
+                    #1769aa
+                );
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 15px 40px rgba(7,26,51,0.25);
+        }
+
+        .pyq-icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .pyq-hero h1 {
+
+            font-size: clamp(32px, 5vw, 55px);
+
+            margin: 10px 0;
+        }
+
+        .pyq-hero p {
+
+            font-size: 18px;
+
+            opacity: 0.92;
+        }
+
+        .hero-tag {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 9px 18px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.14);
+
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .pyq-container {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 20px;
+        }
+
+        /* =========================
+           UNIT SECTION
+        ========================= */
+
+        .unit-section {
+
+            margin: 45px 0;
+        }
+
+        .unit-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        .unit-heading h2 {
+
+            color: #123d63;
+
+            font-size: 30px;
+
+            margin: 0;
+        }
+
+        .unit-badge {
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            background: #e7f2ff;
+
+            color: #1769aa;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           QUESTION CARD
+        ========================= */
+
+        .question-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 24px;
+
+            border: 1px solid #dce7f5;
+
+            box-shadow:
+                0 10px 30px rgba(20,50,90,0.09);
+        }
+
+        .question-card-title {
+
+            color: #123d63;
+
+            margin-top: 0;
+
+            margin-bottom: 22px;
+
+            font-size: 22px;
+        }
+
+        .question {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            margin: 12px 0;
+
+            padding: 16px 18px;
+
+            background: #f6faff;
+
+            border-radius: 14px;
+
+            border-left: 4px solid #1769aa;
+
+            transition: 0.3s;
+        }
+
+        .question:hover {
+
+            transform: translateX(5px);
+
+            background: #edf6ff;
+
+            box-shadow:
+                0 5px 15px rgba(20,50,90,0.08);
+        }
+
+        .question-text {
+
+            flex: 1;
+
+            color: #26364a;
+
+            line-height: 1.55;
+        }
+
+        .question-text strong {
+
+            color: #123d63;
+        }
+
+        .marks {
+
+            flex-shrink: 0;
+
+            background: #123d63;
+
+            color: white;
+
+            padding: 5px 10px;
+
+            border-radius: 15px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+        /* =========================
+           IMPORTANT SECTION
+        ========================= */
+
+        .important-section {
+
+            margin: 55px 0;
+        }
+
+        .important-heading {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .important-heading h2 {
+
+            color: #123d63;
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+        .important-heading p {
+
+            color: #536174;
+        }
+
+        .important-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 25px;
+        }
+
+        .important-box {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eef6ff
+                );
+
+            border: 2px solid #bcd7f2;
+
+            padding: 28px;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 10px 30px rgba(20,50,90,0.08);
+        }
+
+        .important-box h3 {
+
+            color: #123d63;
+
+            margin-top: 0;
+
+            margin-bottom: 18px;
+        }
+
+        .important-box li {
+
+            color: #26364a;
+
+            margin: 12px 0;
+
+            line-height: 1.5;
+        }
+
+        .important-box li::marker {
+
+            color: #1769aa;
+
+            font-weight: bold;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 60px;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            background: #071a33;
+
+            color: white;
+        }
+
+        footer h3 {
+
+            margin-bottom: 8px;
+        }
+
+        footer p {
+
+            margin: 6px 0;
+
+            opacity: 0.85;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            .pyq-hero {
+
+                margin: 15px;
+
+                padding: 45px 18px;
+            }
+
+            .pyq-container {
+
+                padding: 15px;
+            }
+
+            .question-card {
+
+                padding: 20px 15px;
+            }
+
+            .question {
+
+                flex-direction: column;
+
+                gap: 8px;
+            }
+
+            .marks {
+
+                order: -1;
+            }
+
+            .unit-heading {
+
+                flex-wrap: wrap;
+            }
+
+            .pyq-nav {
+
+                padding: 10px;
+            }
+
+            .pyq-nav a {
+
+                padding: 8px 12px;
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="pyq-nav">
+
+        <a href="index.html">🏠 Home</a>
+
+        <a href="web-syllabus.html">📋 Syllabus</a>
+
+        <a href="html-css.html">💻 HTML & CSS</a>
+
+        <a href="#unit1">Unit 1</a>
+
+        <a href="#unit2">Unit 2</a>
+
+        <a href="#unit3">Unit 3</a>
+
+        <a href="#unit4">Unit 4</a>
+
+        <a href="#important">🔥 Important</a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="pyq-hero">
+
+        <div class="pyq-icon">
+            📝
+        </div>
+
+        <h1>
+            Web Technology PYQs
+        </h1>
+
+        <p>
+            Previous Year Questions & Exam Practice
+        </p>
+
+        <div class="hero-tag">
+            🎯 Practice • Revise • Prepare • Perform
+        </div>
+
+    </header>
+
+
+    <main class="pyq-container">
+
+
+        <!-- =========================
+             UNIT 1
+        ========================= -->
+
+        <section class="unit-section" id="unit1">
+
+            <div class="unit-heading">
+
+                <span class="unit-badge">
+                    UNIT 01
+                </span>
+
+                <h2>
+                    🌐 Internet & WWW
+                </h2>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <h3 class="question-card-title">
+                    📚 Important Questions
+                </h3>
+
+
+                <div class="question">
+                    <span class="marks">2 Marks</span>
+                    <div class="question-text">
+                        <strong>Q1.</strong> What is the Internet?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">2 Marks</span>
+                    <div class="question-text">
+                        <strong>Q2.</strong> What is World Wide Web (WWW)?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q3.</strong> Differentiate between Internet and WWW.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q4.</strong> Explain the evolution and history of the World Wide Web.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q5.</strong> Write any five application areas of the Internet.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q6.</strong> Explain the requirements for working with the Internet and WWW.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q7.</strong> What is a web browser? Give examples.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q8.</strong> What is a web server?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q9.</strong> Explain HTTP and its role in communication between browser and server.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q10.</strong> What is web searching? Explain searching techniques.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q11.</strong> What is web-casting?
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             UNIT 2
+        ========================= -->
+
+        <section class="unit-section" id="unit2">
+
+            <div class="unit-heading">
+
+                <span class="unit-badge">
+                    UNIT 02
+                </span>
+
+                <h2>
+                    💻 Basics of HTML
+                </h2>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <h3 class="question-card-title">
+                    📚 Important Questions
+                </h3>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q1.</strong> What is HTML? Explain its features.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q2.</strong> Explain the basic structure of an HTML webpage with an example.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q3.</strong> Explain the steps involved in developing a website.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q4.</strong> What is web publishing?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q5.</strong> What is web hosting?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q6.</strong> Differentiate between static and dynamic websites.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q7.</strong> What are HTML tags and attributes?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q8.</strong> Explain heading, title, body and paragraph tags.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q9.</strong> Differentiate between ordered and unordered lists.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q10.</strong> Explain hyperlinks in HTML. Explain the use of the href attribute with syntax.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q11.</strong> Explain text formatting tags in HTML.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q12.</strong> Explain the image tag and its important attributes.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q13.</strong> What is image mapping? Explain with an example.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q14.</strong> What are frames in HTML?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">8 Marks</span>
+                    <div class="question-text">
+                        <strong>Q15.</strong> Write HTML code to create a webpage containing headings, paragraphs, lists, image and hyperlink.
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             UNIT 3
+        ========================= -->
+
+        <section class="unit-section" id="unit3">
+
+            <div class="unit-heading">
+
+                <span class="unit-badge">
+                    UNIT 03
+                </span>
+
+                <h2>
+                    🚀 HTML5
+                </h2>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <h3 class="question-card-title">
+                    📚 Important Questions
+                </h3>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q1.</strong> What is HTML5?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q2.</strong> Explain the advantages of HTML5.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q3.</strong> Explain the limitations of HTML4.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q4.</strong> Explain semantic elements in HTML5.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q5.</strong> Explain the use of header, nav, article and footer elements.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q6.</strong> Explain multimedia support in HTML5.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q7.</strong> Explain the audio element with syntax.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q8.</strong> Explain the video element with syntax.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q9.</strong> What is Canvas in HTML5? Explain its uses.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q10.</strong> Explain Web Storage in HTML5.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q11.</strong> Differentiate between Local Storage and Session Storage.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q12.</strong> Explain HTML5 forms and important form elements.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q13.</strong> Explain how graphs and charts can be created using HTML5.
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             UNIT 4
+        ========================= -->
+
+        <section class="unit-section" id="unit4">
+
+            <div class="unit-heading">
+
+                <span class="unit-badge">
+                    UNIT 04
+                </span>
+
+                <h2>
+                    🎨 CSS
+                </h2>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <h3 class="question-card-title">
+                    📚 Important Questions
+                </h3>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q1.</strong> What is CSS? Explain its advantages.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q2.</strong> Explain the three types of CSS.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q3.</strong> Explain Inline CSS with example.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q4.</strong> Explain Internal CSS with example.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q5.</strong> Explain External CSS with example.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q6.</strong> Explain text formatting using CSS.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q7.</strong> Explain background and color gradients in CSS.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q8.</strong> Explain fonts and text styles in CSS.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q9.</strong> Explain how boxes are created using CSS.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q10.</strong> Explain columns in CSS.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q11.</strong> Explain display and positioning of elements in CSS.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q12.</strong> What is floating in CSS?
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">3 Marks</span>
+                    <div class="question-text">
+                        <strong>Q13.</strong> Explain list styles in CSS.
+                    </div>
+                </div>
+
+
+                <div class="question">
+                    <span class="marks">5 Marks</span>
+                    <div class="question-text">
+                        <strong>Q14.</strong> Explain table layouts using CSS.
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MOST IMPORTANT
+        ========================= -->
+
+        <section class="important-section" id="important">
+
+            <div class="important-heading">
+
+                <h2>
+                    🔥 Most Important Questions
+                </h2>
+
+                <p>
+                    Focus on these questions before the examination
+                </p>
+
+            </div>
+
+
+            <div class="important-grid">
+
+
+                <div class="important-box">
+
+                    <h3>
+                        ⭐ Theory Focus
+                    </h3>
+
+                    <ol>
+
+                        <li>Explain Internet and WWW.</li>
+
+                        <li>Differentiate between Internet and WWW.</li>
+
+                        <li>Explain web browser and web server.</li>
+
+                        <li>Explain HTTP.</li>
+
+                        <li>Explain basic HTML webpage structure.</li>
+
+                        <li>Explain HTML tags and attributes.</li>
+
+                        <li>Explain ordered and unordered lists.</li>
+
+                        <li>Explain hyperlink and href attribute.</li>
+
+                        <li>Explain image tag and its attributes.</li>
+
+                        <li>Explain HTML5 and its advantages.</li>
+
+                        <li>Explain semantic elements of HTML5.</li>
+
+                        <li>Explain audio and video elements.</li>
+
+                        <li>Explain Canvas and Web Storage.</li>
+
+                        <li>Explain HTML5 forms.</li>
+
+                        <li>Explain CSS and its types.</li>
+
+                        <li>Differentiate Inline, Internal and External CSS.</li>
+
+                        <li>Explain CSS positioning and floating.</li>
+
+                        <li>Explain CSS boxes and columns.</li>
+
+                    </ol>
+
+                </div>
+
+
+                <div class="important-box">
+
+                    <h3>
+                        💻 Coding Focus
+                    </h3>
+
+                    <ol>
+
+                        <li>Create a complete HTML webpage.</li>
+
+                        <li>Create a webpage using heading, paragraph and lists.</li>
+
+                        <li>Create a webpage with an image and hyperlink.</li>
+
+                        <li>Create an HTML5 page using audio and video.</li>
+
+                        <li>Create an HTML5 registration form.</li>
+
+                        <li>Write examples of Inline, Internal and External CSS.</li>
+
+                        <li>Create boxes and columns using CSS.</li>
+
+                        <li>Demonstrate CSS positioning and floating.</li>
+
+                    </ol>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>
+            📚 Web Technology PYQs
+        </h3>
+
+        <p>
+            Practice • Revise • Prepare • Perform
+        </p>
+
+        <p>
+            © 2026 College Resource Hub | Created by Nitin Singh 🎓
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

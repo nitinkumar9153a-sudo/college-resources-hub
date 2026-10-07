@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mathematics Syllabus | College Resource Hub</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050b18;
+            color: white;
+        }
+
+
+        /* ==============================
+           TOP BAR
+        ============================== */
+
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+
+            background: rgba(5, 11, 24, 0.92);
+            border-bottom: 1px solid rgba(0, 170, 255, 0.35);
+
+            backdrop-filter: blur(12px);
+        }
+
+        .topbar-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00bfff;
+        }
+
+        .slide-count {
+            font-size: 15px;
+            color: #b9dfff;
+        }
+
+        .home-btn {
+            text-decoration: none;
+            color: white;
+
+            padding: 9px 17px;
+            border-radius: 25px;
+
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
+        }
+
+
+        /* ==============================
+           PRESENTATION
+        ============================== */
+
+        .presentation {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+
+            top: 65px;
+            left: 0;
+
+            width: 100%;
+            height: calc(100vh - 65px);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 70px 100px 110px;
+
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: flex !important;
+            animation: slideIn 0.45s ease;
+        }
+
+        @keyframes slideIn {
+
+            from {
+                opacity: 0;
+                transform: translateX(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+
+        /* ==============================
+           CONTENT
+        ============================== */
+
+        .content {
+            width: min(1000px, 100%);
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: clamp(38px, 6vw, 75px);
+            margin-bottom: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #00c6ff,
+                #ffffff,
+                #00c6ff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content h2 {
+            font-size: clamp(28px, 4vw, 48px);
+            color: #00c6ff;
+            margin-bottom: 25px;
+        }
+
+        .content h3 {
+            color: #7ddfff;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            color: #d5e9ff;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .subtitle {
+            color: #9bcfff;
+            font-size: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 18px;
+            margin-bottom: 20px;
+
+            border-radius: 30px;
+
+            background: rgba(0, 174, 255, 0.12);
+            border: 1px solid rgba(0, 191, 255, 0.45);
+
+            color: #00c6ff;
+        }
+
+
+        /* ==============================
+           UNIT CARDS
+        ============================== */
+
+        .unit-container {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+
+            width: min(900px, 100%);
+            margin: auto;
+        }
+
+        .card {
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background: linear-gradient(
+                145deg,
+                rgba(0, 120, 255, 0.14),
+                rgba(0, 30, 70, 0.45)
+            );
+
+            border: 1px solid rgba(0, 191, 255, 0.3);
+
+            cursor: pointer;
+
+            transition: 0.35s;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+
+            border-color: #00c6ff;
+
+            box-shadow:
+                0 0 25px rgba(0, 191, 255, 0.35);
+        }
+
+        .card h3 {
+            font-size: 25px;
+            color: #00c6ff;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           TOPICS
+        ============================== */
+
+        .topics {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 25px;
+
+            text-align: left;
+        }
+
+        .topic {
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background: rgba(0, 110, 255, 0.09);
+
+            border: 1px solid rgba(0, 191, 255, 0.25);
+
+            transition: 0.3s;
+        }
+
+        .topic:hover {
+            border-color: #00c6ff;
+            transform: translateY(-3px);
+        }
+
+        .topic strong {
+            color: #00c6ff;
+        }
+
+
+        /* ==============================
+           EXAM BOX
+        ============================== */
+
+        .exam-box {
+            width: min(900px, 100%);
+            margin: auto;
+
+            padding: 35px;
+
+            text-align: left;
+
+            border-radius: 22px;
+
+            background: rgba(0, 100, 255, 0.09);
+
+            border: 1px solid rgba(0, 191, 255, 0.35);
+
+            box-shadow:
+                0 0 30px rgba(0, 150, 255, 0.1);
+        }
+
+        .exam-box li {
+            margin: 14px 0;
+
+            color: #d8ecff;
+
+            line-height: 1.5;
+        }
+
+        .exam-box li::marker {
+            color: #00c6ff;
+        }
+
+
+        /* ==============================
+           FINAL BUTTON
+        ============================== */
+
+        .resource-btn {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #007bff,
+                #00c6ff
+            );
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .resource-btn:hover {
+            transform: scale(1.07);
+
+            box-shadow:
+                0 0 25px rgba(0, 191, 255, 0.7);
+        }
+
+
+        /* ==============================
+           UNIT NAVIGATION
+        ============================== */
+
+        .unit-nav {
+            position: fixed;
+
+            right: 18px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            z-index: 900;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .unit-dot {
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+
+            background: #34516d;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .unit-dot:hover,
+        .unit-dot.active {
+            background: #00c6ff;
+
+            transform: scale(1.35);
+
+            box-shadow:
+                0 0 15px rgba(0, 198, 255, 0.9);
+        }
+
+
+        /* ==============================
+           NEW BOTTOM PPT NAVIGATION
+        ============================== */
+
+        .slide-navigation {
+            position: fixed;
+
+            bottom: 22px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 18px;
+
+            padding: 10px 14px;
+
+            background: rgba(2, 6, 23, 0.92);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border: 1px solid rgba(96, 165, 250, 0.25);
+
+            border-radius: 50px;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.35),
+                0 0 25px rgba(37, 99, 235, 0.08);
+
+            z-index: 9999;
+        }
+
+
+        .slide-nav-btn {
+            min-width: 125px;
+
+            height: 44px;
+
+            padding: 0 18px;
+
+            border: 1px solid rgba(96, 165, 250, 0.3);
+
+            border-radius: 25px;
+
+            background: rgba(30, 41, 59, 0.85);
+
+            color: #e2e8f0;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+
+        .slide-nav-btn:hover {
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #0284c7
+            );
+
+            border-color: #60a5fa;
+
+            color: white;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 25px rgba(37, 99, 235, 0.35);
+        }
+
+
+        .slide-nav-btn:active {
+            transform: translateY(0) scale(0.96);
+        }
+
+
+        .slide-nav-btn span {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+
+        .slide-counter {
+            min-width: 70px;
+
+            text-align: center;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            color: #e2e8f0;
+
+            white-space: nowrap;
+        }
+
+        .slide-counter #currentSlide {
+            color: #60a5fa;
+            font-size: 17px;
+        }
+
+        .slide-counter #totalSlides {
+            color: #94a3b8;
+        }
+
+        .slide-counter .separator {
+            color: #64748b;
+            margin: 0 5px;
+        }
+
+
+        /* ==============================
+           PROGRESS
+        ============================== */
+
+        .progress-container {
+            position: fixed;
+
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            z-index: 1100;
+        }
+
+        .progress-bar {
+            height: 100%;
+
+            width: 0;
+
+            background: linear-gradient(
+                90deg,
+                #007bff,
+                #00c6ff
+            );
+
+            transition: width 0.3s ease;
+        }
+
+
+        /* ==============================
+           GLOW BACKGROUND
+        ============================== */
+
+        .glow {
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            border-radius: 50%;
+
+            background: rgba(0, 150, 255, 0.08);
+
+            filter: blur(80px);
+
+            pointer-events: none;
+        }
+
+        .glow.one {
+            top: -180px;
+            left: -150px;
+        }
+
+        .glow.two {
+            bottom: -200px;
+            right: -150px;
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            .topbar {
+                padding: 0 12px;
+            }
+
+            .topbar-title {
+                font-size: 15px;
+            }
+
+            .slide {
+                padding: 80px 25px 115px;
+            }
+
+            .unit-container,
+            .topics {
+                grid-template-columns: 1fr;
+            }
+
+            .unit-nav {
+                right: 8px;
+            }
+
+            .unit-dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .content p {
+                font-size: 15px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            .slide-navigation {
+                bottom: 12px;
+
+                gap: 8px;
+
+                padding: 8px 10px;
+
+                max-width: calc(100% - 20px);
+            }
+
+            .slide-nav-btn {
+                min-width: 95px;
+
+                height: 40px;
+
+                padding: 0 12px;
+
+                font-size: 13px;
+            }
+
+            .slide-nav-btn span {
+                font-size: 17px;
+            }
+
+            .slide-counter {
+                min-width: 55px;
+                font-size: 13px;
+            }
+
+            .slide-counter #currentSlide {
+                font-size: 15px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- BACKGROUND GLOW -->
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+
+    <!-- ==============================
+         TOP BAR
+    ============================== -->
+
+    <header class="topbar">
+
+        <div class="topbar-title">
+            📐 Mathematics Syllabus
+        </div>
+
+        <div class="slide-count" id="slideCount">
+            1 / 16
+        </div>
+
+        <a href="index.html" class="home-btn">
+            🏠 Home
+        </a>
+
+    </header>
+
+
+    <!-- ==============================
+         UNIT DOTS
+    ============================== -->
+
+    <div class="unit-nav">
+
+        <button
+            class="unit-dot"
+            onclick="goToSlide(2)"
+            title="Unit I">
+        </button>
+
+        <button
+            class="unit-dot"
+            onclick="goToSlide(5)"
+            title="Unit II">
+        </button>
+
+        <button
+            class="unit-dot"
+            onclick="goToSlide(8)"
+            title="Unit III">
+        </button>
+
+        <button
+            class="unit-dot"
+            onclick="goToSlide(11)"
+            title="Unit IV">
+        </button>
+
+    </div>
+
+
+    <!-- ==============================
+         PRESENTATION
+    ============================== -->
+
+    <main class="presentation">
+
+
+        <!-- SLIDE 1 -->
+
+        <section class="slide active">
+
+            <div class="content">
+
+                <div class="badge">
+                    B.Tech CSE • Semester 1
+                </div>
+
+                <h1>
+                    Mathematics
+                </h1>
+
+                <p class="subtitle">
+                    Complete Syllabus
+                </p>
+
+                <p style="margin-top:20px;">
+                    College Resource Hub
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 2 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <div class="badge">
+                    Select a Unit
+                </div>
+
+                <h2>
+                    Mathematics Units
+                </h2>
+
+                <div class="unit-container">
+
+                    <div
+                        class="card"
+                        onclick="goToSlide(2)">
+
+                        <h3>
+                            Unit I
+                        </h3>
+
+                        <p>
+                            Matrices and Linear Algebra
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="card"
+                        onclick="goToSlide(5)">
+
+                        <h3>
+                            Unit II
+                        </h3>
+
+                        <p>
+                            Differential & Integral Calculus
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="card"
+                        onclick="goToSlide(8)">
+
+                        <h3>
+                            Unit III
+                        </h3>
+
+                        <p>
+                            Multivariable & Vector Calculus
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="card"
+                        onclick="goToSlide(11)">
+
+                        <h3>
+                            Unit IV
+                        </h3>
+
+                        <p>
+                            Sequences, Series & Fourier
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 3 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <div class="badge">
+                    Unit I
+                </div>
+
+                <h1>
+                    Matrices
+                </h1>
+
+                <p class="subtitle">
+                    Matrix Algebra & Linear Equations
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 4 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <h2>
+                    Unit I Topics
+                </h2>
+
+                <div class="topics">
+
+                    <div class="topic">
+                        <strong>Rank of Matrix</strong>
+                        <p>Finding rank using elementary transformations.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Gauss-Jordan Method</strong>
+                        <p>Finding inverse of a matrix.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Normal Form</strong>
+                        <p>Reducing matrices to normal form.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Consistency</strong>
+                        <p>Checking consistency of linear equations.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Eigenvalues</strong>
+                        <p>Finding eigenvalues of a square matrix.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Eigenvectors</strong>
+                        <p>Finding corresponding eigenvectors.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Cayley-Hamilton</strong>
+                        <p>Using characteristic equation of a matrix.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 5 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <h2>
+                    Unit I Focus
+                </h2>
+
+                <div class="exam-box">
+
+                    <ul>
+
+                        <li>
+                            Rank using elementary transformations
+                        </li>
+
+                        <li>
+                            Gauss-Jordan method for inverse
+                        </li>
+
+                        <li>
+                            Consistency of linear equations
+                        </li>
+
+                        <li>
+                            Eigenvalues and eigenvectors
+                        </li>
+
+                        <li>
+                            Cayley-Hamilton theorem
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 6 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <div class="badge">
+                    Unit II
+                </div>
+
+                <h1>
+                    Calculus
+                </h1>
+
+                <p class="subtitle">
+                    Differential & Integral Calculus
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 7 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <h2>
+                    Differential Calculus
+                </h2>
+
+                <div class="topics">
+
+                    <div class="topic">
+                        <strong>Rolle's Theorem</strong>
+                        <p>Conditions and applications.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Mean Value Theorem</strong>
+                        <p>Lagrange Mean Value Theorem.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Taylor Series</strong>
+                        <p>Expansion of functions.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Maclaurin Series</strong>
+                        <p>Special case of Taylor series.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>L'Hospital Rule</strong>
+                        <p>Evaluation of indeterminate limits.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 8 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <h2>
+                    Curvature & Special Functions
+                </h2>
+
+                <div class="topics">
+
+                    <div class="topic">
+                        <strong>Curvature</strong>
+                        <p>Radius and related concepts.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Beta Function</strong>
+                        <p>Properties and evaluation.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Gamma Function</strong>
+                        <p>Properties and applications.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Beta-Gamma Relation</strong>
+                        <p>Important relation between Beta and Gamma functions.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 9 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <div class="badge">
+                    Unit III
+                </div>
+
+                <h1>
+                    Multivariable Calculus
+                </h1>
+
+                <p class="subtitle">
+                    Partial Differentiation & Vector Calculus
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 10 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <h2>
+                    Multivariable Differentiation
+                </h2>
+
+                <div class="topics">
+
+                    <div class="topic">
+                        <strong>Partial Derivatives</strong>
+                        <p>First and higher order partial derivatives.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Total Derivative</strong>
+                        <p>Derivative of multivariable functions.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Maxima & Minima</strong>
+                        <p>Finding extreme values of functions.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Jacobian</strong>
+                        <p>Transformation between variables.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 11 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <h2>
+                    Vector Calculus
+                </h2>
+
+                <div class="topics">
+
+                    <div class="topic">
+                        <strong>Gradient</strong>
+                        <p>Directional rate of change.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Divergence</strong>
+                        <p>Measure of vector field expansion.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Curl</strong>
+                        <p>Measure of rotation of vector field.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Vector Identities</strong>
+                        <p>Important identities and applications.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 12 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <div class="badge">
+                    Unit IV
+                </div>
+
+                <h1>
+                    Sequences & Series
+                </h1>
+
+                <p class="subtitle">
+                    Infinite Series & Fourier Series
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 13 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <h2>
+                    Sequence & Series
+                </h2>
+
+                <div class="topics">
+
+                    <div class="topic">
+                        <strong>Convergence</strong>
+                        <p>Understanding convergence of sequences.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Comparison Test</strong>
+                        <p>Testing convergence using comparison.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Ratio Test</strong>
+                        <p>Ratio method for series convergence.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Root Test</strong>
+                        <p>Root criterion for convergence.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Integral Test</strong>
+                        <p>Testing positive term series.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 14 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <h2>
+                    Fourier Series
+                </h2>
+
+                <div class="topics">
+
+                    <div class="topic">
+                        <strong>Fourier Series</strong>
+                        <p>Representation of periodic functions.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Fourier Coefficients</strong>
+                        <p>Finding coefficients of a Fourier series.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Half Range Series</strong>
+                        <p>Sine and cosine expansions.</p>
+                    </div>
+
+                    <div class="topic">
+                        <strong>Applications</strong>
+                        <p>Important engineering applications.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 15 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <div class="badge">
+                    Exam Preparation
+                </div>
+
+                <h2>
+                    Important Focus Areas
+                </h2>
+
+                <div class="exam-box">
+
+                    <ul>
+
+                        <li>
+                            Rank and inverse using Gauss-Jordan
+                        </li>
+
+                        <li>
+                            Eigenvalues and eigenvectors
+                        </li>
+
+                        <li>
+                            Cayley-Hamilton theorem
+                        </li>
+
+                        <li>
+                            Rolle's theorem and LMVT
+                        </li>
+
+                        <li>
+                            Taylor and Maclaurin expansion
+                        </li>
+
+                        <li>
+                            Partial differentiation
+                        </li>
+
+                        <li>
+                            Gradient, divergence and curl
+                        </li>
+
+                        <li>
+                            Convergence tests
+                        </li>
+
+                        <li>
+                            Fourier series
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SLIDE 16 -->
+
+        <section class="slide">
+
+            <div class="content">
+
+                <div class="badge">
+                    Mathematics
+                </div>
+
+                <h1>
+                    Syllabus Completed
+                </h1>
+
+                <p class="subtitle">
+                    Now let's start preparation 🚀
+                </p>
+
+                <a
+                    href="maths-notes.html"
+                    class="resource-btn">
+
+                    📚 Open Mathematics Notes
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==============================
+         NEW SLIDE NAVIGATION
+    ============================== -->
+
+    <div class="slide-navigation">
+
+        <button
+            class="slide-nav-btn"
+            id="prevBtn"
+            aria-label="Previous slide">
+
+            <span>←</span>
+            Previous
+
+        </button>
+
+
+        <div class="slide-counter">
+
+            <span id="currentSlide">
+                1
+            </span>
+
+            <span class="separator">
+                /
+            </span>
+
+            <span id="totalSlides">
+                16
+            </span>
+
+        </div>
+
+
+        <button
+            class="slide-nav-btn"
+            id="nextBtn"
+            aria-label="Next slide">
+
+            Next
+            <span>→</span>
+
+        </button>
+
+    </div>
+
+
+    <!-- ==============================
+         PROGRESS BAR
+    ============================== -->
+
+    <div class="progress-container">
+
+        <div
+            class="progress-bar"
+            id="progressBar">
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const slides =
+                    document.querySelectorAll(".slide");
+
+                const prevBtn =
+                    document.getElementById("prevBtn");
+
+                const nextBtn =
+                    document.getElementById("nextBtn");
+
+                const slideCount =
+                    document.getElementById("slideCount");
+
+                const currentSlideText =
+                    document.getElementById("currentSlide");
+
+                const totalSlidesText =
+                    document.getElementById("totalSlides");
+
+                const progressBar =
+                    document.getElementById("progressBar");
+
+                const unitDots =
+                    document.querySelectorAll(".unit-dot");
+
+                let currentSlide = 0;
+
+
+                /* ==============================
+                   TOTAL SLIDES
+                ============================== */
+
+                totalSlidesText.textContent =
+                    slides.length;
+
+
+                /* ==============================
+                   SHOW SLIDE
+                ============================== */
+
+                function showSlide(index) {
+
+                    if (slides.length === 0) {
+                        return;
+                    }
+
+
+                    /* LOOP */
+
+                    if (index < 0) {
+                        index = slides.length - 1;
+                    }
+
+                    if (index >= slides.length) {
+                        index = 0;
+                    }
+
+
+                    /* HIDE ALL */
+
+                    slides.forEach(
+                        function (slide) {
+
+                            slide.classList.remove(
+                                "active"
+                            );
+
+                            slide.style.display =
+                                "none";
+
+                        }
+                    );
+
+
+                    /* SHOW CURRENT */
+
+                    slides[index].classList.add(
+                        "active"
+                    );
+
+                    slides[index].style.display =
+                        "flex";
+
+
+                    currentSlide = index;
+
+
+                    /* TOP COUNTER */
+
+                    slideCount.textContent =
+                        (currentSlide + 1) +
+                        " / " +
+                        slides.length;
+
+
+                    /* BOTTOM COUNTER */
+
+                    currentSlideText.textContent =
+                        currentSlide + 1;
+
+                    totalSlidesText.textContent =
+                        slides.length;
+
+
+                    /* PROGRESS */
+
+                    const progress =
+                        ((currentSlide + 1) /
+                            slides.length) * 100;
+
+                    progressBar.style.width =
+                        progress + "%";
+
+
+                    /* UNIT DOTS */
+
+                    unitDots.forEach(
+                        function (dot) {
+
+                            dot.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    if (
+                        currentSlide >= 2 &&
+                        currentSlide <= 4
+                    ) {
+
+                        if (unitDots[0]) {
+
+                            unitDots[0]
+                                .classList.add("active");
+
+                        }
+
+                    }
+
+                    else if (
+                        currentSlide >= 5 &&
+                        currentSlide <= 7
+                    ) {
+
+                        if (unitDots[1]) {
+
+                            unitDots[1]
+                                .classList.add("active");
+
+                        }
+
+                    }
+
+                    else if (
+                        currentSlide >= 8 &&
+                        currentSlide <= 10
+                    ) {
+
+                        if (unitDots[2]) {
+
+                            unitDots[2]
+                                .classList.add("active");
+
+                        }
+
+                    }
+
+                    else if (
+                        currentSlide >= 11 &&
+                        currentSlide <= 13
+                    ) {
+
+                        if (unitDots[3]) {
+
+                            unitDots[3]
+                                .classList.add("active");
+
+                        }
+
+                    }
+
+                }
+
+
+                /* ==============================
+                   GLOBAL GO TO SLIDE
+                ============================== */
+
+                window.goToSlide =
+                    function (index) {
+
+                        const slideIndex =
+                            Number(index);
+
+                        if (
+                            Number.isNaN(slideIndex)
+                        ) {
+                            return;
+                        }
+
+                        showSlide(slideIndex);
+
+                    };
+
+
+                /* ==============================
+                   NEXT
+                ============================== */
+
+                nextBtn.addEventListener(
+                    "click",
+                    function () {
+
+                        showSlide(
+                            currentSlide + 1
+                        );
+
+                    }
+                );
+
+
+                /* ==============================
+                   PREVIOUS
+                ============================== */
+
+                prevBtn.addEventListener(
+                    "click",
+                    function () {
+
+                        showSlide(
+                            currentSlide - 1
+                        );
+
+                    }
+                );
+
+
+                /* ==============================
+                   KEYBOARD
+                ============================== */
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key ===
+                            "ArrowRight" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            showSlide(
+                                currentSlide + 1
+                            );
+
+                        }
+
+                        else if (
+                            event.key ===
+                            "ArrowLeft"
+                        ) {
+
+                            event.preventDefault();
+
+                            showSlide(
+                                currentSlide - 1
+                            );
+
+                        }
+
+                        else if (
+                            event.key === "Home"
+                        ) {
+
+                            event.preventDefault();
+
+                            showSlide(0);
+
+                        }
+
+                        else if (
+                            event.key === "End"
+                        ) {
+
+                            event.preventDefault();
+
+                            showSlide(
+                                slides.length - 1
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                /* ==============================
+                   TOUCH SWIPE
+                ============================== */
+
+                let startX = 0;
+                let startY = 0;
+
+
+                document.addEventListener(
+                    "touchstart",
+                    function (event) {
+
+                        if (
+                            !event.changedTouches.length
+                        ) {
+                            return;
+                        }
+
+                        startX =
+                            event.changedTouches[0]
+                                .screenX;
+
+                        startY =
+                            event.changedTouches[0]
+                                .screenY;
+
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+
+                document.addEventListener(
+                    "touchend",
+                    function (event) {
+
+                        if (
+                            !event.changedTouches.length
+                        ) {
+                            return;
+                        }
+
+                        const endX =
+                            event.changedTouches[0]
+                                .screenX;
+
+                        const endY =
+                            event.changedTouches[0]
+                                .screenY;
+
+
+                        const differenceX =
+                            startX - endX;
+
+                        const differenceY =
+                            startY - endY;
+
+
+                        if (
+                            Math.abs(differenceX) < 50 ||
+                            Math.abs(differenceX) <
+                            Math.abs(differenceY)
+                        ) {
+                            return;
+                        }
+
+
+                        if (
+                            differenceX > 50
+                        ) {
+
+                            showSlide(
+                                currentSlide + 1
+                            );
+
+                        }
+
+                        else if (
+                            differenceX < -50
+                        ) {
+
+                            showSlide(
+                                currentSlide - 1
+                            );
+
+                        }
+
+                    },
+                    {
+                        passive: true
+                    }
+                );
+
+
+                /* ==============================
+                   START
+                ============================== */
+
+                showSlide(0);
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

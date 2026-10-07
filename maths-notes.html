@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mathematics Detailed Notes | College Resource Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================================
+           MATHEMATICS PPT STYLE NOTES
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #eef6ff;
+            line-height: 1.7;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .math-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            padding: 15px 20px;
+
+            background: rgba(5, 15, 30, 0.92);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .math-nav a,
+        .theme-btn {
+            color: white;
+            text-decoration: none;
+
+            padding: 9px 16px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            transition: 0.3s;
+
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .math-nav a:hover,
+        .theme-btn:hover {
+            transform: translateY(-3px);
+            background: #1683ff;
+            box-shadow: 0 8px 25px rgba(22,131,255,0.3);
+        }
+
+
+        /* ================= HERO ================= */
+
+        .math-hero {
+            min-height: 75vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(circle at top left, rgba(0,140,255,0.25), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(90,0,255,0.2), transparent 35%),
+                #07111f;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-icon {
+            font-size: 75px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .math-hero h1 {
+            font-size: clamp(38px, 6vw, 72px);
+            margin: 0;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #4db8ff,
+                #8c7bff
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .math-hero p {
+            color: #b9c9dc;
+            font-size: 19px;
+            margin-top: 20px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .hero-tags span {
+            padding: 8px 15px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            font-size: 14px;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        .math-container {
+            width: min(1150px, 92%);
+            margin: auto;
+        }
+
+
+        /* ================= UNIT COVER ================= */
+
+        .unit-cover {
+            min-height: 300px;
+
+            margin: 70px 0 30px;
+
+            padding: 50px 35px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,120,255,0.18),
+                    rgba(100,50,255,0.12)
+                );
+
+            border: 1px solid rgba(100,180,255,0.25);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.35);
+
+            text-align: center;
+        }
+
+        .unit-number {
+            font-size: 15px;
+            color: #55baff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .unit-cover h2 {
+            font-size: clamp(32px,5vw,52px);
+            margin: 10px 0;
+        }
+
+        .unit-cover p {
+            color: #b8c8da;
+            max-width: 800px;
+            margin: auto;
+        }
+
+
+        /* ================= TOPIC SLIDE ================= */
+
+        .slide {
+            margin: 30px 0;
+
+            padding: 35px;
+
+            border-radius: 24px;
+
+            background: rgba(255,255,255,0.045);
+
+            border: 1px solid rgba(255,255,255,0.09);
+
+            box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+
+            transition: 0.35s;
+        }
+
+        .slide:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(60,170,255,0.35);
+
+            box-shadow:
+                0 20px 55px rgba(0,100,255,0.15);
+        }
+
+        .slide-number {
+            display: inline-block;
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            background: #1683ff;
+
+            font-size: 12px;
+
+            margin-bottom: 12px;
+        }
+
+        .slide h3 {
+            font-size: 27px;
+            margin: 5px 0 18px;
+        }
+
+        .slide h4 {
+            color: #58bcff;
+            margin-top: 25px;
+        }
+
+        .slide p {
+            color: #c7d5e5;
+        }
+
+        .slide ul {
+            color: #c7d5e5;
+            padding-left: 25px;
+        }
+
+        .slide li {
+            margin: 8px 0;
+        }
+
+
+        /* ================= FORMULA ================= */
+
+        .formula {
+            margin: 20px 0;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background: #020914;
+
+            border-left: 4px solid #20a8ff;
+
+            font-family: "Courier New", monospace;
+
+            color: #e7f6ff;
+
+            overflow-x: auto;
+        }
+
+
+        /* ================= EXAMPLE ================= */
+
+        .example {
+            margin-top: 25px;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,150,255,0.09),
+                    rgba(120,70,255,0.07)
+                );
+
+            border: 1px solid rgba(80,170,255,0.18);
+        }
+
+        .example-title {
+            color: #57c2ff;
+            font-size: 19px;
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+        .step {
+            padding: 8px 0;
+            color: #d6e3f0;
+        }
+
+
+        /* ================= EXAM TIP ================= */
+
+        .exam-tip {
+            margin-top: 25px;
+
+            padding: 18px 20px;
+
+            border-radius: 14px;
+
+            background: rgba(255,193,7,0.08);
+
+            border-left: 4px solid #ffc107;
+
+            color: #ffe8a3;
+        }
+
+
+        /* ================= IMPORTANT ================= */
+
+        .important-box {
+            margin: 50px 0;
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,190,0,0.08),
+                    rgba(255,80,80,0.06)
+                );
+
+            border: 1px solid rgba(255,193,7,0.2);
+        }
+
+        .important-box h2 {
+            color: #ffd45c;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        .math-footer {
+            text-align: center;
+
+            padding: 60px 20px;
+
+            margin-top: 80px;
+
+            background: #030912;
+
+            color: #8fa4ba;
+        }
+
+        .back-btn {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 12px 25px;
+
+            border-radius: 30px;
+
+            background: #1683ff;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(22,131,255,0.3);
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:700px) {
+
+            .math-nav {
+                padding: 10px;
+            }
+
+            .math-nav a,
+            .theme-btn {
+                font-size: 12px;
+                padding: 7px 11px;
+            }
+
+            .slide {
+                padding: 23px;
+            }
+
+            .unit-cover {
+                padding: 35px 20px;
+            }
+
+            .formula {
+                font-size: 13px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="math-nav">
+
+    <a href="index.html">🏠 Home</a>
+
+    <a href="maths.html">📚 Syllabus</a>
+
+    <a href="#unit1">Unit I</a>
+
+    <a href="#unit2">Unit II</a>
+
+    <a href="#unit3">Unit III</a>
+
+    <a href="#unit4">Unit IV</a>
+
+    <button class="theme-btn" id="themeToggle">
+        🌙 Theme
+    </button>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="math-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">📐</div>
+
+        <h1>Mathematics Detailed Notes</h1>
+
+        <p>
+            B.Tech CSE — Complete Unit I to Unit IV
+            <br>
+            Concepts • Formulae • Solved Examples • Exam Tips
+        </p>
+
+        <div class="hero-tags">
+
+            <span>📘 Detailed Theory</span>
+
+            <span>✍️ Solved Examples</span>
+
+            <span>🧮 Formulae</span>
+
+            <span>🎯 Exam Oriented</span>
+
+            <span>💡 Easy Explanation</span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="math-container">
+
+
+<!-- =====================================================
+     UNIT I
+===================================================== -->
+
+<section id="unit1" class="unit-cover">
+
+    <div class="unit-number">Unit I</div>
+
+    <h2>📊 MATRICES</h2>
+
+    <p>
+        Rank, Elementary Transformations, Inverse,
+        Normal Form, Consistency, Eigenvalues,
+        Eigenvectors and Cayley-Hamilton Theorem.
+    </p>
+
+</section>
+
+
+<!-- TYPES -->
+
+<div class="slide">
+
+    <span class="slide-number">01</span>
+
+    <h3>Types of Matrices</h3>
+
+    <p>
+        A matrix is a rectangular arrangement of numbers
+        written in rows and columns.
+    </p>
+
+    <div class="formula">
+        A = [ aᵢⱼ ]ₘₓₙ
+    </div>
+
+    <h4>Important Types</h4>
+
+    <ul>
+
+        <li>
+            <b>Row Matrix:</b> Only one row.
+        </li>
+
+        <li>
+            <b>Column Matrix:</b> Only one column.
+        </li>
+
+        <li>
+            <b>Square Matrix:</b> Number of rows = number of columns.
+        </li>
+
+        <li>
+            <b>Zero Matrix:</b> All elements are zero.
+        </li>
+
+        <li>
+            <b>Identity Matrix:</b> Main diagonal elements are 1
+            and remaining elements are 0.
+        </li>
+
+        <li>
+            <b>Diagonal Matrix:</b> All elements outside the main
+            diagonal are zero.
+        </li>
+
+        <li>
+            <b>Symmetric Matrix:</b> Aᵀ = A.
+        </li>
+
+        <li>
+            <b>Skew-Symmetric Matrix:</b> Aᵀ = −A.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- RANK -->
+
+<div class="slide">
+
+    <span class="slide-number">02</span>
+
+    <h3>Rank of a Matrix</h3>
+
+    <p>
+        The rank of a matrix is the maximum number of
+        linearly independent rows or columns.
+    </p>
+
+    <h4>Method</h4>
+
+    <ol>
+
+        <li>Write the given matrix.</li>
+
+        <li>Apply elementary row operations.</li>
+
+        <li>Convert it into echelon form.</li>
+
+        <li>Count the number of non-zero rows.</li>
+
+    </ol>
+
+    <div class="formula">
+        Rank(A) = Number of non-zero rows in echelon form
+    </div>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Solved Example
+        </div>
+
+        <div class="formula">
+            A = [ 1  2  3
+                  2  4  6
+                  1  1  1 ]
+        </div>
+
+        <div class="step">
+            R₂ → R₂ − 2R₁
+        </div>
+
+        <div class="step">
+            R₃ → R₃ − R₁
+        </div>
+
+        <div class="formula">
+            [ 1   2   3
+              0   0   0
+              0  -1  -2 ]
+        </div>
+
+        <div class="step">
+            There are 2 non-zero rows.
+        </div>
+
+        <div class="step">
+            <b>Therefore Rank(A) = 2.</b>
+        </div>
+
+    </div>
+
+    <div class="exam-tip">
+        🎯 Exam Tip: Row operations ko clearly show karo.
+        Sirf final rank likhne par complete marks miss ho sakte hain.
+    </div>
+
+</div>
+
+
+<!-- INVERSE -->
+
+<div class="slide">
+
+    <span class="slide-number">03</span>
+
+    <h3>Gauss-Jordan Method for Inverse</h3>
+
+    <p>
+        Gauss-Jordan method se square matrix ka inverse
+        elementary row operations ke through find kiya jata hai.
+    </p>
+
+    <h4>Basic Idea</h4>
+
+    <div class="formula">
+        [ A | I ] → [ I | A⁻¹ ]
+    </div>
+
+    <h4>Steps</h4>
+
+    <ol>
+
+        <li>Matrix A ke saath identity matrix attach karo.</li>
+
+        <li>Elementary row operations apply karo.</li>
+
+        <li>Left side ko identity matrix banao.</li>
+
+        <li>Right side automatically A⁻¹ ban jayega.</li>
+
+    </ol>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Solved Example
+        </div>
+
+        <div class="formula">
+            A = [ 2  1
+                  1  1 ]
+        </div>
+
+        <div class="formula">
+            [ A | I ]
+
+            [ 2  1 | 1  0
+              1  1 | 0  1 ]
+
+            → [ 1  0 | 1  -1
+                0  1 | -1  2 ]
+        </div>
+
+        <div class="step">
+            Therefore,
+        </div>
+
+        <div class="formula">
+            A⁻¹ = [ 1  -1
+                   -1   2 ]
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- NORMAL FORM -->
+
+<div class="slide">
+
+    <span class="slide-number">04</span>
+
+    <h3>Normal Form of a Matrix</h3>
+
+    <p>
+        Elementary row and column transformations ki help se
+        matrix ko standard form mein convert kiya jata hai.
+    </p>
+
+    <div class="formula">
+        Normal Form =
+
+        [ Iᵣ   0
+          0    0 ]
+    </div>
+
+    <p>
+        Yahan r matrix ka rank represent karta hai.
+    </p>
+
+    <div class="example">
+
+        <div class="example-title">
+            Example
+        </div>
+
+        <div class="formula">
+            Rank = 2
+
+            Normal Form =
+
+            [ 1  0  0
+              0  1  0
+              0  0  0 ]
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CONSISTENCY -->
+
+<div class="slide">
+
+    <span class="slide-number">05</span>
+
+    <h3>Consistency of Linear Equations</h3>
+
+    <p>
+        Linear equations ka system consistent hai agar
+        uska at least one solution exist karta hai.
+    </p>
+
+    <div class="formula">
+        Consistent ⇔ Rank(A) = Rank([A|B])
+    </div>
+
+    <h4>Three Cases</h4>
+
+    <ul>
+
+        <li>
+            Rank(A) = Rank([A|B]) = n
+            → Unique solution
+        </li>
+
+        <li>
+            Rank(A) = Rank([A|B]) &lt; n
+            → Infinitely many solutions
+        </li>
+
+        <li>
+            Rank(A) ≠ Rank([A|B])
+            → No solution / inconsistent
+        </li>
+
+    </ul>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Solved Example
+        </div>
+
+        <div class="formula">
+            x + y = 5
+            x − y = 1
+        </div>
+
+        <div class="step">
+            Add both equations:
+        </div>
+
+        <div class="formula">
+            2x = 6
+        </div>
+
+        <div class="step">
+            Therefore x = 3.
+        </div>
+
+        <div class="step">
+            Substitute x = 3:
+        </div>
+
+        <div class="formula">
+            3 + y = 5
+
+            y = 2
+        </div>
+
+        <div class="step">
+            <b>Solution = (3,2)</b>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- EIGENVALUES -->
+
+<div class="slide">
+
+    <span class="slide-number">06</span>
+
+    <h3>Eigenvalues</h3>
+
+    <p>
+        Eigenvalue λ woh scalar value hai jiske liye
+        non-zero vector X satisfy karta hai:
+    </p>
+
+    <div class="formula">
+        AX = λX
+    </div>
+
+    <p>
+        Rearranging:
+    </p>
+
+    <div class="formula">
+        (A − λI)X = 0
+    </div>
+
+    <p>
+        Non-zero solution ke liye:
+    </p>
+
+    <div class="formula">
+        |A − λI| = 0
+    </div>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Solved Example
+        </div>
+
+        <div class="formula">
+            A = [ 2  1
+                  1  2 ]
+        </div>
+
+        <div class="formula">
+            |2−λ   1 |
+            | 1   2−λ| = 0
+
+            (2−λ)² − 1 = 0
+
+            λ² − 4λ + 3 = 0
+
+            (λ−1)(λ−3)=0
+        </div>
+
+        <div class="step">
+            Eigenvalues:
+            <b>λ = 1, 3</b>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- EIGENVECTORS -->
+
+<div class="slide">
+
+    <span class="slide-number">07</span>
+
+    <h3>Eigenvectors</h3>
+
+    <p>
+        Eigenvalue find karne ke baad corresponding
+        eigenvector find kiya jata hai.
+    </p>
+
+    <div class="formula">
+        (A − λI)X = 0
+    </div>
+
+    <h4>Procedure</h4>
+
+    <ol>
+
+        <li>Characteristic equation solve karo.</li>
+
+        <li>Eigenvalue λ select karo.</li>
+
+        <li>(A−λI)X=0 likho.</li>
+
+        <li>Equations solve karke X find karo.</li>
+
+    </ol>
+
+</div>
+
+
+<!-- CAYLEY -->
+
+<div class="slide">
+
+    <span class="slide-number">08</span>
+
+    <h3>Cayley-Hamilton Theorem</h3>
+
+    <p>
+        Every square matrix satisfies its own characteristic equation.
+    </p>
+
+    <div class="formula">
+        If p(λ)=0 is characteristic equation,
+
+        then p(A)=0.
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            Characteristic equation:
+
+            λ² − 4λ + 3 = 0
+
+            Replace λ by A:
+
+            A² − 4A + 3I = 0
+        </div>
+
+        <div class="step">
+            This is the Cayley-Hamilton identity.
+        </div>
+
+    </div>
+
+    <div class="exam-tip">
+        🎯 Important: Cayley-Hamilton se A², A³ ya A⁻¹
+        bhi find karne wale questions aa sakte hain.
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     UNIT II
+===================================================== -->
+
+<section id="unit2" class="unit-cover">
+
+    <div class="unit-number">Unit II</div>
+
+    <h2>∫ CALCULUS</h2>
+
+    <p>
+        Rolle's Theorem, Lagrange MVT, Taylor-Maclaurin,
+        Curvature, L'Hospital Rule and Beta-Gamma Functions.
+    </p>
+
+</section>
+
+
+<!-- ROLLE -->
+
+<div class="slide">
+
+    <span class="slide-number">01</span>
+
+    <h3>Rolle's Theorem</h3>
+
+    <h4>Statement</h4>
+
+    <p>
+        If f(x) is continuous on [a,b], differentiable on (a,b),
+        and f(a)=f(b), then there exists at least one c∈(a,b)
+        such that:
+    </p>
+
+    <div class="formula">
+        f′(c) = 0
+    </div>
+
+    <h4>Conditions</h4>
+
+    <ul>
+
+        <li>Continuous on [a,b]</li>
+
+        <li>Differentiable on (a,b)</li>
+
+        <li>f(a)=f(b)</li>
+
+    </ul>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Solved Example
+        </div>
+
+        <div class="formula">
+            f(x)=x²−4x+3
+
+            Interval [1,3]
+        </div>
+
+        <div class="step">
+            f(1)=1−4+3=0
+        </div>
+
+        <div class="step">
+            f(3)=9−12+3=0
+        </div>
+
+        <div class="step">
+            Therefore f(1)=f(3).
+        </div>
+
+        <div class="formula">
+            f′(x)=2x−4
+
+            f′(c)=0
+
+            2c−4=0
+
+            c=2
+        </div>
+
+        <div class="step">
+            Since 2 lies between 1 and 3,
+            Rolle's theorem is verified.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- LMVT -->
+
+<div class="slide">
+
+    <span class="slide-number">02</span>
+
+    <h3>Lagrange Mean Value Theorem</h3>
+
+    <p>
+        If f is continuous on [a,b] and differentiable on (a,b),
+        then there exists c∈(a,b) such that:
+    </p>
+
+    <div class="formula">
+        f′(c) =
+        [ f(b) − f(a) ] / (b − a)
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Solved Example
+        </div>
+
+        <div class="formula">
+            f(x)=x²
+
+            [1,3]
+        </div>
+
+        <div class="formula">
+            [f(3)-f(1)]/(3-1)
+
+            = (9−1)/2
+
+            = 4
+        </div>
+
+        <div class="formula">
+            f′(x)=2x
+
+            2c=4
+
+            c=2
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TAYLOR -->
+
+<div class="slide">
+
+    <span class="slide-number">03</span>
+
+    <h3>Taylor Series</h3>
+
+    <p>
+        Taylor series kisi function ko x=a ke around
+        infinite polynomial terms ke form mein represent karti hai.
+    </p>
+
+    <div class="formula">
+        f(x) =
+        f(a)
+        + (x−a)f′(a)
+        + (x−a)²/2! f″(a)
+        + ...
+    </div>
+
+    <h4>Important</h4>
+
+    <p>
+        Taylor series ka centre x=a hota hai.
+    </p>
+
+</div>
+
+
+<!-- MACLAURIN -->
+
+<div class="slide">
+
+    <span class="slide-number">04</span>
+
+    <h3>Maclaurin Series</h3>
+
+    <p>
+        Maclaurin series Taylor series ka special case hai
+        jahan a=0.
+    </p>
+
+    <div class="formula">
+        f(x)=
+        f(0)
+        + xf′(0)
+        + x²/2! f″(0)
+        + ...
+    </div>
+
+    <h4>Must Remember Expansions</h4>
+
+    <div class="formula">
+        eˣ = 1 + x + x²/2! + x³/3! + ...
+
+        sin x = x − x³/3! + x⁵/5! − ...
+
+        cos x = 1 − x²/2! + x⁴/4! − ...
+
+        ln(1+x) = x − x²/2 + x³/3 − ...
+    </div>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example: eˣ
+        </div>
+
+        <p>
+            Since every derivative of eˣ is eˣ
+            and its value at x=0 is 1:
+        </p>
+
+        <div class="formula">
+            eˣ = 1+x+x²/2!+x³/3!+...
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CURVATURE -->
+
+<div class="slide">
+
+    <span class="slide-number">05</span>
+
+    <h3>Curvature</h3>
+
+    <p>
+        Curvature batata hai ki curve kitni rapidly bend ho raha hai.
+    </p>
+
+    <div class="formula">
+        K =
+        |d²y/dx²|
+        /
+        [1+(dy/dx)²]³ᐟ²
+    </div>
+
+    <h4>Example</h4>
+
+    <div class="formula">
+        y=x²
+
+        y′=2x
+
+        y″=2
+
+        Therefore:
+
+        K = 2/[1+4x²]³ᐟ²
+    </div>
+
+</div>
+
+
+<!-- RADIUS -->
+
+<div class="slide">
+
+    <span class="slide-number">06</span>
+
+    <h3>Radius of Curvature</h3>
+
+    <div class="formula">
+        ρ =
+        [1+(dy/dx)²]³ᐟ²
+        /
+        |d²y/dx²|
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            y=x²
+
+            y′=2x
+
+            y″=2
+
+            ρ = [1+4x²]³ᐟ² / 2
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- LHOSPITAL -->
+
+<div class="slide">
+
+    <span class="slide-number">07</span>
+
+    <h3>L'Hospital's Rule</h3>
+
+    <p>
+        Indeterminate forms 0/0 and ∞/∞ ke limits ko
+        solve karne ke liye L'Hospital rule use hota hai.
+    </p>
+
+    <div class="formula">
+        lim f(x)/g(x)
+        =
+        lim f′(x)/g′(x)
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            lim(x→0) sin x/x
+
+            = lim(x→0) cos x/1
+
+            = 1
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- BETA -->
+
+<div class="slide">
+
+    <span class="slide-number">08</span>
+
+    <h3>Beta Function</h3>
+
+    <div class="formula">
+        B(m,n)
+        =
+        ∫₀¹ xᵐ⁻¹(1−x)ⁿ⁻¹ dx
+    </div>
+
+    <h4>Important Properties</h4>
+
+    <ul>
+
+        <li>B(m,n)=B(n,m)</li>
+
+        <li>
+            B(m,n)=Γ(m)Γ(n)/Γ(m+n)
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- GAMMA -->
+
+<div class="slide">
+
+    <span class="slide-number">09</span>
+
+    <h3>Gamma Function</h3>
+
+    <div class="formula">
+        Γ(n)
+        =
+        ∫₀∞ e⁻ˣ xⁿ⁻¹ dx
+    </div>
+
+    <div class="formula">
+        Γ(n)=(n−1)!
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            Γ(5)
+
+            = (5−1)!
+
+            = 4!
+
+            = 24
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     UNIT III
+===================================================== -->
+
+<section id="unit3" class="unit-cover">
+
+    <div class="unit-number">Unit III</div>
+
+    <h2>🌐 MULTIVARIABLE CALCULUS</h2>
+
+    <p>
+        Limits, Continuity, Partial Derivatives,
+        Euler's Theorem, Maxima-Minima and Vector Calculus.
+    </p>
+
+</section>
+
+
+<!-- LIMIT -->
+
+<div class="slide">
+
+    <span class="slide-number">01</span>
+
+    <h3>Limit of a Function</h3>
+
+    <p>
+        Limit batata hai ki x kisi value ke close jaane par
+        function kis value ke close jaata hai.
+    </p>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            lim(x→2)(x²+3)
+
+            = 2²+3
+
+            = 7
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CONTINUITY -->
+
+<div class="slide">
+
+    <span class="slide-number">02</span>
+
+    <h3>Continuity</h3>
+
+    <p>
+        Function f(x), x=a par continuous hai agar:
+    </p>
+
+    <div class="formula">
+        lim(x→a) f(x) = f(a)
+    </div>
+
+    <h4>Three Conditions</h4>
+
+    <ul>
+
+        <li>f(a) exists.</li>
+
+        <li>lim(x→a) f(x) exists.</li>
+
+        <li>Both are equal.</li>
+
+    </ul>
+
+</div>
+
+
+<!-- PARTIAL -->
+
+<div class="slide">
+
+    <span class="slide-number">03</span>
+
+    <h3>Partial Derivatives</h3>
+
+    <p>
+        Multiple variables wale function mein ek variable
+        ke respect mein differentiation karte waqt baaki
+        variables ko constant maana jata hai.
+    </p>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Solved Example
+        </div>
+
+        <div class="formula">
+            z=x²y+3xy²
+        </div>
+
+        <div class="formula">
+            ∂z/∂x = 2xy+3y²
+
+            ∂z/∂y = x²+6xy
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HOMOGENEOUS -->
+
+<div class="slide">
+
+    <span class="slide-number">04</span>
+
+    <h3>Homogeneous Function</h3>
+
+    <p>
+        Agar:
+    </p>
+
+    <div class="formula">
+        f(tx,ty)=tⁿf(x,y)
+    </div>
+
+    <p>
+        then function degree n ka homogeneous function hai.
+    </p>
+
+    <div class="example">
+
+        <div class="example-title">
+            Example
+        </div>
+
+        <div class="formula">
+            f(x,y)=x²+xy+y²
+
+            f(tx,ty)
+            = t²(x²+xy+y²)
+
+            Therefore degree = 2
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- EULER -->
+
+<div class="slide">
+
+    <span class="slide-number">05</span>
+
+    <h3>Euler's Theorem</h3>
+
+    <p>
+        If z is homogeneous of degree n:
+    </p>
+
+    <div class="formula">
+        x(∂z/∂x)
+        +
+        y(∂z/∂y)
+        =
+        nz
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            z=x²+xy+y²
+
+            zx=2x+y
+
+            zy=x+2y
+
+            xzx+yzy
+
+            = x(2x+y)+y(x+2y)
+
+            = 2x²+2xy+2y²
+
+            = 2z
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOTAL -->
+
+<div class="slide">
+
+    <span class="slide-number">06</span>
+
+    <h3>Total Derivative</h3>
+
+    <p>
+        Jab x aur y dono kisi third variable ke functions hon,
+        tab chain rule ka use karke total derivative find karte hain.
+    </p>
+
+    <div class="formula">
+        dz/dt =
+        (∂z/∂x)(dx/dt)
+        +
+        (∂z/∂y)(dy/dt)
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            z=x²+y²
+
+            x=t
+
+            y=t²
+
+            dz/dt
+
+            =2x(1)+2y(2t)
+
+            =2t+4t³
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- MAX MIN -->
+
+<div class="slide">
+
+    <span class="slide-number">07</span>
+
+    <h3>Maxima and Minima of Two Variables</h3>
+
+    <h4>Step 1</h4>
+
+    <div class="formula">
+        fx = 0
+        fy = 0
+    </div>
+
+    <p>
+        Critical points find karo.
+    </p>
+
+    <h4>Step 2</h4>
+
+    <div class="formula">
+        D = fxx fyy − (fxy)²
+    </div>
+
+    <ul>
+
+        <li>D &gt; 0 and fxx &gt; 0 → Minimum</li>
+
+        <li>D &gt; 0 and fxx &lt; 0 → Maximum</li>
+
+        <li>D &lt; 0 → Saddle Point</li>
+
+        <li>D = 0 → Test inconclusive</li>
+
+    </ul>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            f=x²+y²
+
+            fx=2x=0 → x=0
+
+            fy=2y=0 → y=0
+        </div>
+
+        <p>
+            Since x²+y² ≥ 0 for all real x,y,
+            (0,0) is a minimum point.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- LAGRANGE -->
+
+<div class="slide">
+
+    <span class="slide-number">08</span>
+
+    <h3>Lagrange Multipliers</h3>
+
+    <p>
+        Constraint ke saath maxima/minima find karne ke liye
+        Lagrange multiplier method use hota hai.
+    </p>
+
+    <div class="formula">
+        ∇f = λ∇g
+    </div>
+
+    <h4>Procedure</h4>
+
+    <ol>
+
+        <li>∇f calculate karo.</li>
+
+        <li>∇g calculate karo.</li>
+
+        <li>∇f = λ∇g set karo.</li>
+
+        <li>Constraint g=0 use karo.</li>
+
+        <li>Unknowns solve karo.</li>
+
+    </ol>
+
+</div>
+
+
+<!-- GRADIENT -->
+
+<div class="slide">
+
+    <span class="slide-number">09</span>
+
+    <h3>Gradient</h3>
+
+    <p>
+        Gradient scalar function ke maximum increase ki direction
+        batata hai.
+    </p>
+
+    <div class="formula">
+        ∇φ =
+        i(∂φ/∂x)
+        +
+        j(∂φ/∂y)
+        +
+        k(∂φ/∂z)
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            Example
+        </div>
+
+        <div class="formula">
+            φ=x²+y²+z²
+
+            ∇φ=2xi+2yj+2zk
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- DIRECTIONAL -->
+
+<div class="slide">
+
+    <span class="slide-number">10</span>
+
+    <h3>Directional Derivative</h3>
+
+    <p>
+        Kisi particular direction mein function ke rate of change
+        ko directional derivative kehte hain.
+    </p>
+
+    <div class="formula">
+        Dᵤφ = ∇φ · u
+    </div>
+
+    <p>
+        Yahan u unit vector hona chahiye.
+    </p>
+
+</div>
+
+
+<!-- DIVERGENCE -->
+
+<div class="slide">
+
+    <span class="slide-number">11</span>
+
+    <h3>Divergence</h3>
+
+    <p>
+        Vector field ke outward flow/source strength ko
+        divergence describe karta hai.
+    </p>
+
+    <div class="formula">
+        For F = Pi + Qj + Rk:
+
+        ∇·F =
+        ∂P/∂x
+        +
+        ∂Q/∂y
+        +
+        ∂R/∂z
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            F=xi+yj+zk
+
+            ∇·F = 1+1+1
+
+            = 3
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CURL -->
+
+<div class="slide">
+
+    <span class="slide-number">12</span>
+
+    <h3>Curl</h3>
+
+    <p>
+        Curl vector field ki rotational tendency ko represent karta hai.
+    </p>
+
+    <div class="formula">
+        ∇×F =
+
+        | i    j    k  |
+        | ∂x   ∂y   ∂z |
+        | P    Q    R  |
+    </div>
+
+    <p>
+        Agar curl zero ho, field ko appropriate region mein
+        irrotational kaha ja sakta hai.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     UNIT IV
+===================================================== -->
+
+<section id="unit4" class="unit-cover">
+
+    <div class="unit-number">Unit IV</div>
+
+    <h2>∞ SEQUENCES, SERIES & FOURIER</h2>
+
+    <p>
+        Convergence Tests, Alternating Series,
+        Absolute/Conditional Convergence and Fourier Series.
+    </p>
+
+</section>
+
+
+<!-- SEQUENCE -->
+
+<div class="slide">
+
+    <span class="slide-number">01</span>
+
+    <h3>Sequence</h3>
+
+    <p>
+        Sequence numbers ka ordered collection hota hai:
+    </p>
+
+    <div class="formula">
+        a₁, a₂, a₃, a₄, ...
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">
+            Example
+        </div>
+
+        <div class="formula">
+            1, 2, 3, 4, 5, ...
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CONVERGENCE -->
+
+<div class="slide">
+
+    <span class="slide-number">02</span>
+
+    <h3>Convergence of Sequence</h3>
+
+    <p>
+        Agar n → ∞ par sequence ek finite value approach kare,
+        to sequence convergent hai.
+    </p>
+
+    <div class="example">
+
+        <div class="formula">
+            aₙ = 1/n
+
+            lim(n→∞) 1/n = 0
+        </div>
+
+        <div class="step">
+            Therefore sequence converges to 0.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- COMPARISON -->
+
+<div class="slide">
+
+    <span class="slide-number">03</span>
+
+    <h3>Comparison Test</h3>
+
+    <p>
+        Kisi difficult positive-term series ko known series
+        se compare kiya jata hai.
+    </p>
+
+    <div class="formula">
+        0 ≤ aₙ ≤ bₙ
+    </div>
+
+    <p>
+        Agar Σbₙ convergent hai, then Σaₙ bhi convergent hai.
+    </p>
+
+</div>
+
+
+<!-- RATIO -->
+
+<div class="slide">
+
+    <span class="slide-number">04</span>
+
+    <h3>Ratio Test</h3>
+
+    <div class="formula">
+        L =
+        lim(n→∞)
+        |aₙ₊₁ / aₙ|
+    </div>
+
+    <ul>
+
+        <li>L &lt; 1 → Convergent</li>
+
+        <li>L &gt; 1 → Divergent</li>
+
+        <li>L = 1 → Inconclusive</li>
+
+    </ul>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            Σ 1/n!
+
+            aₙ = 1/n!
+
+            aₙ₊₁ = 1/(n+1)!
+
+            |aₙ₊₁/aₙ|
+
+            = 1/(n+1)
+
+            L=0
+        </div>
+
+        <div class="step">
+            Since L&lt;1, series is convergent.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- RAABE -->
+
+<div class="slide">
+
+    <span class="slide-number">05</span>
+
+    <h3>Raabe's Test</h3>
+
+    <div class="formula">
+        R =
+        lim(n→∞)
+        n[
+        (aₙ/aₙ₊₁) − 1
+        ]
+    </div>
+
+    <ul>
+
+        <li>R &gt; 1 → Convergent</li>
+
+        <li>R &lt; 1 → Divergent</li>
+
+        <li>R = 1 → Inconclusive</li>
+
+    </ul>
+
+</div>
+
+
+<!-- LOG TEST -->
+
+<div class="slide">
+
+    <span class="slide-number">06</span>
+
+    <h3>Logarithmic Test</h3>
+
+    <p>
+        Positive-term series ki convergence ko logarithmic
+        behaviour ke through study karne ke liye logarithmic
+        test use kiya jata hai.
+    </p>
+
+    <div class="exam-tip">
+        🎯 Exam mein test ka exact criterion question mein
+        diye syllabus/teacher convention ke according apply karo.
+    </div>
+
+</div>
+
+
+<!-- ROOT -->
+
+<div class="slide">
+
+    <span class="slide-number">07</span>
+
+    <h3>Cauchy's Root Test</h3>
+
+    <div class="formula">
+        L =
+        lim(n→∞)
+        ⁿ√|aₙ|
+    </div>
+
+    <ul>
+
+        <li>L &lt; 1 → Convergent</li>
+
+        <li>L &gt; 1 → Divergent</li>
+
+        <li>L = 1 → Inconclusive</li>
+
+    </ul>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            ✍️ Example
+        </div>
+
+        <div class="formula">
+            Σ(1/2)ⁿ
+
+            ⁿ√|aₙ| = 1/2
+
+            L = 1/2 &lt; 1
+
+            Therefore convergent.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ALTERNATING -->
+
+<div class="slide">
+
+    <span class="slide-number">08</span>
+
+    <h3>Alternating Series</h3>
+
+    <p>
+        Jis series mein consecutive terms ke signs alternate
+        hote hain, use alternating series kehte hain.
+    </p>
+
+    <div class="formula">
+        1 − 1/2 + 1/3 − 1/4 + ...
+    </div>
+
+</div>
+
+
+<!-- LEIBNIZ -->
+
+<div class="slide">
+
+    <span class="slide-number">09</span>
+
+    <h3>Leibniz Test</h3>
+
+    <p>
+        Alternating series:
+    </p>
+
+    <div class="formula">
+        Σ(−1)ⁿ aₙ
+    </div>
+
+    <p>
+        converges if:
+    </p>
+
+    <ul>
+
+        <li>aₙ positive hai.</li>
+
+        <li>aₙ decreasing hai.</li>
+
+        <li>lim aₙ = 0.</li>
+
+    </ul>
+
+</div>
+
+
+<!-- ABSOLUTE -->
+
+<div class="slide">
+
+    <span class="slide-number">10</span>
+
+    <h3>Absolute and Conditional Convergence</h3>
+
+    <h4>Absolute Convergence</h4>
+
+    <p>
+        Agar:
+    </p>
+
+    <div class="formula">
+        Σ|aₙ|
+    </div>
+
+    <p>
+        convergent hai, to original series absolutely convergent hai.
+    </p>
+
+    <h4>Conditional Convergence</h4>
+
+    <p>
+        Original series convergent ho lekin absolute series divergent ho,
+        to conditional convergence hoti hai.
+    </p>
+
+    <div class="example">
+
+        <div class="example-title">
+            Example
+        </div>
+
+        <div class="formula">
+            1 − 1/2 + 1/3 − 1/4 + ...
+
+            → Conditionally convergent
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOURIER -->
+
+<div class="slide">
+
+    <span class="slide-number">11</span>
+
+    <h3>Fourier Series</h3>
+
+    <p>
+        Fourier series kisi periodic function ko sine aur cosine
+        terms ke sum ke form mein represent karti hai.
+    </p>
+
+    <div class="formula">
+        f(x)
+        =
+        a₀/2
+        +
+        Σ[
+        aₙcos(nx)
+        +
+        bₙsin(nx)
+        ]
+    </div>
+
+</div>
+
+
+<!-- EULER -->
+
+<div class="slide">
+
+    <span class="slide-number">12</span>
+
+    <h3>Euler's Formulae for Fourier Series</h3>
+
+    <div class="formula">
+
+        a₀ = (1/π) ∫₋π^π f(x) dx
+
+        aₙ = (1/π) ∫₋π^π f(x)cos(nx) dx
+
+        bₙ = (1/π) ∫₋π^π f(x)sin(nx) dx
+
+    </div>
+
+    <div class="exam-tip">
+        🎯 Fourier question mein sabse pehle interval aur
+        function ki even/odd nature check karo.
+    </div>
+
+</div>
+
+
+<!-- EVEN ODD -->
+
+<div class="slide">
+
+    <span class="slide-number">13</span>
+
+    <h3>Even and Odd Functions</h3>
+
+    <h4>Even Function</h4>
+
+    <div class="formula">
+        f(−x)=f(x)
+    </div>
+
+    <p>
+        Example: x²
+    </p>
+
+    <p>
+        Even Fourier function ke liye:
+    </p>
+
+    <div class="formula">
+        bₙ = 0
+    </div>
+
+
+    <h4>Odd Function</h4>
+
+    <div class="formula">
+        f(−x)=−f(x)
+    </div>
+
+    <p>
+        Example: x³
+    </p>
+
+    <div class="formula">
+        a₀=0
+
+        aₙ=0
+    </div>
+
+</div>
+
+
+<!-- HALF RANGE -->
+
+<div class="slide">
+
+    <span class="slide-number">14</span>
+
+    <h3>Half-Range Fourier Series</h3>
+
+    <p>
+        Jab function sirf half interval mein given ho,
+        tab half-range Fourier series use hoti hai.
+    </p>
+
+    <h4>Types</h4>
+
+    <ul>
+
+        <li>Half-range sine series</li>
+
+        <li>Half-range cosine series</li>
+
+    </ul>
+
+    <p>
+        Question ki boundary condition ke according
+        sine ya cosine expansion choose ki jati hai.
+    </p>
+
+</div>
+
+
+<!-- CHANGE INTERVAL -->
+
+<div class="slide">
+
+    <span class="slide-number">15</span>
+
+    <h3>Fourier Series on (−L,L)</h3>
+
+    <p>
+        Jab interval (−π,π) ke instead (−L,L) ho,
+        Fourier terms modify ho jate hain.
+    </p>
+
+    <div class="formula">
+        f(x)=
+        a₀/2
+        +
+        Σ[
+        aₙcos(nπx/L)
+        +
+        bₙsin(nπx/L)
+        ]
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMPORTANT FORMULAS
+===================================================== -->
+
+<section class="important-box">
+
+    <h2>🔥 IMPORTANT FORMULAS — QUICK REVISION</h2>
+
+    <h3>📊 Matrices</h3>
+
+    <div class="formula">
+        Rank = Number of non-zero rows
+
+        [A|I] → [I|A⁻¹]
+
+        |A−λI|=0
+
+        AX=λX
+    </div>
+
+
+    <h3>∫ Calculus</h3>
+
+    <div class="formula">
+        Rolle: f′(c)=0
+
+        LMVT:
+        f′(c)=[f(b)−f(a)]/(b−a)
+
+        Taylor:
+        f(x)=Σ [(x−a)ⁿ/n!] f⁽ⁿ⁾(a)
+
+        L'Hospital:
+        lim f/g = lim f′/g′
+
+        Γ(n)=(n−1)!
+
+        B(m,n)=Γ(m)Γ(n)/Γ(m+n)
+    </div>
+
+
+    <h3>🌐 Multivariable Calculus</h3>
+
+    <div class="formula">
+        xzx+yzy=nz
+
+        dz/dt=zx dx/dt + zy dy/dt
+
+        D=fxxfyy−(fxy)²
+
+        ∇φ = iφx+jφy+kφz
+
+        Dᵤφ=∇φ·u
+
+        ∇·F = Px+Qy+Rz
+    </div>
+
+
+    <h3>∞ Series</h3>
+
+    <div class="formula">
+        Ratio Test:
+
+        L&lt;1 → Convergent
+        L&gt;1 → Divergent
+
+        Root Test:
+
+        L&lt;1 → Convergent
+        L&gt;1 → Divergent
+    </div>
+
+
+    <h3>🎵 Fourier</h3>
+
+    <div class="formula">
+        f(x)=a₀/2+Σ[aₙcos(nx)+bₙsin(nx)]
+
+        Even → bₙ=0
+
+        Odd → a₀=aₙ=0
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXAM STRATEGY
+===================================================== -->
+
+<section class="slide">
+
+    <span class="slide-number">🎯</span>
+
+    <h3>Mathematics Exam Strategy</h3>
+
+    <ul>
+
+        <li>
+            Theorem question mein
+            <b>Statement + Conditions + Formula + Verification</b>
+            likho.
+        </li>
+
+        <li>
+            Matrix questions mein har row operation clearly show karo.
+        </li>
+
+        <li>
+            Taylor/Maclaurin mein standard expansion yaad rakho.
+        </li>
+
+        <li>
+            Maxima-Minima mein D test skip mat karo.
+        </li>
+
+        <li>
+            Series question mein test ka naam pehle likho.
+        </li>
+
+        <li>
+            Fourier mein even/odd property check karna mat bhoolna.
+        </li>
+
+        <li>
+            Formula ke baad substitution aur final answer
+            clearly highlight karo.
+        </li>
+
+    </ul>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="math-footer">
+
+    <h2>📘 Mathematics Complete Notes</h2>
+
+    <p>
+        B.Tech CSE • Unit I to Unit IV
+    </p>
+
+    <p>
+        Created for College Resource Hub
+    </p>
+
+    <a href="index.html" class="back-btn">
+        🏠 Back to Home
+    </a>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* ================= THEME ================= */
+
+    const themeBtn =
+        document.getElementById("themeToggle");
+
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("light-math");
+
+        if (
+            document.body.classList.contains("light-math")
+        ) {
+
+            themeBtn.textContent = "☀️ Theme";
+
+        } else {
+
+            themeBtn.textContent = "🌙 Theme";
+
+        }
+
+    });
+
+
+    /* ================= SCROLL REVEAL ================= */
+
+    const slides =
+        document.querySelectorAll(".slide, .unit-cover, .important-box");
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    slides.forEach(slide => {
+
+        slide.style.opacity = "0";
+
+        slide.style.transform =
+            "translateY(30px)";
+
+        slide.style.transition =
+            "opacity 0.7s ease, transform 0.7s ease";
+
+        observer.observe(slide);
+
+    });
+
+
+</script>
+
+
+<style>
+
+    /* =====================================================
+       LIGHT MODE
+    ===================================================== */
+
+    body.light-math {
+
+        background: #f4f8fc;
+
+        color: #152238;
+
+    }
+
+    body.light-math .math-nav {
+
+        background: rgba(255,255,255,0.92);
+
+    }
+
+    body.light-math .math-nav a,
+    body.light-math .theme-btn {
+
+        color: #172337;
+
+        background: rgba(0,0,0,0.05);
+
+    }
+
+    body.light-math .math-hero {
+
+        background:
+            radial-gradient(
+                circle at top left,
+                rgba(0,140,255,0.18),
+                transparent 35%
+            ),
+            #f4f8fc;
+
+    }
+
+    body.light-math .math-hero p {
+
+        color: #526579;
+
+    }
+
+    body.light-math .slide {
+
+        background: white;
+
+        border-color: rgba(0,0,0,0.08);
+
+        box-shadow:
+            0 15px 40px rgba(0,0,0,0.08);
+
+    }
+
+    body.light-math .slide p,
+    body.light-math .slide li {
+
+        color: #46566a;
+
+    }
+
+    body.light-math .formula {
+
+        background: #edf5fc;
+
+        color: #17304d;
+
+    }
+
+    body.light-math .example {
+
+        background: #f1f8ff;
+
+    }
+
+    body.light-math .unit-cover {
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(0,120,255,0.08),
+                rgba(100,50,255,0.06)
+            );
+
+        border-color: rgba(0,120,255,0.15);
+
+    }
+
+    body.light-math .math-footer {
+
+        background: #eaf1f8;
+
+    }
+
+</style>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>C Programming | College Resource Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #07111f, #0d1b2a, #102a43);
+        color: white;
+        min-height: 100vh;
+    }
+
+    nav {
+        background: rgba(0, 0, 0, 0.45);
+        padding: 18px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #00c6ff;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+        padding: 60px 0;
+    }
+
+    .hero {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 12px;
+        color: #00c6ff;
+    }
+
+    .hero p {
+        font-size: 18px;
+        color: #d6e4f0;
+    }
+
+    .units {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .unit-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 30px;
+        min-height: 220px;
+        transition: 0.35s;
+        cursor: pointer;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .unit-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        border-color: #00c6ff;
+        box-shadow: 0 15px 40px rgba(0, 198, 255, 0.25);
+    }
+
+    .unit-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .unit-card h2 {
+        font-size: 25px;
+        margin-bottom: 12px;
+    }
+
+    .unit-card p {
+        color: #cbd8e5;
+        line-height: 1.6;
+    }
+
+    .open-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #00c6ff;
+        color: #00111f;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .open-btn:hover {
+        background: white;
+        transform: scale(1.05);
+    }
+
+    .resources {
+        margin-top: 45px;
+        text-align: center;
+    }
+
+    .pyq-card {
+        display: inline-block;
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .pyq-card h2 {
+        margin-bottom: 12px;
+    }
+
+    .pyq-card p {
+        color: #cbd8e5;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 30px;
+        color: #aebdcc;
+    }
+
+    @media (max-width: 700px) {
+        .units {
+            grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 7px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- NAVIGATION -->
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="math.html">Mathematics</a>
+    <a href="physics.html">Physics</a>
+    <a href="c.html">C Programming</a>
+</nav>
+
+
+<!-- HERO SECTION -->
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1>💻 C Programming</h1>
+
+        <p>
+            B.Tech CSE – 1st Semester
+        </p>
+
+        <p>
+            Select a unit to explore the syllabus and topics.
+        </p>
+
+    </div>
+
+
+    <!-- UNITS -->
+
+    <div class="units">
+
+        <!-- UNIT 1 -->
+
+        <div class="unit-card">
+
+            <div class="unit-icon">📘</div>
+
+            <h2>Unit 1</h2>
+
+            <p>
+                Programming Fundamentals and Problem Solving
+            </p>
+
+            <a href="c-unit1.html" class="open-btn">
+                Open Unit →
+            </a>
+
+        </div>
+
+
+        <!-- UNIT 2 -->
+
+        <div class="unit-card">
+
+            <div class="unit-icon">📗</div>
+
+            <h2>Unit 2</h2>
+
+            <p>
+                Core Programming Concepts and Control Structures
+            </p>
+
+            <a href="c-unit2.html" class="open-btn">
+                Open Unit →
+            </a>
+
+        </div>
+
+
+        <!-- UNIT 3 -->
+
+        <div class="unit-card">
+
+            <div class="unit-icon">📙</div>
+
+            <h2>Unit 3</h2>
+
+            <p>
+                Arrays, Strings, Functions and Modular Programming
+            </p>
+
+            <a href="c-unit3.html" class="open-btn">
+                Open Unit →
+            </a>
+
+        </div>
+
+
+        <!-- UNIT 4 -->
+
+        <div class="unit-card">
+
+            <div class="unit-icon">📕</div>
+
+            <h2>Unit 4</h2>
+
+            <p>
+                Advanced Data Handling and Dynamic Memory Management
+            </p>
+
+            <a href="c-unit4.html" class="open-btn">
+                Open Unit →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL PYQ -->
+
+    <div class="resources">
+
+        <div class="pyq-card">
+
+            <h2>📝 C Programming Practical PYQ</h2>
+
+            <p>
+                Previous Year Questions and practical programs
+                for C Programming.
+            </p>
+
+            <!-- PRACTICAL PYQ LINK — KEEP AS IT IS -->
+
+            <a href="c-pyq.html" class="open-btn">
+                View Practical PYQ →
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+    <p>
+        © 2026 College Resource Hub | C Programming
+    </p>
+
+</div>
+```
+
+</body>
+
+</html>

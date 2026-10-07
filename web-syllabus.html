@@ -1,0 +1,989 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Technology Syllabus | College Resource Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #eef5ff, #f8fbff);
+            color: #172033;
+            font-family: Arial, sans-serif;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .web-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            padding: 15px 20px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+        }
+
+        .web-nav a {
+            text-decoration: none;
+            color: #123d63;
+
+            background: #eef5ff;
+
+            padding: 10px 17px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .web-nav a:hover {
+            background: #123d63;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .web-hero {
+
+            max-width: 1150px;
+
+            margin: 30px auto;
+
+            padding: 65px 25px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a33,
+                    #123d63,
+                    #1769aa
+                );
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 15px 40px rgba(7,26,51,0.25);
+        }
+
+        .hero-icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .web-hero h1 {
+            font-size: clamp(32px, 5vw, 55px);
+            margin: 10px 0;
+        }
+
+        .web-hero p {
+            font-size: 18px;
+            opacity: 0.92;
+        }
+
+        .hero-tag {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 9px 18px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.14);
+
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .web-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* =========================
+           SECTION HEADING
+        ========================= */
+
+        .section-heading {
+            text-align: center;
+            margin: 45px 0 25px;
+        }
+
+        .section-heading h2 {
+            color: #123d63;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: #536174;
+        }
+
+        /* =========================
+           OVERVIEW
+        ========================= */
+
+        .overview-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 20px;
+        }
+
+        .overview-card {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            border: 1px solid #dce7f5;
+
+            box-shadow:
+                0 8px 25px rgba(20,50,90,0.08);
+
+            transition: 0.3s;
+        }
+
+        .overview-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 35px rgba(20,50,90,0.15);
+        }
+
+        .overview-card .icon {
+            font-size: 35px;
+        }
+
+        .overview-card h3 {
+            color: #123d63;
+            margin: 12px 0 8px;
+        }
+
+        .overview-card p {
+            color: #4d5b6e;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           UNIT SLIDES
+        ========================= */
+
+        .ppt-slide {
+
+            margin: 35px 0;
+
+            padding: 35px;
+
+            background: white;
+
+            border-radius: 25px;
+
+            border-left: 6px solid #1769aa;
+
+            box-shadow:
+                0 10px 30px rgba(20,50,90,0.10);
+
+            transition: 0.3s;
+        }
+
+        .ppt-slide:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 40px rgba(20,50,90,0.15);
+        }
+
+        .slide-number {
+
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            margin-bottom: 12px;
+
+            border-radius: 20px;
+
+            background: #e7f2ff;
+
+            color: #1769aa;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .ppt-slide h2 {
+
+            color: #123d63;
+
+            margin-bottom: 10px;
+
+            font-size: 28px;
+        }
+
+        .hours {
+
+            display: inline-block;
+
+            background: #123d63;
+
+            color: white;
+
+            padding: 6px 13px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           TOPIC LIST
+        ========================= */
+
+        .topic-list {
+
+            margin: 0;
+
+            padding-left: 25px;
+        }
+
+        .topic-list li {
+
+            color: #26364a;
+
+            margin: 13px 0;
+
+            line-height: 1.6;
+
+            padding-left: 5px;
+        }
+
+        .topic-list li::marker {
+            color: #1769aa;
+            font-weight: bold;
+        }
+
+        /* =========================
+           QUICK REVISION
+        ========================= */
+
+        .revision-box {
+
+            margin: 40px 0;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eef6ff
+                );
+
+            border-radius: 25px;
+
+            border: 2px solid #bcd7f2;
+
+            box-shadow:
+                0 10px 30px rgba(20,50,90,0.08);
+        }
+
+        .revision-box h2 {
+
+            color: #123d63;
+
+            margin-top: 0;
+
+            margin-bottom: 20px;
+        }
+
+        .revision-item {
+
+            background: white;
+
+            margin: 12px 0;
+
+            padding: 15px 18px;
+
+            border-radius: 12px;
+
+            border-left: 4px solid #1769aa;
+
+            color: #26364a;
+        }
+
+        .revision-item strong {
+            color: #123d63;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 50px;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            background: #071a33;
+
+            color: white;
+        }
+
+        footer h3 {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            margin: 6px 0;
+            opacity: 0.85;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .web-hero {
+                margin: 15px;
+                padding: 45px 18px;
+            }
+
+            .web-container {
+                padding: 15px;
+            }
+
+            .ppt-slide {
+                padding: 25px 20px;
+            }
+
+            .ppt-slide h2 {
+                font-size: 23px;
+            }
+
+            .web-nav {
+                padding: 10px;
+            }
+
+            .web-nav a {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="web-nav">
+
+        <a href="index.html">🏠 Home</a>
+
+        <a href="html-css.html">💻 HTML & CSS</a>
+
+        <a href="web-pyq.html">📝 PYQs</a>
+
+        <a href="#unit1">Unit 1</a>
+
+        <a href="#unit2">Unit 2</a>
+
+        <a href="#unit3">Unit 3</a>
+
+        <a href="#unit4">Unit 4</a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="web-hero">
+
+        <div class="hero-icon">
+            🌐
+        </div>
+
+        <h1>
+            Web Technology
+        </h1>
+
+        <p>
+            Complete Unit-wise Syllabus
+        </p>
+
+        <div class="hero-tag">
+            📚 Learn • Practice • Revise • Build
+        </div>
+
+    </header>
+
+
+    <main class="web-container">
+
+
+        <!-- =========================
+             COURSE OVERVIEW
+        ========================= -->
+
+        <div class="section-heading">
+
+            <h2>
+                📚 Course Overview
+            </h2>
+
+            <p>
+                Web Technology syllabus divided into four units
+            </p>
+
+        </div>
+
+
+        <div class="overview-grid">
+
+
+            <div class="overview-card">
+
+                <div class="icon">🌐</div>
+
+                <h3>
+                    Unit 1
+                </h3>
+
+                <p>
+                    Internet, World Wide Web,
+                    Browsers, Servers and HTTP.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="icon">💻</div>
+
+                <h3>
+                    Unit 2
+                </h3>
+
+                <p>
+                    HTML basics, tags, links,
+                    lists, images and frames.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="icon">🚀</div>
+
+                <h3>
+                    Unit 3
+                </h3>
+
+                <p>
+                    HTML5, multimedia, canvas,
+                    storage and forms.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="icon">🎨</div>
+
+                <h3>
+                    Unit 4
+                </h3>
+
+                <p>
+                    CSS, formatting, boxes,
+                    positioning, floating and tables.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =========================
+             UNIT 1
+        ========================= -->
+
+        <section class="ppt-slide" id="unit1">
+
+            <span class="slide-number">
+                UNIT 01
+            </span>
+
+            <h2>
+                🌐 Introduction to Internet & WWW
+            </h2>
+
+            <span class="hours">
+                ⏱ 6 Hours
+            </span>
+
+            <ol class="topic-list">
+
+                <li>
+                    Introduction to Internet and World Wide Web
+                </li>
+
+                <li>
+                    Evolution and History of World Wide Web
+                </li>
+
+                <li>
+                    Application Areas of Internet
+                </li>
+
+                <li>
+                    Requirements for working with Internet and World Wide Web
+                </li>
+
+                <li>
+                    Web Browsers
+                </li>
+
+                <li>
+                    Web Servers
+                </li>
+
+                <li>
+                    Hypertext Transfer Protocol (HTTP)
+                </li>
+
+                <li>
+                    Searching Techniques
+                </li>
+
+                <li>
+                    Web-Casting Techniques
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- =========================
+             UNIT 2
+        ========================= -->
+
+        <section class="ppt-slide" id="unit2">
+
+            <span class="slide-number">
+                UNIT 02
+            </span>
+
+            <h2>
+                💻 Basics of HTML
+            </h2>
+
+            <span class="hours">
+                ⏱ 6 Hours
+            </span>
+
+            <ol class="topic-list">
+
+                <li>
+                    Steps for Developing Website
+                </li>
+
+                <li>
+                    Web Publishing
+                </li>
+
+                <li>
+                    Web Hosting
+                </li>
+
+                <li>
+                    Static and Dynamic Website
+                </li>
+
+                <li>
+                    Structure of Webpage
+                </li>
+
+                <li>
+                    HTML Features
+                </li>
+
+                <li>
+                    HTML Tags
+                </li>
+
+                <li>
+                    Header
+                </li>
+
+                <li>
+                    Title
+                </li>
+
+                <li>
+                    Body
+                </li>
+
+                <li>
+                    Paragraph
+                </li>
+
+                <li>
+                    Ordered List
+                </li>
+
+                <li>
+                    Unordered List
+                </li>
+
+                <li>
+                    Creating Links
+                </li>
+
+                <li>
+                    Text Styles
+                </li>
+
+                <li>
+                    Text Structuring
+                </li>
+
+                <li>
+                    Text Colors and Background
+                </li>
+
+                <li>
+                    Formatting Text
+                </li>
+
+                <li>
+                    Page Layouts
+                </li>
+
+                <li>
+                    Images and their Attributes
+                </li>
+
+                <li>
+                    Image Mapping
+                </li>
+
+                <li>
+                    Frames
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- =========================
+             UNIT 3
+        ========================= -->
+
+        <section class="ppt-slide" id="unit3">
+
+            <span class="slide-number">
+                UNIT 03
+            </span>
+
+            <h2>
+                🚀 HTML5
+            </h2>
+
+            <span class="hours">
+                ⏱ 6 Hours
+            </span>
+
+            <ol class="topic-list">
+
+                <li>
+                    Introduction to HTML5
+                </li>
+
+                <li>
+                    Advantages of HTML5
+                </li>
+
+                <li>
+                    Limitations of HTML4
+                </li>
+
+                <li>
+                    Header, Navigation Section, Articles and Footer
+                </li>
+
+                <li>
+                    HTML5 Elements
+                </li>
+
+                <li>
+                    HTML5 Multimedia
+                </li>
+
+                <li>
+                    Audio
+                </li>
+
+                <li>
+                    Video
+                </li>
+
+                <li>
+                    Canvas
+                </li>
+
+                <li>
+                    Web Storage
+                </li>
+
+                <li>
+                    HTML5 Forms
+                </li>
+
+                <li>
+                    Creating Graphs and Charts
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- =========================
+             UNIT 4
+        ========================= -->
+
+        <section class="ppt-slide" id="unit4">
+
+            <span class="slide-number">
+                UNIT 04
+            </span>
+
+            <h2>
+                🎨 CSS
+            </h2>
+
+            <span class="hours">
+                ⏱ 6 Hours
+            </span>
+
+            <ol class="topic-list">
+
+                <li>
+                    CSS and Style Sheets
+                </li>
+
+                <li>
+                    Text Formatting using CSS
+                </li>
+
+                <li>
+                    Embedded CSS
+                </li>
+
+                <li>
+                    Inline CSS
+                </li>
+
+                <li>
+                    External CSS
+                </li>
+
+                <li>
+                    Background and Color Gradients in CSS
+                </li>
+
+                <li>
+                    Fonts and Text Styles
+                </li>
+
+                <li>
+                    Creating Boxes using CSS
+                </li>
+
+                <li>
+                    Creating Columns using CSS
+                </li>
+
+                <li>
+                    Displaying an Element
+                </li>
+
+                <li>
+                    Positioning an Element
+                </li>
+
+                <li>
+                    Floating an Element
+                </li>
+
+                <li>
+                    List Styles
+                </li>
+
+                <li>
+                    Table Layouts
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- =========================
+             QUICK REVISION
+        ========================= -->
+
+        <div class="section-heading">
+
+            <h2>
+                ⚡ Quick Revision
+            </h2>
+
+            <p>
+                Remember the main focus of all four units
+            </p>
+
+        </div>
+
+
+        <section class="revision-box">
+
+            <h2>
+                🎯 4 Units at a Glance
+            </h2>
+
+
+            <div class="revision-item">
+
+                <strong>Unit 1:</strong>
+
+                Internet + WWW + Browser + Server + HTTP
+
+            </div>
+
+
+            <div class="revision-item">
+
+                <strong>Unit 2:</strong>
+
+                HTML + Tags + Lists + Links + Images + Frames
+
+            </div>
+
+
+            <div class="revision-item">
+
+                <strong>Unit 3:</strong>
+
+                HTML5 + Multimedia + Canvas + Storage + Forms
+
+            </div>
+
+
+            <div class="revision-item">
+
+                <strong>Unit 4:</strong>
+
+                CSS + Formatting + Boxes + Position + Float + Tables
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>
+            🌐 Web Technology
+        </h3>
+
+        <p>
+            Learn • Practice • Revise • Build
+        </p>
+
+        <p>
+            © 2026 College Resource Hub | Created by Nitin Singh 🎓
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

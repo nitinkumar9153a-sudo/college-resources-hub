@@ -1,0 +1,1033 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics Important Questions | College Resource Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ================================
+           THEME VARIABLES
+        ================================= */
+
+        :root {
+            --page-bg: #f4f7fb;
+            --text: #172033;
+            --muted: #475569;
+
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --nav-text: #172033;
+
+            --card-bg: #ffffff;
+            --card-border: rgba(37, 99, 235, 0.12);
+
+            --question-bg: #f8fafc;
+            --question-text: #1e293b;
+            --question-border: #2563eb;
+
+            --heading: #0f172a;
+            --unit-heading: #1d4ed8;
+
+            --priority-bg: #fff7d6;
+            --priority-border: #f59e0b;
+            --priority-text: #713f12;
+
+            --shadow: rgba(15, 23, 42, 0.10);
+            --footer-bg: #eaf0f8;
+        }
+
+        /* ================================
+           DARK MODE
+        ================================= */
+
+        body.dark-mode {
+            --page-bg: #07111f;
+            --text: #e5e7eb;
+            --muted: #cbd5e1;
+
+            --nav-bg: rgba(7, 17, 31, 0.96);
+            --nav-text: #f1f5f9;
+
+            --card-bg: #111c2e;
+            --card-border: rgba(96, 165, 250, 0.18);
+
+            --question-bg: #0b1627;
+            --question-text: #e2e8f0;
+            --question-border: #60a5fa;
+
+            --heading: #f8fafc;
+            --unit-heading: #93c5fd;
+
+            --priority-bg: #422006;
+            --priority-border: #f59e0b;
+            --priority-text: #fde68a;
+
+            --shadow: rgba(0, 0, 0, 0.35);
+            --footer-bg: #0b1627;
+        }
+
+        /* ================================
+           GENERAL
+        ================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--page-bg) !important;
+            color: var(--text) !important;
+            transition:
+                background 0.35s ease,
+                color 0.35s ease;
+        }
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+
+        nav {
+            background: var(--nav-bg) !important;
+            color: var(--nav-text) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--card-border);
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease;
+        }
+
+        nav a {
+            color: var(--nav-text) !important;
+            text-decoration: none;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            color: #2563eb !important;
+        }
+
+        body.dark-mode nav a:hover {
+            color: #60a5fa !important;
+        }
+
+        /* ================================
+           THEME BUTTON
+        ================================= */
+
+        #themeToggle {
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            padding: 10px 15px;
+            margin-left: 10px;
+
+            border-radius: 10px;
+
+            background: #2563eb;
+            color: white;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        #themeToggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+        }
+
+        body.dark-mode #themeToggle {
+            background: #1e40af;
+        }
+
+        /* ================================
+           MAIN CONTAINER
+        ================================= */
+
+        .questions-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .questions-container > h1 {
+            color: var(--heading) !important;
+            text-align: center;
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 12px;
+
+            transition: color 0.35s ease;
+        }
+
+        .questions-container > p {
+            color: var(--muted) !important;
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+
+            transition: color 0.35s ease;
+        }
+
+        /* ================================
+           UNIT CARD
+        ================================= */
+
+        .unit {
+            background: var(--card-bg) !important;
+
+            color: var(--text) !important;
+
+            padding: 28px;
+            margin: 28px 0;
+
+            border-radius: 18px;
+
+            border: 1px solid var(--card-border);
+
+            box-shadow:
+                0 8px 30px var(--shadow);
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.35s ease;
+
+            animation: cardAppear 0.7s ease both;
+        }
+
+        .unit:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 14px 40px var(--shadow);
+        }
+
+        .unit h2 {
+            color: var(--unit-heading) !important;
+
+            font-size: 24px;
+            line-height: 1.4;
+
+            padding-bottom: 13px;
+            margin-bottom: 20px;
+
+            border-bottom: 3px solid var(--question-border);
+
+            transition:
+                color 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        /* ================================
+           QUESTION CARD
+        ================================= */
+
+        .question {
+            background: var(--question-bg) !important;
+            color: var(--question-text) !important;
+
+            padding: 15px 17px;
+            margin: 12px 0;
+
+            border-left: 5px solid var(--question-border);
+
+            border-radius: 8px;
+
+            line-height: 1.65;
+
+            box-shadow:
+                0 3px 12px rgba(15, 23, 42, 0.05);
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.25s ease,
+                border-color 0.3s ease;
+        }
+
+        .question:hover {
+            transform: translateX(5px);
+        }
+
+        .question b {
+            display: inline-block;
+
+            color: var(--question-border) !important;
+
+            margin-right: 6px;
+
+            transition: color 0.3s ease;
+        }
+
+        /* ================================
+           TOP PRIORITY
+        ================================= */
+
+        .priority-card {
+            background: var(--priority-bg) !important;
+
+            color: var(--priority-text) !important;
+
+            border: 2px solid var(--priority-border);
+
+            box-shadow:
+                0 8px 30px rgba(245, 158, 11, 0.12);
+        }
+
+        .priority-card h2 {
+            color: var(--priority-text) !important;
+            border-bottom-color: var(--priority-border);
+        }
+
+        .priority-card ol {
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+
+        .priority-card li {
+            color: var(--priority-text) !important;
+
+            padding: 9px 5px;
+
+            line-height: 1.6;
+
+            transition:
+                transform 0.2s ease,
+                color 0.25s ease;
+        }
+
+        .priority-card li:hover {
+            transform: translateX(5px);
+        }
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background: var(--footer-bg) !important;
+            color: var(--muted) !important;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            border-top: 1px solid var(--card-border);
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease;
+        }
+
+        footer p {
+            color: var(--muted) !important;
+            margin: 0;
+        }
+
+        /* ================================
+           ANIMATION
+        ================================= */
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 700px) {
+
+            .questions-container {
+                padding: 25px 12px 45px;
+            }
+
+            .unit {
+                padding: 18px;
+                margin: 20px 0;
+                border-radius: 14px;
+            }
+
+            .unit h2 {
+                font-size: 20px;
+            }
+
+            .question {
+                padding: 13px;
+                font-size: 15px;
+            }
+
+            .questions-container > h1 {
+                font-size: 30px;
+            }
+
+            .questions-container > p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================================
+         NAVIGATION
+    ================================= -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="physics.html">Physics</a>
+
+        <a href="physics-notes.html">Notes</a>
+
+        <button id="themeToggle" type="button">
+            🌙 Dark Mode
+        </button>
+
+    </nav>
+
+
+    <!-- ================================
+         MAIN CONTENT
+    ================================= -->
+
+    <main class="questions-container">
+
+        <h1>📘 Physics Important Questions</h1>
+
+        <p>
+            Unit-wise important questions for exam preparation.
+            Focus on these questions for theory, derivations, diagrams and numericals.
+        </p>
+
+
+        <!-- ================================
+             UNIT 1
+        ================================= -->
+
+        <div class="unit">
+
+            <h2>Unit 1 - Wave Optics and Lasers</h2>
+
+            <div class="question">
+                <b>Q1.</b>
+                Explain Huygens principle with a neat diagram.
+            </div>
+
+            <div class="question">
+                <b>Q2.</b>
+                Explain the principle of superposition of waves.
+            </div>
+
+            <div class="question">
+                <b>Q3.</b>
+                Explain interference of light by division of wavefront.
+            </div>
+
+            <div class="question">
+                <b>Q4.</b>
+                Explain interference by division of amplitude.
+            </div>
+
+            <div class="question">
+                <b>Q5.</b>
+                Explain Newton's rings with a neat diagram and applications.
+            </div>
+
+            <div class="question">
+                <b>Q6.</b>
+                Explain Fraunhofer diffraction from a single slit and derive the condition for minima.
+            </div>
+
+            <div class="question">
+                <b>Q7.</b>
+                Explain diffraction grating and derive its grating equation.
+            </div>
+
+            <div class="question">
+                <b>Q8.</b>
+                Explain resolving power of a diffraction grating.
+            </div>
+
+            <div class="question">
+                <b>Q9.</b>
+                Differentiate between polarized and unpolarized light.
+            </div>
+
+            <div class="question">
+                <b>Q10.</b>
+                Explain the characteristics and properties of laser beams.
+            </div>
+
+            <div class="question">
+                <b>Q11.</b>
+                Explain spontaneous and stimulated emission of radiation.
+            </div>
+
+            <div class="question">
+                <b>Q12.</b>
+                Explain meta-stable state, population inversion and pumping.
+            </div>
+
+            <div class="question">
+                <b>Q13.</b>
+                Explain Einstein's coefficients and relation between them.
+            </div>
+
+            <div class="question">
+                <b>Q14.</b>
+                Explain Ruby laser with a neat diagram, working and applications.
+            </div>
+
+            <div class="question">
+                <b>Q15.</b>
+                Explain He-Ne laser with a neat diagram, working and applications.
+            </div>
+
+            <div class="question">
+                <b>Q16.</b>
+                Write applications of lasers in engineering and medicine.
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             UNIT 2
+        ================================= -->
+
+        <div class="unit">
+
+            <h2>Unit 2 - Electrostatics, Magnetostatics and EM Waves</h2>
+
+            <div class="question">
+                <b>Q1.</b>
+                Explain divergence and curl of electrostatic field.
+            </div>
+
+            <div class="question">
+                <b>Q2.</b>
+                Derive Laplace's equation for electrostatic potential.
+            </div>
+
+            <div class="question">
+                <b>Q3.</b>
+                Derive Poisson's equation for electrostatic potential.
+            </div>
+
+            <div class="question">
+                <b>Q4.</b>
+                State and explain Biot-Savart law.
+            </div>
+
+            <div class="question">
+                <b>Q5.</b>
+                Explain divergence and curl of static magnetic field.
+            </div>
+
+            <div class="question">
+                <b>Q6.</b>
+                Explain scalar and vector magnetic potential.
+            </div>
+
+            <div class="question">
+                <b>Q7.</b>
+                State and explain Stokes' theorem.
+            </div>
+
+            <div class="question">
+                <b>Q8.</b>
+                Derive the continuity equation for current density.
+            </div>
+
+            <div class="question">
+                <b>Q9.</b>
+                State and explain Maxwell's equations in vacuum.
+            </div>
+
+            <div class="question">
+                <b>Q10.</b>
+                Explain Maxwell's equations in conducting and non-conducting media.
+            </div>
+
+            <div class="question">
+                <b>Q11.</b>
+                Explain electromagnetic waves and their basic properties.
+            </div>
+
+            <div class="question">
+                <b>Q12.</b>
+                Explain plane electromagnetic waves in vacuum.
+            </div>
+
+            <div class="question">
+                <b>Q13.</b>
+                Explain Poynting vector and flow of electromagnetic energy.
+            </div>
+
+            <div class="question">
+                <b>Q14.</b>
+                Explain Poynting theorem and its physical significance.
+            </div>
+
+            <div class="question">
+                <b>Q15.</b>
+                Explain skin depth and skin effect.
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             UNIT 3
+        ================================= -->
+
+        <div class="unit">
+
+            <h2>Unit 3 - Quantum Mechanics and Schrödinger Equation</h2>
+
+            <div class="question">
+                <b>Q1.</b>
+                Give an introduction to quantum mechanics and explain its need.
+            </div>
+
+            <div class="question">
+                <b>Q2.</b>
+                Explain the wave nature of particles and de Broglie hypothesis.
+            </div>
+
+            <div class="question">
+                <b>Q3.</b>
+                Derive the time-dependent Schrödinger equation.
+            </div>
+
+            <div class="question">
+                <b>Q4.</b>
+                Derive the time-independent Schrödinger equation.
+            </div>
+
+            <div class="question">
+                <b>Q5.</b>
+                Explain Born interpretation of wave function.
+            </div>
+
+            <div class="question">
+                <b>Q6.</b>
+                Explain probability current density.
+            </div>
+
+            <div class="question">
+                <b>Q7.</b>
+                Explain expectation value in quantum mechanics.
+            </div>
+
+            <div class="question">
+                <b>Q8.</b>
+                Explain free-particle wave function.
+            </div>
+
+            <div class="question">
+                <b>Q9.</b>
+                Explain wave packets and their significance.
+            </div>
+
+            <div class="question">
+                <b>Q10.</b>
+                State and explain Heisenberg's uncertainty principle with applications.
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             UNIT 4
+        ================================= -->
+
+        <div class="unit">
+
+            <h2>Unit 4 - Applications of Schrödinger Equation</h2>
+
+            <div class="question">
+                <b>Q1.</b>
+                Explain the stationary-state Schrödinger equation.
+            </div>
+
+            <div class="question">
+                <b>Q2.</b>
+                Explain particle in a one-dimensional box.
+            </div>
+
+            <div class="question">
+                <b>Q3.</b>
+                Derive the energy eigenvalues for a particle in a 1-D box.
+            </div>
+
+            <div class="question">
+                <b>Q4.</b>
+                Derive the normalized wave function for a particle in a 1-D box.
+            </div>
+
+            <div class="question">
+                <b>Q5.</b>
+                Explain finite potential well.
+            </div>
+
+            <div class="question">
+                <b>Q6.</b>
+                Explain quantum tunneling with a neat diagram.
+            </div>
+
+            <div class="question">
+                <b>Q7.</b>
+                Write applications of quantum tunneling.
+            </div>
+
+            <div class="question">
+                <b>Q8.</b>
+                Explain one-dimensional quantum harmonic oscillator qualitatively.
+            </div>
+
+            <div class="question">
+                <b>Q9.</b>
+                Write the energy eigenvalues of a quantum harmonic oscillator.
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             UNIT 5
+        ================================= -->
+
+        <div class="unit">
+
+            <h2>Unit 5 - Crystal Structures</h2>
+
+            <div class="question">
+                <b>Q1.</b>
+                Explain lattice points and space lattice.
+            </div>
+
+            <div class="question">
+                <b>Q2.</b>
+                Define basis and Bravais lattice.
+            </div>
+
+            <div class="question">
+                <b>Q3.</b>
+                Explain unit cell and lattice parameters.
+            </div>
+
+            <div class="question">
+                <b>Q4.</b>
+                Explain atomic radius, coordination number and packing factor.
+            </div>
+
+            <div class="question">
+                <b>Q5.</b>
+                Explain Simple Cubic structure with its properties.
+            </div>
+
+            <div class="question">
+                <b>Q6.</b>
+                Explain Body Centred Cubic structure with its properties.
+            </div>
+
+            <div class="question">
+                <b>Q7.</b>
+                Explain Face Centred Cubic structure with its properties.
+            </div>
+
+            <div class="question">
+                <b>Q8.</b>
+                Compare SC, BCC and FCC structures.
+            </div>
+
+            <div class="question">
+                <b>Q9.</b>
+                Explain classification of crystal defects.
+            </div>
+
+            <div class="question">
+                <b>Q10.</b>
+                Explain substitutional and interstitial defects.
+            </div>
+
+            <div class="question">
+                <b>Q11.</b>
+                Explain Frenkel defect with diagram.
+            </div>
+
+            <div class="question">
+                <b>Q12.</b>
+                Explain Schottky defect with diagram.
+            </div>
+
+            <div class="question">
+                <b>Q13.</b>
+                Differentiate between Frenkel and Schottky defects.
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             UNIT 6
+        ================================= -->
+
+        <div class="unit">
+
+            <h2>Unit 6 - Free Electron Theory of Metals</h2>
+
+            <div class="question">
+                <b>Q1.</b>
+                Explain the postulates of classical free electron theory.
+            </div>
+
+            <div class="question">
+                <b>Q2.</b>
+                Explain the failures of classical free electron theory.
+            </div>
+
+            <div class="question">
+                <b>Q3.</b>
+                Explain quantum free electron theory of metals.
+            </div>
+
+            <div class="question">
+                <b>Q4.</b>
+                Explain Fermi-Dirac distribution function.
+            </div>
+
+            <div class="question">
+                <b>Q5.</b>
+                Explain Fermi energy and its physical significance.
+            </div>
+
+            <div class="question">
+                <b>Q6.</b>
+                Explain density of states.
+            </div>
+
+            <div class="question">
+                <b>Q7.</b>
+                Explain failures of quantum free electron theory.
+            </div>
+
+            <div class="question">
+                <b>Q8.</b>
+                Explain thermionic emission.
+            </div>
+
+            <div class="question">
+                <b>Q9.</b>
+                Explain Richardson's equation and its terms.
+            </div>
+
+        </div>
+
+
+        <!-- ================================
+             TOP PRIORITY
+        ================================= -->
+
+        <div class="unit priority-card">
+
+            <h2>⭐ Top Priority Questions</h2>
+
+            <ol>
+
+                <li>Huygens Principle</li>
+
+                <li>Newton's Rings</li>
+
+                <li>Fraunhofer Diffraction from Single Slit</li>
+
+                <li>Diffraction Grating and Resolving Power</li>
+
+                <li>Spontaneous and Stimulated Emission</li>
+
+                <li>Population Inversion and Pumping</li>
+
+                <li>Einstein's Coefficients</li>
+
+                <li>Ruby Laser</li>
+
+                <li>He-Ne Laser</li>
+
+                <li>Maxwell's Equations</li>
+
+                <li>Poynting Vector and Poynting Theorem</li>
+
+                <li>Time-Dependent Schrödinger Equation</li>
+
+                <li>Time-Independent Schrödinger Equation</li>
+
+                <li>Heisenberg Uncertainty Principle</li>
+
+                <li>Particle in 1-D Box</li>
+
+                <li>Quantum Tunneling</li>
+
+                <li>SC, BCC and FCC</li>
+
+                <li>Frenkel and Schottky Defects</li>
+
+                <li>Fermi-Dirac Distribution and Fermi Energy</li>
+
+                <li>Thermionic Emission and Richardson's Equation</li>
+
+            </ol>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 College Resource Hub | Physics Important Questions
+        </p>
+
+    </footer>
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script>
+
+        const themeToggle = document.getElementById("themeToggle");
+
+        function updateThemeButton() {
+
+            if (document.body.classList.contains("dark-mode")) {
+
+                themeToggle.innerHTML = "☀️ Bright Mode";
+
+            } else {
+
+                themeToggle.innerHTML = "🌙 Dark Mode";
+
+            }
+
+        }
+
+
+        /* Load saved theme */
+
+        const savedTheme = localStorage.getItem("physicsImportantTheme");
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+
+        updateThemeButton();
+
+
+        /* Toggle theme */
+
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+
+                localStorage.setItem("physicsImportantTheme", "dark");
+
+            } else {
+
+                localStorage.setItem("physicsImportantTheme", "light");
+
+            }
+
+            updateThemeButton();
+
+        });
+
+
+        /* ================================
+           MOUSE GLOW EFFECT
+        ================================= */
+
+        document.addEventListener("mousemove", function (e) {
+
+            document.body.style.setProperty(
+                "--mouse-x",
+                e.clientX + "px"
+            );
+
+            document.body.style.setProperty(
+                "--mouse-y",
+                e.clientY + "px"
+            );
+
+        });
+
+
+        /* ================================
+           QUESTION RIPPLE EFFECT
+        ================================= */
+
+        document.querySelectorAll(".question").forEach(function (question) {
+
+            question.addEventListener("click", function () {
+
+                this.style.transform = "scale(0.99)";
+
+                setTimeout(() => {
+
+                    this.style.transform = "";
+
+                }, 120);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+```

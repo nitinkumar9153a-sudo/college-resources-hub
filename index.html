@@ -1,0 +1,2470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Resource Hub | Adarsh Mishra</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =================================================
+           🔥 ULTRA PREMIUM SUBJECTS SECTION
+           ONLY SUBJECTS SECTION MODIFIED
+        ================================================= */
+
+        #subjects {
+            position: relative;
+            padding: 105px 7%;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        #subjects::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            left: -220px;
+            top: 80px;
+            background: rgba(37, 99, 235, 0.14);
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: -1;
+            animation: subjectGlowOne 7s ease-in-out infinite alternate;
+        }
+
+        #subjects::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            right: -220px;
+            bottom: 20px;
+            background: rgba(6, 182, 212, 0.13);
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: -1;
+            animation: subjectGlowTwo 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes subjectGlowOne {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(100px, 80px) scale(1.3);
+            }
+        }
+
+        @keyframes subjectGlowTwo {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(-100px, -60px) scale(1.25);
+            }
+        }
+
+        #subjects > h2 {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-size: clamp(42px, 5vw, 64px);
+            font-weight: 900;
+            margin-bottom: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #06b6d4,
+                    #7c3aed,
+                    #2563eb
+                );
+
+            background-size: 300% auto;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation: subjectGradient 5s linear infinite;
+        }
+
+        @keyframes subjectGradient {
+
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 300% center;
+            }
+
+        }
+
+        #subjects > .section-title {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 58px;
+            color: #64748b;
+        }
+
+        .subjects-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1350px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .subject-card {
+
+            position: relative;
+
+            min-height: 350px;
+
+            padding: 34px;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.98),
+                    rgba(248,250,252,0.90)
+                );
+
+            border:
+                1px solid
+                rgba(148,163,184,0.20);
+
+            box-shadow:
+                0 18px 55px
+                rgba(15,23,42,0.09);
+
+            transition:
+                transform 0.5s cubic-bezier(.2,.8,.2,1),
+                box-shadow 0.5s ease,
+                border-color 0.5s ease;
+
+            transform-style: preserve-3d;
+        }
+
+        .subject-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -100%;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #06b6d4,
+                    #7c3aed
+                );
+
+            transition:
+                left 0.7s ease;
+
+        }
+
+        .subject-card:hover::before {
+            left: 0;
+        }
+
+        .subject-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -95px;
+            top: -95px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(37,99,235,0.10);
+
+            filter: blur(8px);
+
+            transition:
+                transform 0.6s ease,
+                opacity 0.6s ease;
+
+            pointer-events: none;
+
+        }
+
+        .subject-card:hover::after {
+
+            transform: scale(2.8);
+
+            opacity: 0.8;
+
+        }
+
+        .subject-card:hover {
+
+            transform:
+                translateY(-14px)
+                scale(1.025);
+
+            border-color:
+                rgba(37,99,235,0.42);
+
+            box-shadow:
+                0 35px 80px
+                rgba(37,99,235,0.18);
+
+        }
+
+        .card-shine {
+
+            position: absolute;
+
+            top: 0;
+            left: -140%;
+
+            width: 70%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,0.55),
+                    transparent
+                );
+
+            transform:
+                skewX(-20deg);
+
+            pointer-events: none;
+
+            transition:
+                left 0.9s ease;
+
+            z-index: 1;
+
+        }
+
+        .subject-card:hover .card-shine {
+            left: 150%;
+        }
+
+        .subject-number {
+
+            position: absolute;
+
+            top: 22px;
+            right: 24px;
+
+            padding: 7px 11px;
+
+            border-radius: 30px;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            color: #2563eb;
+
+            background:
+                rgba(37,99,235,0.08);
+
+            border:
+                1px solid
+                rgba(37,99,235,0.15);
+
+            z-index: 3;
+
+        }
+
+        .subject-icon {
+
+            position: relative;
+            z-index: 3;
+
+            width: 82px;
+            height: 82px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 24px;
+
+            font-size: 39px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 15px 35px
+                rgba(37,99,235,0.12);
+
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+
+        }
+
+        .subject-icon::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: -6px;
+
+            border-radius: 28px;
+
+            border:
+                2px solid
+                rgba(37,99,235,0.10);
+
+            transition:
+                transform 0.5s ease,
+                border-color 0.5s ease;
+
+        }
+
+        .subject-card:hover .subject-icon {
+
+            transform:
+                rotate(-7deg)
+                scale(1.13);
+
+            box-shadow:
+                0 20px 45px
+                rgba(37,99,235,0.25);
+
+        }
+
+        .subject-card:hover .subject-icon::before {
+
+            transform:
+                rotate(12deg)
+                scale(1.12);
+
+            border-color:
+                rgba(37,99,235,0.35);
+
+        }
+
+        .subject-card h3 {
+
+            position: relative;
+            z-index: 3;
+
+            font-size: 27px;
+
+            font-weight: 850;
+
+            margin-bottom: 12px;
+
+            color: #0f172a;
+
+        }
+
+        .subject-card p {
+
+            position: relative;
+            z-index: 3;
+
+            font-size: 15.5px;
+
+            line-height: 1.7;
+
+            color: #64748b;
+
+            min-height: 78px;
+
+            margin-bottom: 23px;
+
+        }
+
+        .subject-card a {
+
+            position: relative;
+            z-index: 5;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 19px;
+
+            border-radius: 14px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #0f172a,
+                    #1e293b
+                );
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                background 0.35s ease;
+
+        }
+
+        .subject-card a::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -120%;
+
+            width: 80%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,0.35),
+                    transparent
+                );
+
+            transform: skewX(-20deg);
+
+            transition:
+                left 0.6s ease;
+
+        }
+
+        .subject-card a:hover::before {
+            left: 140%;
+        }
+
+        .subject-card a:hover {
+
+            transform:
+                translateX(5px);
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #2563eb,
+                    #06b6d4
+                );
+
+            box-shadow:
+                0 14px 35px
+                rgba(37,99,235,0.30);
+
+        }
+
+        .subject-card a::after {
+
+            content: "→";
+
+            font-size: 19px;
+
+            transition:
+                transform 0.35s ease;
+
+        }
+
+        .subject-card a:hover::after {
+            transform:
+                translateX(5px);
+        }
+
+        .subject-card:nth-child(1) .subject-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef2ff,
+                    #dbeafe
+                );
+
+        }
+
+        .subject-card:nth-child(2) .subject-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ecfeff,
+                    #cffafe
+                );
+
+        }
+
+        .subject-card:nth-child(3) .subject-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0fdf4,
+                    #dcfce7
+                );
+
+        }
+
+        .subject-card:nth-child(4) .subject-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff7ed,
+                    #ffedd5
+                );
+
+        }
+
+        .subject-card:nth-child(5) .subject-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #faf5ff,
+                    #f3e8ff
+                );
+
+        }
+
+        .subject-card:nth-child(6) .subject-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fdf2f8,
+                    #fce7f3
+                );
+
+        }
+
+        @media (max-width: 1050px) {
+
+            .subjects-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            #subjects {
+
+                padding:
+                    75px 5%;
+
+            }
+
+            .subjects-container {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 22px;
+
+            }
+
+            .subject-card {
+
+                min-height:
+                    auto;
+
+                padding:
+                    30px;
+
+            }
+
+            .subject-card p {
+
+                min-height:
+                    auto;
+
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            #subjects > h2 {
+
+                font-size:
+                    42px;
+
+            }
+
+            #subjects > .section-title {
+
+                font-size:
+                    15px;
+
+                margin-bottom:
+                    40px;
+
+            }
+
+            .subject-card {
+
+                border-radius:
+                    24px;
+
+            }
+
+            .subject-card h3 {
+
+                font-size:
+                    24px;
+
+            }
+
+            .subject-icon {
+
+                width:
+                    68px;
+
+                height:
+                    68px;
+
+                font-size:
+                    32px;
+
+            }
+
+        }
+
+        body:not(.light-mode)
+        #subjects > .section-title {
+
+            color:
+                #94a3b8;
+
+        }
+
+        body:not(.light-mode)
+        .subject-card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(15,23,42,0.97),
+                    rgba(30,41,59,0.94)
+                );
+
+            border-color:
+                rgba(148,163,184,0.16);
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,0.30);
+
+        }
+
+        body:not(.light-mode)
+        .subject-card:hover {
+
+            border-color:
+                rgba(59,130,246,0.48);
+
+            box-shadow:
+                0 35px 80px
+                rgba(37,99,235,0.22);
+
+        }
+
+        body:not(.light-mode)
+        .subject-card h3 {
+
+            color:
+                #f8fafc;
+
+        }
+
+        body:not(.light-mode)
+        .subject-card p {
+
+            color:
+                #94a3b8;
+
+        }
+
+        body:not(.light-mode)
+        .subject-number {
+
+            color:
+                #60a5fa;
+
+            background:
+                rgba(59,130,246,0.10);
+
+            border-color:
+                rgba(59,130,246,0.20);
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================================
+     HACKER STYLE OPENING INTRO
+================================================== -->
+
+<div class="intro-screen hacker-intro" id="introScreen">
+
+    <div class="hacker-grid"></div>
+    <div class="hacker-scanlines"></div>
+
+    <div class="binary-code">
+
+        <span>010101 101001 110010 001101</span>
+        <span>101010 001011 110101 010010</span>
+        <span>110011 010101 001110 101100</span>
+        <span>001101 110010 010101 101011</span>
+        <span>111000 001011 101010 110101</span>
+        <span>010010 111001 001101 100110</span>
+        <span>101101 010010 110011 001101</span>
+        <span>110101 101010 001011 111000</span>
+        <span>001110 100101 110010 010101</span>
+        <span>101001 110101 001011 010010</span>
+        <span>110010 101101 001011 111001</span>
+        <span>010101 110010 101001 001110</span>
+        <span>111001 010101 110010 001011</span>
+        <span>001011 101010 110101 010010</span>
+        <span>101100 001101 110010 101001</span>
+        <span>010010 110011 101010 001101</span>
+
+    </div>
+
+
+    <div class="hacker-terminal">
+
+        <div class="terminal-header">
+
+            <div class="terminal-dots">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+            </div>
+
+            <div class="terminal-name">
+                SYSTEM_TERMINAL.exe
+            </div>
+
+            <div class="terminal-status">
+                ● ONLINE
+            </div>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+            <div class="terminal-line">
+                <span class="prompt">root@hub:~$</span>
+                initializing system...
+                <span class="terminal-ok">[OK]</span>
+            </div>
+
+            <div class="terminal-line">
+                <span class="prompt">root@hub:~$</span>
+                loading college resources...
+                <span class="terminal-ok">[OK]</span>
+            </div>
+
+            <div class="terminal-line">
+                <span class="prompt">root@hub:~$</span>
+                checking security protocols...
+                <span class="terminal-ok">[OK]</span>
+            </div>
+
+            <div class="terminal-line">
+                <span class="prompt">root@hub:~$</span>
+                connecting to resource database...
+                <span class="terminal-ok">[OK]</span>
+            </div>
+
+            <div class="terminal-line">
+                <span class="prompt">root@hub:~$</span>
+                verifying user access...
+                <span class="terminal-ok">[OK]</span>
+            </div>
+
+            <div class="terminal-line access-granted">
+                <span class="prompt">root@hub:~$</span>
+                ACCESS GRANTED ✓
+            </div>
+
+        </div>
+
+
+        <div class="hacker-brand">
+
+            <div class="system-online">
+                SYSTEM ONLINE
+            </div>
+
+            <h1 class="hacker-title">
+
+                <span class="title-main">
+                    COLLEGE
+                </span>
+
+                <span class="title-sub">
+                    RESOURCE HUB
+                </span>
+
+            </h1>
+
+            <div class="hacker-divider"></div>
+
+            <div class="founder-label">
+                FOUNDER &amp; CREATOR
+            </div>
+
+            <div class="hacker-name">
+                ADARSH MISHRA
+            </div>
+
+        </div>
+
+
+        <div class="risk-text">
+
+            <span>⚠</span>
+
+            ENTER WEBSITE AT YOUR OWN RISK
+
+            <span>⚠</span>
+
+        </div>
+
+
+        <button
+            class="enter-btn hacker-enter"
+            id="enterBtn">
+
+            <span>
+                &gt; ENTER WEBSITE
+            </span>
+
+            <b>
+                →
+            </b>
+
+        </button>
+
+
+        <div class="terminal-footer">
+
+            SECURE CONNECTION
+            •
+            CRH_2026
+            •
+            ENCRYPTED
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     NAVBAR
+================================================== -->
+
+<nav>
+
+    <a href="#home">Home</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#resources">Resources</a>
+    <a href="#music">Music</a>
+    <a href="#about">About</a>
+
+    <button id="themeToggle" aria-label="Toggle theme">
+        🌙
+    </button>
+
+</nav>
+
+
+<!-- =================================================
+     HERO
+================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-motivation">
+            NO PAIN • NO GAIN
+        </div>
+
+        <div class="hero-badge">
+            🎓 B.Tech CSE • Semester 1
+        </div>
+
+        <h1>
+            College Resource Hub
+        </h1>
+
+        <p>
+            One place for your syllabus,
+            notes, important questions,
+            previous year questions and
+            useful resources.
+        </p>
+
+        <a href="#subjects" class="hero-btn">
+            Explore Subjects 🚀
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     SEARCH
+================================================== -->
+
+<section class="search-section">
+
+    <h2>
+        🔎 Find Your Resource
+    </h2>
+
+    <p class="section-title">
+        Search subjects and resources quickly
+    </p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Mathematics, Physics, C, Web..."
+            autocomplete="off">
+
+        <button type="button" id="searchBtn">
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     PREMIUM SUBJECTS
+================================================== -->
+
+<section id="subjects">
+
+    <h2>
+        📚 Subjects
+    </h2>
+
+    <p class="section-title">
+        Select a subject to explore its resources
+    </p>
+
+
+    <div class="subjects-container">
+
+        <div class="subject-card">
+
+            <div class="card-shine"></div>
+
+            <div class="subject-number">
+                SUBJECT 01
+            </div>
+
+            <div class="subject-icon">
+                📐
+            </div>
+
+            <h3>
+                Mathematics
+            </h3>
+
+            <p>
+                Matrices, Calculus, Vector Calculus,
+                Sequences &amp; Series and more.
+            </p>
+
+            <a href="#resources">
+                View Resources
+            </a>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="card-shine"></div>
+
+            <div class="subject-number">
+                SUBJECT 02
+            </div>
+
+            <div class="subject-icon">
+                ⚛️
+            </div>
+
+            <h3>
+                Physics
+            </h3>
+
+            <p>
+                Wave Optics, Lasers, Electrostatics,
+                Magnetostatics, EM Waves and more.
+            </p>
+
+            <a href="#resources">
+                View Resources
+            </a>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="card-shine"></div>
+
+            <div class="subject-number">
+                SUBJECT 03
+            </div>
+
+            <div class="subject-icon">
+                💻
+            </div>
+
+            <h3>
+                C Programming
+            </h3>
+
+            <p>
+                C fundamentals, operators,
+                conditions, loops, arrays and functions.
+            </p>
+
+            <a href="#resources">
+                View Resources
+            </a>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="card-shine"></div>
+
+            <div class="subject-number">
+                SUBJECT 04
+            </div>
+
+            <div class="subject-icon">
+                🌐
+            </div>
+
+            <h3>
+                Web Technology
+            </h3>
+
+            <p>
+                HTML, CSS, web fundamentals,
+                practical questions and resources.
+            </p>
+
+            <a href="#resources">
+                View Resources
+            </a>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="card-shine"></div>
+
+            <div class="subject-number">
+                SUBJECT 05
+            </div>
+
+            <div class="subject-icon">
+                🤖
+            </div>
+
+            <h3>
+                AI &amp; ML
+            </h3>
+
+            <p>
+                Artificial Intelligence, search algorithms,
+                knowledge representation and expert systems.
+            </p>
+
+            <a href="#resources">
+                View Resources
+            </a>
+
+        </div>
+
+
+        <div class="subject-card">
+
+            <div class="card-shine"></div>
+
+            <div class="subject-number">
+                SUBJECT 06
+            </div>
+
+            <div class="subject-icon">
+                📖
+            </div>
+
+            <h3>
+                English
+            </h3>
+
+            <p>
+                Effective learning, listening comprehension,
+                grammar and sentence structure.
+            </p>
+
+            <a href="#resources">
+                View Resources
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     RESOURCES
+================================================== -->
+
+<section id="resources">
+
+    <h2>
+        📦 Study Resources
+    </h2>
+
+    <p class="section-title">
+        Everything you need — Notes, PYQs,
+        Important Questions &amp; Syllabus
+    </p>
+
+
+    <div class="resources-container">
+
+
+        <!-- MATHEMATICS -->
+
+        <div class="resource-subject-card">
+
+            <div class="resource-subject-header">
+
+                <div class="resource-subject-icon">
+                    📐
+                </div>
+
+                <div>
+                    <h3>Mathematics</h3>
+
+                    <p>
+                        Matrices • Calculus • Vector Calculus
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+                <a href="maths.html" class="resource-item syllabus">
+
+                    <div class="resource-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <strong>Syllabus</strong>
+                        <span>Complete syllabus</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="maths-notes.html" class="resource-item notes">
+
+                    <div class="resource-icon">
+                        📚
+                    </div>
+
+                    <div>
+                        <strong>Notes</strong>
+                        <span>Unit-wise detailed notes</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="maths-important.html" class="resource-item important">
+
+                    <div class="resource-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <strong>Important Questions</strong>
+                        <span>Exam-focused questions</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="maths-pyq.html" class="resource-item pyq">
+
+                    <div class="resource-icon">
+                        📝
+                    </div>
+
+                    <div>
+                        <strong>Previous Year Questions</strong>
+                        <span>Practice PYQs</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHYSICS -->
+
+        <div class="resource-subject-card">
+
+            <div class="resource-subject-header">
+
+                <div class="resource-subject-icon">
+                    ⚛️
+                </div>
+
+                <div>
+                    <h3>Physics</h3>
+
+                    <p>
+                        Optics • Lasers • EM Waves
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+                <a href="physics.html" class="resource-item syllabus">
+
+                    <div class="resource-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <strong>Syllabus</strong>
+                        <span>Complete syllabus</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="physics-notes.html" class="resource-item notes">
+
+                    <div class="resource-icon">
+                        📚
+                    </div>
+
+                    <div>
+                        <strong>Notes</strong>
+                        <span>Unit-wise detailed notes</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="physics-important.html" class="resource-item important">
+
+                    <div class="resource-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <strong>Important Questions</strong>
+                        <span>Exam-focused questions</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="physics-pyq.html" class="resource-item pyq">
+
+                    <div class="resource-icon">
+                        📝
+                    </div>
+
+                    <div>
+                        <strong>Previous Year Questions</strong>
+                        <span>Practice PYQs</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- C PROGRAMMING -->
+
+        <div class="resource-subject-card">
+
+            <div class="resource-subject-header">
+
+                <div class="resource-subject-icon">
+                    💻
+                </div>
+
+                <div>
+                    <h3>C Programming</h3>
+
+                    <p>
+                        Fundamentals • Loops • Arrays • Functions
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+                <a href="c.html" class="resource-item syllabus">
+
+                    <div class="resource-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <strong>Syllabus</strong>
+                        <span>Complete syllabus</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="c-notes.html" class="resource-item notes">
+
+                    <div class="resource-icon">
+                        📚
+                    </div>
+
+                    <div>
+                        <strong>Notes</strong>
+                        <span>Unit-wise C notes</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <!-- C PRACTICAL PYQ - DO NOT CHANGE -->
+
+                <a href="c-pyq.html" class="resource-item pyq">
+
+                    <div class="resource-icon">
+                        📝
+                    </div>
+
+                    <div>
+                        <strong>Practical PYQs</strong>
+                        <span>Practice programming</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="c-important.html" class="resource-item important">
+
+                    <div class="resource-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <strong>Important Questions</strong>
+                        <span>Exam-focused questions</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WEB TECHNOLOGY -->
+
+        <div class="resource-subject-card">
+
+            <div class="resource-subject-header">
+
+                <div class="resource-subject-icon">
+                    🌐
+                </div>
+
+                <div>
+
+                    <h3>
+                        Web Technology
+                    </h3>
+
+                    <p>
+                        HTML • CSS • Web Fundamentals
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+                <a href="web-syllabus.html" class="resource-item syllabus">
+
+                    <div class="resource-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <strong>Syllabus</strong>
+                        <span>Complete syllabus</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="html-css.html" class="resource-item notes">
+
+                    <div class="resource-icon">
+                        📚
+                    </div>
+
+                    <div>
+                        <strong>HTML &amp; CSS Notes</strong>
+                        <span>Learn web development</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="web-pyq.html" class="resource-item pyq">
+
+                    <div class="resource-icon">
+                        📝
+                    </div>
+
+                    <div>
+                        <strong>Previous Year Questions</strong>
+                        <span>Practice web questions</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="web-notes.html" class="resource-item notes">
+
+                    <div class="resource-icon">
+                        📖
+                    </div>
+
+                    <div>
+                        <strong>Detailed Web Notes</strong>
+                        <span>Unit-wise PPT style notes</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI & ML -->
+
+        <div class="resource-subject-card">
+
+            <div class="resource-subject-header">
+
+                <div class="resource-subject-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h3>
+                        AI &amp; ML
+                    </h3>
+
+                    <p>
+                        AI Basics • Search • Knowledge Representation
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+                <a href="ai-introduction.html" class="resource-item syllabus">
+
+                    <div class="resource-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <strong>Syllabus</strong>
+                        <span>Complete AI &amp; ML syllabus</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="ai-notes.html" class="resource-item notes">
+
+                    <div class="resource-icon">
+                        📚
+                    </div>
+
+                    <div>
+                        <strong>Notes</strong>
+                        <span>Detailed PPT-style AI notes</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="ai-important.html" class="resource-item important">
+
+                    <div class="resource-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <strong>Important Questions</strong>
+                        <span>Exam-focused questions</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <a href="ai-pyq.html" class="resource-item pyq">
+
+                    <div class="resource-icon">
+                        📝
+                    </div>
+
+                    <div>
+                        <strong>Previous Year Questions</strong>
+                        <span>Practice AI questions</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ENGLISH -->
+
+        <div class="resource-subject-card">
+
+            <div class="resource-subject-header">
+
+                <div class="resource-subject-icon">
+                    📖
+                </div>
+
+                <div>
+
+                    <h3>
+                        English
+                    </h3>
+
+                    <p>
+                        Learning Skills • Grammar • Comprehension
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+                <a href="english.html" class="resource-item syllabus">
+
+                    <div class="resource-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <strong>Syllabus</strong>
+                        <span>View English syllabus</span>
+                    </div>
+
+                    <b>→</b>
+
+                </a>
+
+
+                <div class="resource-item coming-soon">
+
+                    <div class="resource-icon">
+                        📚
+                    </div>
+
+                    <div>
+                        <strong>Notes</strong>
+                        <span>Coming soon</span>
+                    </div>
+
+                    <b>•••</b>
+
+                </div>
+
+
+                <div class="resource-item coming-soon">
+
+                    <div class="resource-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <strong>Important Questions</strong>
+                        <span>Coming soon</span>
+                    </div>
+
+                    <b>•••</b>
+
+                </div>
+
+
+                <div class="resource-item coming-soon">
+
+                    <div class="resource-icon">
+                        📝
+                    </div>
+
+                    <div>
+                        <strong>Previous Year Questions</strong>
+                        <span>Coming soon</span>
+                    </div>
+
+                    <b>•••</b>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     MUSIC
+================================================== -->
+
+<section class="music-home-section" id="music">
+
+    <div class="music-home-container">
+
+        <div class="music-home-heading">
+
+            <div class="music-wave">
+                🎵
+            </div>
+
+            <span>
+                TAKE A BREAK
+            </span>
+
+            <h2>
+                Music Home
+            </h2>
+
+            <p>
+                Study hard. Relax a little.
+                Enjoy some music. 🎧
+            </p>
+
+        </div>
+
+
+        <!-- SONG 01 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 01
+            </div>
+
+            <h3>
+                🎧 Music 01
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/9M_ZKSmxb_s"
+                title="Music 01"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 02 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 02
+            </div>
+
+            <h3>
+                🎶 Music 02
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/1oQTRSeKU4g"
+                title="Music 02"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 03 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 03
+            </div>
+
+            <h3>
+                🎵 Music 03
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/Un91UKYlr6g"
+                title="Music 03"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 04 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 04
+            </div>
+
+            <h3>
+                🎧 Music 04
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/TZjaIHJx-eA"
+                title="Music 04"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 05 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 05
+            </div>
+
+            <h3>
+                🎶 Music 05
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/9f6U8gtJdV0"
+                title="Music 05"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 06 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 06
+            </div>
+
+            <h3>
+                🎵 Music 06
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/0K4-DkwmoPk"
+                title="Music 06"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 07 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 07
+            </div>
+
+            <h3>
+                🎧 Music 07
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/pelFvYIh-NI"
+                title="Music 07"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 08 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 08
+            </div>
+
+            <h3>
+                🎶 Music 08
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/ZeaqjybbzzM"
+                title="Music 08"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 09 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 09
+            </div>
+
+            <h3>
+                🎵 Music 09
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/rVoWxbIDG74"
+                title="Music 09"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <!-- SONG 10 -->
+
+        <div class="music-home-card">
+
+            <div class="music-home-number">
+                SONG 10
+            </div>
+
+            <h3>
+                🎧 Music 10
+            </h3>
+
+            <iframe
+                src="https://www.youtube.com/embed/mMoNULbgqe8"
+                title="Music 10"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <a href="music.html" class="music-home-button">
+
+            🎵 Open Full Music Page →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     ABOUT
+================================================== -->
+
+<section id="about">
+
+    <div class="about">
+
+        <h2>
+            👨‍💻 About College Resource Hub
+        </h2>
+
+        <p>
+            College Resource Hub is a student-friendly
+            platform created to keep important college
+            study material organized in one place.
+        </p>
+
+        <br>
+
+        <p>
+            Here you can find subject-wise syllabus,
+            notes, important questions, previous year
+            questions and other useful learning resources.
+        </p>
+
+        <br>
+
+        <p>
+            The goal is simple — make studying easier,
+            faster and more organized for every student.
+        </p>
+
+        <br>
+
+        <p>
+            Created with ❤️ by
+            <strong>Adarsh Mishra</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <p>
+        © 2026
+        <strong>
+            College Resource Hub
+        </strong>
+    </p>
+
+    <p>
+        Created by
+        <strong>
+            Adarsh Mishra
+        </strong>
+    </p>
+
+</footer>
+
+
+<!-- =================================================
+     BACK TO TOP
+================================================== -->
+
+<button
+    id="backToTop"
+    title="Back to Top"
+    aria-label="Back to Top">
+
+    ↑
+
+</button>
+
+
+<!-- =================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+    /* ==========================================
+       HACKER INTRO
+    ========================================== */
+
+    const introScreen =
+        document.getElementById("introScreen");
+
+    const enterBtn =
+        document.getElementById("enterBtn");
+
+
+    if (enterBtn && introScreen) {
+
+        enterBtn.addEventListener(
+            "click",
+            function () {
+
+                introScreen.classList.add(
+                    "intro-hidden"
+                );
+
+                setTimeout(
+                    function () {
+
+                        introScreen.style.display =
+                            "none";
+
+                    },
+                    1100
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       THEME TOGGLE
+    ========================================== */
+
+    const themeToggle =
+        document.getElementById(
+            "themeToggle"
+        );
+
+
+    function updateThemeButton() {
+
+        if (!themeToggle) return;
+
+        if (
+            document.body.classList.contains(
+                "light-mode"
+            )
+        ) {
+
+            themeToggle.textContent = "☀️";
+
+        } else {
+
+            themeToggle.textContent = "🌙";
+
+        }
+
+    }
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "light-mode"
+                );
+
+
+                const theme =
+                    document.body.classList.contains(
+                        "light-mode"
+                    )
+                        ? "light"
+                        : "dark";
+
+
+                localStorage.setItem(
+                    "collegeHubTheme",
+                    theme
+                );
+
+
+                updateThemeButton();
+
+            }
+        );
+
+    }
+
+
+    const savedTheme =
+        localStorage.getItem(
+            "collegeHubTheme"
+        );
+
+
+    if (savedTheme === "light") {
+
+        document.body.classList.add(
+            "light-mode"
+        );
+
+    }
+
+
+    updateThemeButton();
+
+
+    /* ==========================================
+       SEARCH
+    ========================================== */
+
+    const searchInput =
+        document.getElementById(
+            "searchInput"
+        );
+
+    const searchBtn =
+        document.getElementById(
+            "searchBtn"
+        );
+
+
+    function searchResources() {
+
+        const query =
+            searchInput.value
+                .toLowerCase()
+                .trim();
+
+
+        const cards =
+            document.querySelectorAll(
+                ".subject-card"
+            );
+
+
+        cards.forEach(
+            function (card) {
+
+                const text =
+                    card.textContent
+                        .toLowerCase();
+
+
+                if (
+                    query === "" ||
+                    text.includes(query)
+                ) {
+
+                    card.style.display = "";
+
+                } else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    if (searchBtn) {
+
+        searchBtn.addEventListener(
+            "click",
+            searchResources
+        );
+
+    }
+
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "keyup",
+            function (event) {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    searchResources();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       RESOURCE SCROLL ANIMATION
+    ========================================== */
+
+    const resourceCards =
+        document.querySelectorAll(
+            ".resource-subject-card"
+        );
+
+
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const resourceObserver =
+            new IntersectionObserver(
+                function (
+                    entries,
+                    observer
+                ) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "resource-visible"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        resourceCards.forEach(
+            function (card) {
+
+                resourceObserver.observe(card);
+
+            }
+        );
+
+    } else {
+
+        resourceCards.forEach(
+            function (card) {
+
+                card.classList.add(
+                    "resource-visible"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       BACK TO TOP
+    ========================================== */
+
+    const backToTop =
+        document.getElementById(
+            "backToTop"
+        );
+
+
+    if (backToTop) {
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (
+                    window.scrollY > 400
+                ) {
+
+                    backToTop.classList.add(
+                        "show"
+                    );
+
+                } else {
+
+                    backToTop.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+    }
+
+</script>
+
+</body>
+
+</html>

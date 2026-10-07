@@ -1,0 +1,2544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Technology Complete Notes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================
+           WEB TECHNOLOGY PPT NOTES
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f3f6fb;
+            color: #1f2937;
+        }
+
+        .wt-page {
+            width: 94%;
+            max-width: 1150px;
+            margin: auto;
+            padding: 35px 0 60px;
+        }
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .wt-hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 430px;
+            padding: 80px 35px;
+            margin-bottom: 35px;
+            border-radius: 32px;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(135deg, #2563eb, #7c3aed, #9333ea);
+
+            box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
+        }
+
+        .wt-hero::before,
+        .wt-hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .wt-hero::before {
+            width: 320px;
+            height: 320px;
+            top: -130px;
+            right: -80px;
+        }
+
+        .wt-hero::after {
+            width: 250px;
+            height: 250px;
+            bottom: -120px;
+            left: -70px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .wt-hero h1 {
+            font-size: 52px;
+            margin: 10px 0;
+        }
+
+        .wt-hero p {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        /* =========================================
+           UNIT BANNER
+        ========================================= */
+
+        .unit-banner {
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+            margin: 45px 0 25px;
+            border-radius: 25px;
+            color: white;
+            background: linear-gradient(135deg, #111827, #312e81);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .unit-banner h2 {
+            margin: 0;
+            font-size: 36px;
+            color: white;
+        }
+
+        .unit-banner p {
+            margin-bottom: 0;
+            font-size: 17px;
+            color: #dbeafe;
+        }
+
+        .unit-number {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 7px 15px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.12);
+            font-size: 14px;
+        }
+
+        /* =========================================
+           SLIDES
+        ========================================= */
+
+        .slide {
+            background: white;
+            border-radius: 25px;
+            padding: 34px;
+            margin-bottom: 25px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .slide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.11);
+        }
+
+        .slide-no {
+            display: inline-block;
+            padding: 6px 13px;
+            border-radius: 20px;
+            background: #eef2ff;
+            color: #4f46e5;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .slide h2 {
+            font-size: 29px;
+            color: #111827;
+            margin: 12px 0 18px;
+        }
+
+        .slide h3 {
+            color: #2563eb;
+            margin-top: 25px;
+        }
+
+        .slide p {
+            color: #4b5563;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* =========================================
+           DEFINITION
+        ========================================= */
+
+        .definition {
+            padding: 20px;
+            border-radius: 17px;
+            background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+            border-left: 5px solid #2563eb;
+            margin: 20px 0;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        /* =========================================
+           POINTS
+        ========================================= */
+
+        .points {
+            padding-left: 22px;
+        }
+
+        .points li {
+            margin: 9px 0;
+            line-height: 1.65;
+            color: #374151;
+        }
+
+        /* =========================================
+           CARDS
+        ========================================= */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .mini-card {
+            padding: 20px;
+            border-radius: 18px;
+            background: #f8fafc;
+            border-left: 4px solid #6366f1;
+        }
+
+        .mini-card h4 {
+            margin: 0 0 8px;
+            color: #111827;
+        }
+
+        .mini-card p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* =========================================
+           EXAM BOX
+        ========================================= */
+
+        .exam {
+            margin-top: 22px;
+            padding: 18px 20px;
+            border-radius: 15px;
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+        }
+
+        .exam strong {
+            color: #1d4ed8;
+        }
+
+        /* =========================================
+           FLOW
+        ========================================= */
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .flow-box {
+            padding: 13px 18px;
+            border-radius: 13px;
+            background: #eef2ff;
+            color: #3730a3;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .arrow {
+            font-size: 25px;
+            color: #2563eb;
+        }
+
+        /* =========================================
+           CODE
+        ========================================= */
+
+        pre {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 22px;
+            border-radius: 16px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+        }
+
+        /* =========================================
+           TABLE
+        ========================================= */
+
+        .table-wrap {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 13px;
+            border: 1px solid #dbe2ea;
+            text-align: left;
+        }
+
+        th {
+            background: #eef2ff;
+            color: #3730a3;
+        }
+
+        /* =========================================
+           REVISION
+        ========================================= */
+
+        .revision {
+            padding: 35px;
+            margin-top: 35px;
+            border-radius: 25px;
+            color: white;
+            background: linear-gradient(135deg, #111827, #1e293b);
+        }
+
+        .revision h2 {
+            color: white;
+        }
+
+        .revision li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .wt-page {
+                width: 94%;
+            }
+
+            .wt-hero {
+                padding: 55px 20px;
+                min-height: 350px;
+            }
+
+            .wt-hero h1 {
+                font-size: 36px;
+            }
+
+            .wt-hero p {
+                font-size: 17px;
+            }
+
+            .unit-banner {
+                padding: 28px 22px;
+            }
+
+            .unit-banner h2 {
+                font-size: 28px;
+            }
+
+            .slide {
+                padding: 23px 18px;
+            }
+
+            .slide h2 {
+                font-size: 24px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+    <a href="web.html">Web Technology</a>
+    <a href="math.html">Mathematics</a>
+    <a href="physics.html">Physics</a>
+    <a href="c.html">C Programming</a>
+    <a href="ai.html">AI & ML</a>
+
+</nav>
+
+
+<main class="wt-page">
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="wt-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            🎓 B.Tech CSE • Complete Notes
+        </div>
+
+        <h1>🌐 Web Technology</h1>
+
+        <p>
+            Complete Detailed Notes
+        </p>
+
+        <p>
+            Unit 1 • Unit 2 • Unit 3 • Unit 4
+        </p>
+
+        <p>
+            📚 Internet • HTML • HTML5 • CSS
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     UNIT 1
+===================================================== -->
+
+<section class="unit-banner">
+
+    <span class="unit-number">UNIT 1 • 6 HOURS</span>
+
+    <h2>🌐 Introduction to Internet & WWW</h2>
+
+    <p>
+        Internet, World Wide Web, browsers, servers, HTTP,
+        searching and web-casting.
+    </p>
+
+</section>
+
+
+<!-- 1 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 01</span>
+
+    <h2>🌍 Introduction to Internet</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            The Internet is a worldwide network of interconnected
+            computers and devices that communicate and exchange
+            information using standard communication protocols.
+        </p>
+
+    </div>
+
+    <h3>🔑 Features</h3>
+
+    <ul class="points">
+
+        <li>It is a global network.</li>
+        <li>It connects millions of devices.</li>
+        <li>It allows information sharing.</li>
+        <li>It supports communication and online services.</li>
+        <li>TCP/IP is the main protocol suite.</li>
+
+    </ul>
+
+    <h3>💡 Applications</h3>
+
+    <div class="card-grid">
+
+        <div class="mini-card">
+            <h4>📧 Email</h4>
+            <p>Electronic communication through the Internet.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🎓 Education</h4>
+            <p>Online classes, courses and digital libraries.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🛒 E-Commerce</h4>
+            <p>Online shopping and digital transactions.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🎮 Entertainment</h4>
+            <p>Streaming, gaming, music and videos.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 2 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 02</span>
+
+    <h2>🌐 World Wide Web</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            The World Wide Web is a system of interconnected
+            web pages and resources that are accessed through
+            the Internet using web browsers.
+        </p>
+
+    </div>
+
+    <div class="compare">
+
+        <div class="mini-card">
+
+            <h4>🌍 Internet</h4>
+
+            <ul class="points">
+                <li>Global network.</li>
+                <li>Infrastructure for communication.</li>
+                <li>Supports many services.</li>
+            </ul>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>🌐 WWW</h4>
+
+            <ul class="points">
+                <li>Service running over Internet.</li>
+                <li>Uses web pages.</li>
+                <li>Accessed through browsers.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="exam">
+
+        <strong>📝 Exam Point:</strong>
+
+        <p>
+            Internet is the network, whereas WWW is a service
+            that operates over the Internet.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- 3 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 03</span>
+
+    <h2>🕰️ Evolution and History of WWW</h2>
+
+    <p>
+        The World Wide Web was proposed to make information
+        sharing easier through interconnected documents.
+    </p>
+
+    <div class="flow">
+
+        <div class="flow-box">1989<br>Web Proposal</div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">1990<br>Development</div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">1991<br>First Website</div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">Modern Web</div>
+
+    </div>
+
+    <h3>👨‍💻 Tim Berners-Lee</h3>
+
+    <p>
+        Tim Berners-Lee proposed the World Wide Web in 1989
+        while working at CERN. He developed important Web
+        technologies including HTML, HTTP and URL.
+    </p>
+
+</section>
+
+
+<!-- 4 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 04</span>
+
+    <h2>🚀 Application Areas of Internet</h2>
+
+    <div class="card-grid">
+
+        <div class="mini-card">
+            <h4>🎓 Education</h4>
+            <p>Online learning, examinations and digital libraries.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🏦 Banking</h4>
+            <p>Online banking, payments and fund transfers.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🏥 Healthcare</h4>
+            <p>Telemedicine and online appointments.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🛍️ Business</h4>
+            <p>E-commerce and online marketing.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>💬 Communication</h4>
+            <p>Email, messaging and video calls.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🎬 Entertainment</h4>
+            <p>Movies, music, gaming and streaming.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 5 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 05</span>
+
+    <h2>💻 Requirements for Internet & WWW</h2>
+
+    <div class="card-grid">
+
+        <div class="mini-card">
+            <h4>📱 Device</h4>
+            <p>Computer, laptop, tablet or smartphone.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🌐 Internet Connection</h4>
+            <p>Wi-Fi, broadband or mobile data.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🏢 ISP</h4>
+            <p>Internet Service Provider provides Internet access.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>📡 Router</h4>
+            <p>Connects devices to a network.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🌎 Browser</h4>
+            <p>Software used to access websites.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 6 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 06</span>
+
+    <h2>🌎 Web Browsers</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            A web browser is software used to access, retrieve
+            and display web pages from the Internet.
+        </p>
+
+    </div>
+
+    <h3>Examples</h3>
+
+    <ul class="points">
+
+        <li>Google Chrome</li>
+        <li>Microsoft Edge</li>
+        <li>Mozilla Firefox</li>
+        <li>Safari</li>
+
+    </ul>
+
+    <h3>Functions</h3>
+
+    <ul class="points">
+
+        <li>Sends requests to web servers.</li>
+        <li>Displays web pages.</li>
+        <li>Interprets HTML and CSS.</li>
+        <li>Supports navigation.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 7 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 07</span>
+
+    <h2>🖥️ Web Servers</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            A web server is a computer system or software that
+            stores and delivers web resources to clients.
+        </p>
+
+    </div>
+
+    <div class="flow">
+
+        <div class="flow-box">👤 User</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">🌐 Browser</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">🖥️ Server</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">📄 Web Page</div>
+
+    </div>
+
+    <h3>Examples</h3>
+
+    <ul class="points">
+
+        <li>Apache HTTP Server</li>
+        <li>NGINX</li>
+        <li>Microsoft IIS</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 08</span>
+
+    <h2>🔗 Hypertext Transfer Protocol (HTTP)</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            HTTP is a protocol used for communication between
+            a web browser and a web server.
+        </p>
+
+    </div>
+
+    <div class="flow">
+
+        <div class="flow-box">Browser</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">HTTP Request</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Server</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">HTTP Response</div>
+
+    </div>
+
+    <h3>Common Methods</h3>
+
+    <ul class="points">
+
+        <li><strong>GET:</strong> Requests data from a server.</li>
+        <li><strong>POST:</strong> Sends data to a server.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 09</span>
+
+    <h2>🔍 Searching Techniques</h2>
+
+    <p>
+        Searching techniques help users find required information
+        efficiently on the Internet.
+    </p>
+
+    <ul class="points">
+
+        <li>Use specific keywords.</li>
+        <li>Use quotation marks for exact phrases.</li>
+        <li>Use relevant keywords together.</li>
+        <li>Use search filters.</li>
+        <li>Use advanced search options.</li>
+
+    </ul>
+
+    <pre><code>"HTML5 features"</code></pre>
+
+</section>
+
+
+<!-- 10 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 1 • TOPIC 10</span>
+
+    <h2>📡 Web-Casting Techniques</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            Webcasting is the delivery of audio, video or multimedia
+            content through the Internet.
+        </p>
+
+    </div>
+
+    <div class="card-grid">
+
+        <div class="mini-card">
+            <h4>🎓 Online Lecture</h4>
+            <p>Live educational content through Internet.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🎤 Live Event</h4>
+            <p>Online broadcasting of events.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>📺 Streaming</h4>
+            <p>Delivery of video and audio online.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>💻 Webinar</h4>
+            <p>Online seminar or conference.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     UNIT 2
+===================================================== -->
+
+<section class="unit-banner">
+
+    <span class="unit-number">UNIT 2 • 6 HOURS</span>
+
+    <h2>💻 Basics of HTML</h2>
+
+    <p>
+        Website development, HTML structure, tags, links,
+        lists, images, layouts and frames.
+    </p>
+
+</section>
+
+
+<!-- 1 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 01</span>
+
+    <h2>🛠️ Steps for Developing Website</h2>
+
+    <div class="flow">
+
+        <div class="flow-box">Planning</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Design</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Development</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Testing</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Publishing</div>
+
+    </div>
+
+    <ul class="points">
+
+        <li><strong>Planning:</strong> Decide purpose and content.</li>
+        <li><strong>Design:</strong> Create page layout and appearance.</li>
+        <li><strong>Development:</strong> Write HTML, CSS and scripts.</li>
+        <li><strong>Testing:</strong> Check links, layout and functionality.</li>
+        <li><strong>Publishing:</strong> Make website available online.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 2 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 02</span>
+
+    <h2>📢 Web Publishing</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            Web publishing is the process of preparing and making
+            website content available to users on the Internet.
+        </p>
+
+    </div>
+
+    <h3>Basic Process</h3>
+
+    <ul class="points">
+
+        <li>Create web pages.</li>
+        <li>Test the website.</li>
+        <li>Obtain hosting space.</li>
+        <li>Upload website files.</li>
+        <li>Connect domain if required.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 3 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 03</span>
+
+    <h2>🖥️ Web Hosting</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            Web hosting is a service that provides server space
+            where website files are stored and made accessible
+            through the Internet.
+        </p>
+
+    </div>
+
+    <div class="flow">
+
+        <div class="flow-box">Website Files</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Hosting Server</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Internet</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">User</div>
+
+    </div>
+
+</section>
+
+
+<!-- 4 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 04</span>
+
+    <h2>⚖️ Static and Dynamic Website</h2>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <tr>
+                <th>Static Website</th>
+                <th>Dynamic Website</th>
+            </tr>
+
+            <tr>
+                <td>Content usually remains fixed.</td>
+                <td>Content can change according to data/user.</td>
+            </tr>
+
+            <tr>
+                <td>Mostly HTML and CSS.</td>
+                <td>Can use server-side programming and databases.</td>
+            </tr>
+
+            <tr>
+                <td>Simple to develop.</td>
+                <td>More complex.</td>
+            </tr>
+
+            <tr>
+                <td>Example: Simple portfolio.</td>
+                <td>Example: Online shopping website.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- 5 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 05</span>
+
+    <h2>📄 Structure of Webpage</h2>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    Content of webpage
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+    <ul class="points">
+
+        <li><strong>DOCTYPE:</strong> Defines document type.</li>
+        <li><strong>html:</strong> Root element.</li>
+        <li><strong>head:</strong> Contains metadata and title.</li>
+        <li><strong>body:</strong> Contains visible content.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 6 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 06</span>
+
+    <h2>✨ HTML Features</h2>
+
+    <ul class="points">
+
+        <li>Easy to learn.</li>
+        <li>Used to structure web pages.</li>
+        <li>Supports text, images, audio and video.</li>
+        <li>Supports hyperlinks.</li>
+        <li>Works with CSS and JavaScript.</li>
+        <li>Platform independent.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 7 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 07</span>
+
+    <h2>&lt;/&gt; HTML Tags</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            HTML tags are special keywords enclosed within angle
+            brackets that define the structure and meaning of content.
+        </p>
+
+    </div>
+
+    <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;h1&gt;Heading&lt;/h1&gt;
+
+&lt;b&gt;Bold Text&lt;/b&gt;</code></pre>
+
+    <h3>Types</h3>
+
+    <ul class="points">
+
+        <li>Paired/Container Tags</li>
+        <li>Empty/Void Tags</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 08</span>
+
+    <h2>📌 Header</h2>
+
+    <p>
+        The heading tags are used to create headings in HTML.
+        They range from h1 to h6.
+    </p>
+
+    <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Sub Heading&lt;/h2&gt;
+&lt;h3&gt;Small Heading&lt;/h3&gt;</code></pre>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 09</span>
+
+    <h2>🏷️ Title</h2>
+
+    <p>
+        The title element defines the title of a webpage.
+        It is written inside the head section.
+    </p>
+
+    <pre><code>&lt;head&gt;
+
+    &lt;title&gt;My First Website&lt;/title&gt;
+
+&lt;/head&gt;</code></pre>
+
+</section>
+
+
+<!-- 10 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 10</span>
+
+    <h2>📄 Body</h2>
+
+    <p>
+        The body element contains the visible content of a webpage.
+    </p>
+
+    <pre><code>&lt;body&gt;
+
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+
+    &lt;p&gt;This is my website.&lt;/p&gt;
+
+&lt;/body&gt;</code></pre>
+
+</section>
+
+
+<!-- 11 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 11</span>
+
+    <h2>📝 Paragraph</h2>
+
+    <p>
+        The paragraph tag is used to create a paragraph.
+    </p>
+
+    <pre><code>&lt;p&gt;
+    HTML is used to structure web pages.
+&lt;/p&gt;</code></pre>
+
+</section>
+
+
+<!-- 12 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 12</span>
+
+    <h2>1️⃣ Ordered List</h2>
+
+    <p>
+        An ordered list displays items in a numbered sequence.
+    </p>
+
+    <pre><code>&lt;ol&gt;
+
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+
+&lt;/ol&gt;</code></pre>
+
+</section>
+
+
+<!-- 13 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 13</span>
+
+    <h2>🔹 Unordered List</h2>
+
+    <p>
+        An unordered list displays items using bullet points.
+    </p>
+
+    <pre><code>&lt;ul&gt;
+
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+
+&lt;/ul&gt;</code></pre>
+
+</section>
+
+
+<!-- 14 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 14</span>
+
+    <h2>🔗 Creating Links</h2>
+
+    <div class="definition">
+
+        <strong>Anchor Tag:</strong>
+
+        <p>
+            The anchor tag is used to create hyperlinks in HTML.
+        </p>
+
+    </div>
+
+    <pre><code>&lt;a href="https://example.com"&gt;
+    Visit Website
+&lt;/a&gt;</code></pre>
+
+    <ul class="points">
+
+        <li><strong>a</strong> = anchor tag.</li>
+        <li><strong>href</strong> = hyperlink reference.</li>
+        <li>The text between the tags becomes clickable.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 15 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 15</span>
+
+    <h2>🎨 Text Styles</h2>
+
+    <pre><code>&lt;b&gt;Bold&lt;/b&gt;
+
+&lt;i&gt;Italic&lt;/i&gt;
+
+&lt;u&gt;Underline&lt;/u&gt;
+
+&lt;strong&gt;Important&lt;/strong&gt;
+
+&lt;em&gt;Emphasized&lt;/em&gt;</code></pre>
+
+</section>
+
+
+<!-- 16 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 16</span>
+
+    <h2>📐 Text Structuring</h2>
+
+    <p>
+        HTML provides different elements to organize content
+        into headings, paragraphs, lists and sections.
+    </p>
+
+    <ul class="points">
+
+        <li>Headings organize topics.</li>
+        <li>Paragraphs organize text.</li>
+        <li>Lists organize multiple items.</li>
+        <li>Horizontal rule separates content.</li>
+        <li>Line break moves content to a new line.</li>
+
+    </ul>
+
+    <pre><code>&lt;h1&gt;Heading&lt;/h1&gt;
+
+&lt;p&gt;Paragraph&lt;/p&gt;
+
+&lt;hr&gt;
+
+Line 1&lt;br&gt;
+Line 2</code></pre>
+
+</section>
+
+
+<!-- 17 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 17</span>
+
+    <h2>🌈 Text Colors and Background</h2>
+
+    <pre><code>&lt;body bgcolor="lightblue"&gt;
+
+    &lt;font color="blue"&gt;
+        Welcome
+    &lt;/font&gt;
+
+&lt;/body&gt;</code></pre>
+
+    <p>
+        Modern websites generally use CSS for colors and backgrounds.
+    </p>
+
+</section>
+
+
+<!-- 18 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 18</span>
+
+    <h2>🖌️ Formatting Text</h2>
+
+    <pre><code>&lt;b&gt;Bold&lt;/b&gt;
+&lt;i&gt;Italic&lt;/i&gt;
+&lt;u&gt;Underline&lt;/u&gt;
+&lt;sup&gt;2&lt;/sup&gt;
+&lt;sub&gt;2&lt;/sub&gt;</code></pre>
+
+    <p>
+        Text formatting improves readability and highlights
+        important information.
+    </p>
+
+</section>
+
+
+<!-- 19 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 19</span>
+
+    <h2>📐 Page Layouts</h2>
+
+    <p>
+        Page layout defines how different elements are arranged
+        on a webpage.
+    </p>
+
+    <div class="flow">
+
+        <div class="flow-box">Header</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Navigation</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Main Content</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Footer</div>
+
+    </div>
+
+</section>
+
+
+<!-- 20 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 20</span>
+
+    <h2>🖼️ Images and Attributes</h2>
+
+    <div class="definition">
+
+        <strong>Image Tag:</strong>
+
+        <p>
+            The img element is used to display an image on a webpage.
+        </p>
+
+    </div>
+
+    <pre><code>&lt;img
+    src="student.jpg"
+    alt="Student Image"
+    width="200"
+    height="200"&gt;</code></pre>
+
+    <h3>Important Attributes</h3>
+
+    <ul class="points">
+
+        <li><strong>src:</strong> Specifies image location.</li>
+        <li><strong>alt:</strong> Alternative text.</li>
+        <li><strong>width:</strong> Image width.</li>
+        <li><strong>height:</strong> Image height.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 21 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 21</span>
+
+    <h2>🗺️ Image Mapping</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            Image mapping allows different areas of an image
+            to act as separate clickable links.
+        </p>
+
+    </div>
+
+    <pre><code>&lt;img src="india-map.jpg"
+     usemap="#india"
+     width="600"&gt;
+
+&lt;map name="india"&gt;
+
+    &lt;area shape="rect"
+          coords="182,211,229,221"
+          href="haryana.html"&gt;
+
+&lt;/map&gt;</code></pre>
+
+    <ul class="points">
+
+        <li><strong>usemap:</strong> Connects image to map.</li>
+        <li><strong>map:</strong> Defines image map.</li>
+        <li><strong>area:</strong> Defines clickable region.</li>
+        <li><strong>coords:</strong> Defines region coordinates.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 22 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 2 • TOPIC 22</span>
+
+    <h2>🪟 Frames</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            Frames were used in older HTML to divide the browser
+            window into multiple sections, where different documents
+            could be displayed.
+        </p>
+
+    </div>
+
+    <p>
+        Frames and the traditional frame-related elements are
+        obsolete in modern HTML. Modern layouts use CSS and
+        elements such as iframe when embedding another document
+        is required.
+    </p>
+
+    <pre><code>&lt;iframe
+    src="page.html"
+    width="500"
+    height="300"&gt;
+&lt;/iframe&gt;</code></pre>
+
+</section>
+
+
+<!-- =====================================================
+     UNIT 3
+===================================================== -->
+
+<section class="unit-banner">
+
+    <span class="unit-number">UNIT 3 • 6 HOURS</span>
+
+    <h2>🚀 HTML5</h2>
+
+    <p>
+        Modern HTML, semantic elements, multimedia, canvas,
+        storage, forms and graphs.
+    </p>
+
+</section>
+
+
+<!-- 1 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 01</span>
+
+    <h2>🚀 Introduction to HTML5</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            HTML5 is a modern version of HTML that provides
+            improved semantic structure, multimedia support,
+            graphics and modern web application features.
+        </p>
+
+    </div>
+
+    <h3>Major Features</h3>
+
+    <ul class="points">
+
+        <li>Semantic elements.</li>
+        <li>Audio and video support.</li>
+        <li>Canvas graphics.</li>
+        <li>Web storage.</li>
+        <li>Improved forms.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 2 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 02</span>
+
+    <h2>✨ Advantages of HTML5</h2>
+
+    <div class="card-grid">
+
+        <div class="mini-card">
+            <h4>🎵 Multimedia</h4>
+            <p>Audio and video can be embedded directly.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>📱 Mobile Friendly</h4>
+            <p>Supports modern responsive web development.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>🎨 Graphics</h4>
+            <p>Canvas supports drawing and graphics.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>💾 Storage</h4>
+            <p>Provides browser-based local storage features.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 3 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 03</span>
+
+    <h2>⚠️ Limitations of HTML4</h2>
+
+    <ul class="points">
+
+        <li>Limited native multimedia support.</li>
+        <li>Required external plugins for some media.</li>
+        <li>Limited semantic elements.</li>
+        <li>No built-in canvas element.</li>
+        <li>Less support for modern web application features.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 4 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 04</span>
+
+    <h2>🧩 Header, Navigation, Articles & Footer</h2>
+
+    <p>
+        HTML5 introduced semantic elements that describe
+        the purpose of different parts of a webpage.
+    </p>
+
+    <pre><code>&lt;header&gt;
+    Website Header
+&lt;/header&gt;
+
+&lt;nav&gt;
+    Home | About | Contact
+&lt;/nav&gt;
+
+&lt;article&gt;
+    Article Content
+&lt;/article&gt;
+
+&lt;footer&gt;
+    Copyright
+&lt;/footer&gt;</code></pre>
+
+</section>
+
+
+<!-- 5 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 05</span>
+
+    <h2>🧱 HTML5 Elements</h2>
+
+    <div class="card-grid">
+
+        <div class="mini-card">
+            <h4>&lt;header&gt;</h4>
+            <p>Defines introductory/header content.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>&lt;nav&gt;</h4>
+            <p>Defines navigation links.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>&lt;section&gt;</h4>
+            <p>Defines a section of content.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>&lt;article&gt;</h4>
+            <p>Defines independent content.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>&lt;footer&gt;</h4>
+            <p>Defines footer content.</p>
+        </div>
+
+        <div class="mini-card">
+            <h4>&lt;main&gt;</h4>
+            <p>Defines the main content.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 6 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 06</span>
+
+    <h2>🎬 HTML5 Multimedia</h2>
+
+    <p>
+        HTML5 provides native support for multimedia content
+        such as audio and video.
+    </p>
+
+    <ul class="points">
+
+        <li>Audio can be played using the audio element.</li>
+        <li>Video can be played using the video element.</li>
+        <li>Controls can be provided to the user.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 7 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 07</span>
+
+    <h2>🎵 Audio</h2>
+
+    <pre><code>&lt;audio controls&gt;
+
+    &lt;source src="music.mp3"
+            type="audio/mpeg"&gt;
+
+    Your browser does not support audio.
+
+&lt;/audio&gt;</code></pre>
+
+    <p>
+        The controls attribute displays playback controls.
+    </p>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 08</span>
+
+    <h2>🎥 Video</h2>
+
+    <pre><code>&lt;video width="500"
+       controls&gt;
+
+    &lt;source src="video.mp4"
+            type="video/mp4"&gt;
+
+&lt;/video&gt;</code></pre>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 09</span>
+
+    <h2>🎨 Canvas</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            Canvas is an HTML5 element used with JavaScript
+            to draw graphics dynamically in a webpage.
+        </p>
+
+    </div>
+
+    <pre><code>&lt;canvas id="myCanvas"
+        width="400"
+        height="200"&gt;
+&lt;/canvas&gt;</code></pre>
+
+    <p>
+        JavaScript can be used to draw lines, shapes,
+        text and other graphics on the canvas.
+    </p>
+
+</section>
+
+
+<!-- 10 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 10</span>
+
+    <h2>💾 Web Storage</h2>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <tr>
+                <th>Storage</th>
+                <th>Description</th>
+            </tr>
+
+            <tr>
+                <td>localStorage</td>
+                <td>Stores data in the browser with persistence.</td>
+            </tr>
+
+            <tr>
+                <td>sessionStorage</td>
+                <td>Stores data for the current browser session.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <pre><code>localStorage.setItem("name", "Nitin");
+
+let name = localStorage.getItem("name");</code></pre>
+
+</section>
+
+
+<!-- 11 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 11</span>
+
+    <h2>📝 HTML5 Forms</h2>
+
+    <p>
+        HTML5 forms are used to collect information from users.
+        HTML5 introduced several useful input types.
+    </p>
+
+    <pre><code>&lt;form&gt;
+
+    &lt;label&gt;Name:&lt;/label&gt;
+    &lt;input type="text"&gt;
+
+    &lt;label&gt;Email:&lt;/label&gt;
+    &lt;input type="email"&gt;
+
+    &lt;label&gt;Date:&lt;/label&gt;
+    &lt;input type="date"&gt;
+
+    &lt;input type="submit"
+           value="Submit"&gt;
+
+&lt;/form&gt;</code></pre>
+
+</section>
+
+
+<!-- 12 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 3 • TOPIC 12</span>
+
+    <h2>📊 Creating Graphs and Charts</h2>
+
+    <p>
+        Graphs and charts can be created on web pages using
+        technologies such as HTML5 Canvas and JavaScript.
+    </p>
+
+    <div class="flow">
+
+        <div class="flow-box">Data</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">JavaScript</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Canvas</div>
+        <div class="arrow">→</div>
+        <div class="flow-box">Chart</div>
+
+    </div>
+
+    <div class="exam">
+
+        <strong>📝 Exam Point:</strong>
+
+        <p>
+            HTML5 Canvas combined with JavaScript can be used
+            to create graphical representations such as charts.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     UNIT 4
+===================================================== -->
+
+<section class="unit-banner">
+
+    <span class="unit-number">UNIT 4 • 6 HOURS</span>
+
+    <h2>🎨 CSS — Cascading Style Sheets</h2>
+
+    <p>
+        Styling, layouts, colors, fonts, boxes, columns,
+        positioning, floating, lists and tables.
+    </p>
+
+</section>
+
+
+<!-- 1 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 01</span>
+
+    <h2>🎨 CSS and Style Sheets</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            CSS stands for Cascading Style Sheets. It is used
+            to control the presentation, appearance and layout
+            of HTML documents.
+        </p>
+
+    </div>
+
+    <h3>Benefits</h3>
+
+    <ul class="points">
+
+        <li>Controls colors and fonts.</li>
+        <li>Controls spacing and layout.</li>
+        <li>Creates responsive designs.</li>
+        <li>Separates content from presentation.</li>
+        <li>Allows reuse of styles.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 2 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 02</span>
+
+    <h2>📝 Text Formatting using CSS</h2>
+
+    <pre><code>p {
+    color: blue;
+    font-size: 18px;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+}</code></pre>
+
+</section>
+
+
+<!-- 3 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 03</span>
+
+    <h2>📌 Embedded CSS</h2>
+
+    <p>
+        Embedded CSS is written inside the style element
+        within the head section of an HTML document.
+    </p>
+
+    <pre><code>&lt;style&gt;
+
+p {
+    color: blue;
+    font-size: 18px;
+}
+
+&lt;/style&gt;</code></pre>
+
+</section>
+
+
+<!-- 4 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 04</span>
+
+    <h2>📍 Inline CSS</h2>
+
+    <p>
+        Inline CSS is written directly inside the style attribute
+        of an HTML element.
+    </p>
+
+    <pre><code>&lt;p style="color: blue;"&gt;
+    Hello World
+&lt;/p&gt;</code></pre>
+
+</section>
+
+
+<!-- 5 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 05</span>
+
+    <h2>📁 External CSS</h2>
+
+    <p>
+        External CSS is stored in a separate .css file and
+        connected to the HTML document.
+    </p>
+
+    <pre><code>&lt;link rel="stylesheet"
+      href="style.css"&gt;</code></pre>
+
+    <div class="exam">
+
+        <strong>⭐ Important:</strong>
+
+        <p>
+            External CSS is useful when the same styling needs
+            to be applied to multiple webpages.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- 6 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 06</span>
+
+    <h2>🌈 Background and Color Gradients</h2>
+
+    <pre><code>body {
+    background: linear-gradient(
+        135deg,
+        blue,
+        purple
+    );
+}</code></pre>
+
+    <p>
+        A gradient creates a smooth transition between two or
+        more colors.
+    </p>
+
+</section>
+
+
+<!-- 7 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 07</span>
+
+    <h2>🔤 Fonts and Text Styles</h2>
+
+    <pre><code>p {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1.6;
+}</code></pre>
+
+    <ul class="points">
+
+        <li>font-family</li>
+        <li>font-size</li>
+        <li>font-weight</li>
+        <li>font-style</li>
+        <li>line-height</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 08</span>
+
+    <h2>📦 Creating Boxes using CSS</h2>
+
+    <pre><code>.box {
+
+    width: 300px;
+    height: 150px;
+
+    padding: 20px;
+    margin: 20px;
+
+    border: 2px solid black;
+
+}</code></pre>
+
+    <p>
+        The CSS box model consists of content, padding,
+        border and margin.
+    </p>
+
+    <div class="flow">
+
+        <div class="flow-box">
+            Content
+        </div>
+
+        <div class="arrow">+</div>
+
+        <div class="flow-box">
+            Padding
+        </div>
+
+        <div class="arrow">+</div>
+
+        <div class="flow-box">
+            Border
+        </div>
+
+        <div class="arrow">+</div>
+
+        <div class="flow-box">
+            Margin
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 09</span>
+
+    <h2>📰 Creating Columns using CSS</h2>
+
+    <pre><code>.container {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap: 20px;
+
+}</code></pre>
+
+    <p>
+        CSS Grid and Flexbox are commonly used to create
+        modern multi-column layouts.
+    </p>
+
+</section>
+
+
+<!-- 10 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 10</span>
+
+    <h2>👁️ Displaying an Element</h2>
+
+    <pre><code>.box {
+    display: block;
+}
+
+.menu {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}</code></pre>
+
+    <h3>Common Values</h3>
+
+    <ul class="points">
+
+        <li>block</li>
+        <li>inline</li>
+        <li>inline-block</li>
+        <li>flex</li>
+        <li>grid</li>
+        <li>none</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 11 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 11</span>
+
+    <h2>📍 Positioning an Element</h2>
+
+    <pre><code>.box {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}</code></pre>
+
+    <h3>Position Values</h3>
+
+    <ul class="points">
+
+        <li>static</li>
+        <li>relative</li>
+        <li>absolute</li>
+        <li>fixed</li>
+        <li>sticky</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 12 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 12</span>
+
+    <h2>↔️ Floating an Element</h2>
+
+    <div class="definition">
+
+        <strong>Definition:</strong>
+
+        <p>
+            The float property moves an element toward the
+            left or right side of its container and allows
+            surrounding content to flow around it.
+        </p>
+
+    </div>
+
+    <pre><code>img {
+    float: left;
+    margin-right: 20px;
+}</code></pre>
+
+</section>
+
+
+<!-- 13 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 13</span>
+
+    <h2>📋 List Styles</h2>
+
+    <pre><code>ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: upper-roman;
+}</code></pre>
+
+    <h3>Common List Styles</h3>
+
+    <ul class="points">
+
+        <li>disc</li>
+        <li>circle</li>
+        <li>square</li>
+        <li>decimal</li>
+        <li>upper-roman</li>
+        <li>lower-alpha</li>
+
+    </ul>
+
+</section>
+
+
+<!-- 14 -->
+
+<section class="slide">
+
+    <span class="slide-no">UNIT 4 • TOPIC 14</span>
+
+    <h2>📊 Table Layouts</h2>
+
+    <pre><code>table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}</code></pre>
+
+    <p>
+        CSS can be used to control table width, borders,
+        spacing, alignment and appearance.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     COMPLETE QUICK REVISION
+===================================================== -->
+
+<section class="revision">
+
+    <h2>⚡ Complete Web Technology Quick Revision</h2>
+
+    <h3>🌐 Unit 1</h3>
+
+    <ul>
+
+        <li>Internet = global network of networks.</li>
+        <li>WWW = service that operates over Internet.</li>
+        <li>Browser = software used to access websites.</li>
+        <li>Server = provides requested web resources.</li>
+        <li>HTTP = communication protocol for Web.</li>
+        <li>Webcasting = delivery of multimedia over Internet.</li>
+
+    </ul>
+
+
+    <h3>💻 Unit 2</h3>
+
+    <ul>
+
+        <li>HTML = HyperText Markup Language.</li>
+        <li>HTML structures web pages.</li>
+        <li>Anchor tag creates links.</li>
+        <li>ol creates ordered lists.</li>
+        <li>ul creates unordered lists.</li>
+        <li>img displays images.</li>
+        <li>Image maps create clickable image regions.</li>
+
+    </ul>
+
+
+    <h3>🚀 Unit 3</h3>
+
+    <ul>
+
+        <li>HTML5 is the modern version of HTML.</li>
+        <li>Supports semantic elements.</li>
+        <li>Supports audio and video.</li>
+        <li>Canvas provides drawing capabilities.</li>
+        <li>Web Storage includes localStorage and sessionStorage.</li>
+        <li>HTML5 provides improved form controls.</li>
+
+    </ul>
+
+
+    <h3>🎨 Unit 4</h3>
+
+    <ul>
+
+        <li>CSS controls webpage presentation.</li>
+        <li>Inline CSS is written inside style attribute.</li>
+        <li>Embedded CSS is written inside style element.</li>
+        <li>External CSS is stored in a separate file.</li>
+        <li>CSS controls fonts, colors and layouts.</li>
+        <li>CSS supports Grid and Flexbox layouts.</li>
+        <li>CSS controls positioning and floating.</li>
+
+    </ul>
+
+
+    <h2>🎯 Most Important Exam Topics</h2>
+
+    <ul>
+
+        <li>Internet vs WWW</li>
+        <li>History of WWW</li>
+        <li>Browser and Web Server</li>
+        <li>HTTP</li>
+        <li>Static vs Dynamic Website</li>
+        <li>HTML Structure</li>
+        <li>HTML Tags and Attributes</li>
+        <li>Anchor Tag</li>
+        <li>Lists</li>
+        <li>Images and Image Mapping</li>
+        <li>HTML5 Semantic Elements</li>
+        <li>Audio and Video</li>
+        <li>Canvas and Web Storage</li>
+        <li>HTML5 Forms</li>
+        <li>CSS Types</li>
+        <li>CSS Box Model</li>
+        <li>CSS Positioning</li>
+        <li>CSS Display and Float</li>
+
+    </ul>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <p>🌐 Web Technology Complete Notes</p>
+
+    <p>B.Tech CSE • College Resource Hub</p>
+
+</footer>
+
+
+</body>
+
+</html>

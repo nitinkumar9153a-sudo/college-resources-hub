@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>C Programming Unit 1 | College Resource Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #06111f, #0b1d33, #12395a);
+        color: white;
+        min-height: 100vh;
+    }
+
+    nav {
+        background: rgba(0, 0, 0, 0.55);
+        padding: 18px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 13px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #00c6ff;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 1100px;
+        margin: auto;
+        padding: 45px 0 70px;
+    }
+
+    /* HERO */
+
+    .hero {
+        text-align: center;
+        padding: 55px 25px;
+        margin-bottom: 35px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-icon {
+        font-size: 70px;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        color: #00c6ff;
+        font-size: 43px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        color: #d4e3ef;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    /* PPT SLIDES */
+
+    .slide {
+        margin: 30px 0;
+        padding: 35px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.075);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+
+    .slide:hover {
+        border-color: rgba(0, 198, 255, 0.55);
+        transform: translateY(-3px);
+    }
+
+    .slide-number {
+        display: inline-block;
+        background: #00c6ff;
+        color: #00131f;
+        padding: 7px 14px;
+        border-radius: 20px;
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+
+    .slide h2 {
+        font-size: 30px;
+        color: #00c6ff;
+        margin-bottom: 18px;
+    }
+
+    .slide h3 {
+        font-size: 22px;
+        color: #ffffff;
+        margin: 25px 0 12px;
+    }
+
+    .slide p {
+        color: #d5e2ec;
+        line-height: 1.8;
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .slide ul,
+    .slide ol {
+        margin: 15px 0 15px 25px;
+        color: #d9e7f1;
+        line-height: 1.9;
+    }
+
+    .slide li {
+        margin-bottom: 4px;
+    }
+
+    /* HIGHLIGHT */
+
+    .highlight {
+        padding: 18px 20px;
+        margin: 20px 0;
+        border-left: 4px solid #00c6ff;
+        background: rgba(0, 198, 255, 0.08);
+        border-radius: 10px;
+    }
+
+    .highlight strong {
+        color: #00c6ff;
+    }
+
+    /* EXAMPLE */
+
+    .example {
+        margin: 20px 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .example-title {
+        color: #00c6ff;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* CODE */
+
+    pre {
+        background: #02070d;
+        color: #e9f7ff;
+        padding: 22px;
+        border-radius: 14px;
+        overflow-x: auto;
+        margin: 18px 0;
+        border: 1px solid rgba(0, 198, 255, 0.2);
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    code {
+        font-family: Consolas, monospace;
+    }
+
+    .output {
+        background: #07140d;
+        border-left: 4px solid #36d399;
+    }
+
+    .output-title {
+        color: #36d399;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* TABLE */
+
+    .table-wrapper {
+        overflow-x: auto;
+        margin: 20px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 600px;
+    }
+
+    th,
+    td {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 13px;
+        text-align: left;
+    }
+
+    th {
+        background: rgba(0, 198, 255, 0.2);
+        color: #00c6ff;
+    }
+
+    td {
+        color: #d8e5ee;
+    }
+
+    /* QUESTION BOX */
+
+    .question-box {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        background: rgba(255, 193, 7, 0.08);
+        border: 1px solid rgba(255, 193, 7, 0.25);
+    }
+
+    .question-box h3 {
+        color: #ffd166;
+        margin-top: 0;
+    }
+
+    /* NAV BUTTONS */
+
+    .page-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        margin: 40px 0;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 13px 23px;
+        border-radius: 30px;
+        background: #00c6ff;
+        color: #00131f;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: white;
+        transform: scale(1.04);
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 30px;
+        color: #9fb2c2;
+    }
+
+    @media (max-width: 700px) {
+
+        .container {
+            width: 94%;
+        }
+
+        .hero h1 {
+            font-size: 31px;
+        }
+
+        .slide {
+            padding: 24px;
+        }
+
+        .slide h2 {
+            font-size: 25px;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 6px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="math.html">Mathematics</a>
+    <a href="physics.html">Physics</a>
+    <a href="c.html">C Programming</a>
+    <a href="c-notes.html">C Notes</a>
+</nav>
+
+
+<div class="container">
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-icon">📘</div>
+
+        <h1>UNIT 1</h1>
+
+        <p>
+            Programming Fundamentals and Problem Solving
+        </p>
+
+        <p>
+            <b>Computational and Problem Solving using C</b>
+            | B.Tech CSE – 1st Semester
+        </p>
+
+    </section>
+
+
+    <!-- ================= SLIDE 1 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 01</span>
+
+        <h2>🧠 What is Problem Solving?</h2>
+
+        <p>
+            Problem solving is the process of understanding a problem,
+            developing a logical solution and implementing that solution
+            using a programming language.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Simple Definition:</strong>
+
+            Problem solving means finding a correct and efficient way
+            to solve a given problem.
+
+        </div>
+
+        <h3>Basic Steps of Problem Solving</h3>
+
+        <ol>
+
+            <li>Understand the problem.</li>
+            <li>Identify the required input.</li>
+            <li>Identify the expected output.</li>
+            <li>Design the algorithm.</li>
+            <li>Prepare flowchart or pseudocode.</li>
+            <li>Write the program.</li>
+            <li>Compile and execute.</li>
+            <li>Test the program.</li>
+            <li>Debug errors.</li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- ================= SLIDE 2 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 02</span>
+
+        <h2>💻 Computational Problem</h2>
+
+        <p>
+            A computational problem is a problem that can be solved
+            using a computer by following a sequence of logical steps.
+        </p>
+
+        <h3>Examples</h3>
+
+        <ul>
+
+            <li>Finding the largest of three numbers.</li>
+
+            <li>Calculating the average marks of students.</li>
+
+            <li>Finding factorial of a number.</li>
+
+            <li>Checking whether a number is even or odd.</li>
+
+            <li>Sorting numbers in ascending order.</li>
+
+        </ul>
+
+        <div class="example">
+
+            <div class="example-title">
+                Example Problem
+            </div>
+
+            <p>
+                Find the largest among three numbers A, B and C.
+            </p>
+
+            <p>
+                <b>Input:</b> A, B and C
+            </p>
+
+            <p>
+                <b>Output:</b> Largest number
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 3 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 03</span>
+
+        <h2>🔢 Programming Logic</h2>
+
+        <p>
+            Logic is a systematic way of thinking used to solve a problem.
+            Programming logic defines the sequence of instructions that
+            a computer must follow.
+        </p>
+
+        <h3>Three Basic Logical Structures</h3>
+
+        <table>
+
+            <tr>
+                <th>Structure</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+
+            <tr>
+                <td>Sequence</td>
+                <td>Statements execute one after another.</td>
+                <td>Input → Calculate → Output</td>
+            </tr>
+
+            <tr>
+                <td>Selection</td>
+                <td>Decision is made based on a condition.</td>
+                <td>if-else</td>
+            </tr>
+
+            <tr>
+                <td>Iteration</td>
+                <td>Statements are repeated.</td>
+                <td>for / while</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ================= SLIDE 4 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 04</span>
+
+        <h2>📋 Algorithm</h2>
+
+        <p>
+            An algorithm is a finite sequence of well-defined steps
+            used to solve a particular problem.
+        </p>
+
+        <h3>Characteristics of an Algorithm</h3>
+
+        <ul>
+
+            <li><b>Input:</b> It may accept zero or more inputs.</li>
+
+            <li><b>Output:</b> It should produce at least one output.</li>
+
+            <li><b>Definiteness:</b> Every step must be clear.</li>
+
+            <li><b>Finiteness:</b> It must terminate after a finite number of steps.</li>
+
+            <li><b>Effectiveness:</b> Every step should be practical and executable.</li>
+
+        </ul>
+
+        <div class="example">
+
+            <div class="example-title">
+                Algorithm – Addition of Two Numbers
+            </div>
+
+            <ol>
+
+                <li>Start</li>
+                <li>Input A and B</li>
+                <li>Calculate SUM = A + B</li>
+                <li>Display SUM</li>
+                <li>Stop</li>
+
+            </ol>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 5 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 05</span>
+
+        <h2>📊 Flowchart</h2>
+
+        <p>
+            A flowchart is a graphical representation of an algorithm.
+            It uses standard symbols to represent different operations.
+        </p>
+
+        <h3>Important Flowchart Symbols</h3>
+
+        <table>
+
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>Oval</td>
+                <td>Terminator</td>
+                <td>Start / Stop</td>
+            </tr>
+
+            <tr>
+                <td>Parallelogram</td>
+                <td>Input / Output</td>
+                <td>Taking input or displaying output</td>
+            </tr>
+
+            <tr>
+                <td>Rectangle</td>
+                <td>Process</td>
+                <td>Calculation or processing</td>
+            </tr>
+
+            <tr>
+                <td>Diamond</td>
+                <td>Decision</td>
+                <td>Checking a condition</td>
+            </tr>
+
+            <tr>
+                <td>Arrow</td>
+                <td>Flow Line</td>
+                <td>Shows direction of execution</td>
+            </tr>
+
+        </table>
+
+        <div class="highlight">
+
+            <strong>Exam Tip:</strong>
+
+            Flowchart symbols are frequently asked in short-answer
+            and theory questions.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 6 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 06</span>
+
+        <h2>✍️ Pseudocode</h2>
+
+        <p>
+            Pseudocode is an English-like description of the steps
+            required to solve a problem.
+        </p>
+
+        <p>
+            It does not follow the exact syntax of any programming language.
+        </p>
+
+        <div class="example">
+
+            <div class="example-title">
+                Pseudocode – Addition
+            </div>
+```
+
+<pre><code>START
+
+INPUT A, B
+
+SUM = A + B
+
+PRINT SUM
+
+STOP</code></pre>
+
+```
+        </div>
+
+        <h3>Advantages</h3>
+
+        <ul>
+
+            <li>Easy to understand.</li>
+            <li>Language independent.</li>
+            <li>Helps before writing actual code.</li>
+            <li>Makes program logic clear.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ================= SLIDE 7 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 07</span>
+
+        <h2>🔨 Stepwise Refinement</h2>
+
+        <p>
+            Stepwise refinement is a problem-solving technique in which
+            a large problem is divided into smaller and simpler tasks.
+        </p>
+
+        <div class="example">
+
+            <div class="example-title">
+                Example – Student Result System
+            </div>
+
+            <ol>
+
+                <li>Take student marks.</li>
+
+                <li>Calculate total marks.</li>
+
+                <li>Calculate percentage.</li>
+
+                <li>Determine grade.</li>
+
+                <li>Display result.</li>
+
+            </ol>
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Benefit:</strong>
+
+            Complex problems become easier to design, code,
+            test and maintain.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 8 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 08</span>
+
+        <h2>🐞 Debugging and Testing</h2>
+
+        <h3>Debugging</h3>
+
+        <p>
+            Debugging is the process of finding and removing errors
+            from a program.
+        </p>
+
+        <h3>Testing</h3>
+
+        <p>
+            Testing means executing a program with different inputs
+            to check whether it produces the expected output.
+        </p>
+
+        <h3>Types of Common Errors</h3>
+
+        <table>
+
+            <tr>
+                <th>Error</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+
+            <tr>
+                <td>Syntax Error</td>
+                <td>Violation of language rules.</td>
+                <td>Missing semicolon</td>
+            </tr>
+
+            <tr>
+                <td>Runtime Error</td>
+                <td>Error during execution.</td>
+                <td>Division by zero</td>
+            </tr>
+
+            <tr>
+                <td>Logical Error</td>
+                <td>Program runs but gives wrong result.</td>
+                <td>Wrong formula</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ================= SLIDE 9 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 09</span>
+
+        <h2>⏱️ Time and Space Complexity</h2>
+
+        <h3>Time Complexity</h3>
+
+        <p>
+            Time complexity describes how the running time of an
+            algorithm grows as the input size increases.
+        </p>
+
+        <h3>Space Complexity</h3>
+
+        <p>
+            Space complexity describes how much additional memory
+            an algorithm requires.
+        </p>
+
+        <h3>Common Complexities</h3>
+
+        <table>
+
+            <tr>
+                <th>Complexity</th>
+                <th>Name</th>
+            </tr>
+
+            <tr>
+                <td>O(1)</td>
+                <td>Constant</td>
+            </tr>
+
+            <tr>
+                <td>O(log n)</td>
+                <td>Logarithmic</td>
+            </tr>
+
+            <tr>
+                <td>O(n)</td>
+                <td>Linear</td>
+            </tr>
+
+            <tr>
+                <td>O(n²)</td>
+                <td>Quadratic</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ================= SLIDE 10 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 10</span>
+
+        <h2>⌨️ Basic Input and Output in C</h2>
+
+        <p>
+            C provides standard input and output functions through
+            the <b>stdio.h</b> header file.
+        </p>
+
+        <h3>printf()</h3>
+
+        <p>
+            Used to display output on the screen.
+        </p>
+
+        <h3>scanf()</h3>
+
+        <p>
+            Used to take input from the user.
+        </p>
+```
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a;
+
+    printf("Enter a number: ");
+    scanf("%d", &amp;a);
+
+    printf("Number = %d", a);
+
+    return 0;
+}</code></pre>
+
+```
+        <div class="example output">
+
+            <div class="output-title">
+                OUTPUT
+            </div>
+```
+
+<pre><code>Enter a number: 10
+Number = 10</code></pre>
+
+```
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 11 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 11</span>
+
+        <h2>🔍 Tracing and Dry Run</h2>
+
+        <p>
+            A dry run means manually executing a program step by step
+            without actually running it on a computer.
+        </p>
+
+        <h3>Example</h3>
+```
+
+<pre><code>int a = 5;
+int b = 3;
+int sum = a + b;</code></pre>
+
+```
+        <table>
+
+            <tr>
+                <th>Variable</th>
+                <th>Value</th>
+            </tr>
+
+            <tr>
+                <td>a</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>b</td>
+                <td>3</td>
+            </tr>
+
+            <tr>
+                <td>sum</td>
+                <td>8</td>
+            </tr>
+
+        </table>
+
+        <div class="highlight">
+
+            <strong>Result:</strong>
+
+            SUM = 5 + 3 = 8
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 12 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 12</span>
+
+        <h2>💻 Introduction to C</h2>
+
+        <p>
+            C is a general-purpose, procedural and structured
+            programming language.
+        </p>
+
+        <p>
+            C was developed by <b>Dennis Ritchie</b> at Bell Labs
+            in the early 1970s.
+        </p>
+
+        <h3>Features of C</h3>
+
+        <ul>
+
+            <li>Simple and efficient</li>
+
+            <li>Fast execution</li>
+
+            <li>Portable</li>
+
+            <li>Structured programming support</li>
+
+            <li>Middle-level language</li>
+
+            <li>Pointer support</li>
+
+            <li>Rich set of operators</li>
+
+            <li>Large standard library</li>
+
+        </ul>
+
+        <h3>Applications of C</h3>
+
+        <ul>
+
+            <li>Operating systems</li>
+
+            <li>Embedded systems</li>
+
+            <li>Compilers</li>
+
+            <li>System software</li>
+
+            <li>Drivers</li>
+
+            <li>Games and applications</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ================= SLIDE 13 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 13</span>
+
+        <h2>🔤 High-Level vs Low-Level Language</h2>
+
+        <table>
+
+            <tr>
+                <th>High-Level Language</th>
+                <th>Low-Level Language</th>
+            </tr>
+
+            <tr>
+                <td>Easy for humans to understand.</td>
+                <td>Closer to hardware.</td>
+            </tr>
+
+            <tr>
+                <td>More readable.</td>
+                <td>More difficult to understand.</td>
+            </tr>
+
+            <tr>
+                <td>Generally more portable.</td>
+                <td>More machine dependent.</td>
+            </tr>
+
+            <tr>
+                <td>Examples: C, C++, Java.</td>
+                <td>Examples: Assembly, Machine language.</td>
+            </tr>
+
+        </table>
+
+        <div class="highlight">
+
+            <strong>Note:</strong>
+
+            C is commonly described as a middle-level language because
+            it provides both high-level programming constructs and
+            low-level memory/hardware-oriented features.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 14 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 14</span>
+
+        <h2>⚙️ Translators</h2>
+
+        <p>
+            A translator converts a program written in one language
+            into another form that can be executed by the computer.
+        </p>
+
+        <table>
+
+            <tr>
+                <th>Translator</th>
+                <th>Function</th>
+            </tr>
+
+            <tr>
+                <td>Compiler</td>
+                <td>Translates the source program into machine/object code.</td>
+            </tr>
+
+            <tr>
+                <td>Interpreter</td>
+                <td>Translates and executes instructions one by one.</td>
+            </tr>
+
+            <tr>
+                <td>Assembler</td>
+                <td>Converts assembly language into machine code.</td>
+            </tr>
+
+        </table>
+
+        <div class="highlight">
+
+            <strong>Exam Question:</strong>
+
+            Differentiate compiler, interpreter and assembler.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 15 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 15</span>
+
+        <h2>🧱 Structure of a C Program</h2>
+```
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Hello World");
+
+    return 0;
+}</code></pre>
+
+```
+        <h3>Explanation</h3>
+
+        <ol>
+
+            <li>
+                <b>#include &lt;stdio.h&gt;</b>
+                – Includes the standard input/output header.
+            </li>
+
+            <li>
+                <b>int main()</b>
+                – Main function from where program execution begins.
+            </li>
+
+            <li>
+                <b>printf()</b>
+                – Displays output.
+            </li>
+
+            <li>
+                <b>return 0;</b>
+                – Indicates successful program termination.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- ================= SLIDE 16 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 16</span>
+
+        <h2>📐 Syntax and Semantics</h2>
+
+        <h3>Syntax</h3>
+
+        <p>
+            Syntax means the grammatical rules used to write
+            a program correctly.
+        </p>
+
+        <div class="example">
+
+            <div class="example-title">
+                Syntax Error Example
+            </div>
+```
+
+<pre><code>printf("Hello")</code></pre>
+
+```
+            <p>
+                The semicolon is missing.
+            </p>
+
+        </div>
+
+        <h3>Semantics</h3>
+
+        <p>
+            Semantics refers to the meaning of a statement or program.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Remember:</strong>
+
+            Syntax = How the statement is written.
+            <br>
+            Semantics = What the statement means.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 17 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 17</span>
+
+        <h2>🧠 Memory Layout of a C Program</h2>
+
+        <p>
+            A running C program uses different areas of memory.
+        </p>
+
+        <table>
+
+            <tr>
+                <th>Memory Area</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>Text / Code</td>
+                <td>Contains executable program instructions.</td>
+            </tr>
+
+            <tr>
+                <td>Data</td>
+                <td>Stores initialized global and static variables.</td>
+            </tr>
+
+            <tr>
+                <td>BSS</td>
+                <td>Stores uninitialized global and static variables.</td>
+            </tr>
+
+            <tr>
+                <td>Heap</td>
+                <td>Used for dynamic memory allocation.</td>
+            </tr>
+
+            <tr>
+                <td>Stack</td>
+                <td>Stores function calls and local variables.</td>
+            </tr>
+
+        </table>
+
+        <div class="highlight">
+
+            <strong>Important:</strong>
+
+            Stack and heap are especially important when studying
+            functions, pointers and dynamic memory.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 18 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 18</span>
+
+        <h2>📝 Important Unit 1 Questions</h2>
+
+        <div class="question-box">
+
+            <h3>Short / 2–3 Marks</h3>
+
+            <ol>
+
+                <li>Define algorithm.</li>
+
+                <li>What is pseudocode?</li>
+
+                <li>What is a flowchart?</li>
+
+                <li>Define debugging.</li>
+
+                <li>What is dry run?</li>
+
+                <li>What is a compiler?</li>
+
+                <li>What is an interpreter?</li>
+
+                <li>What is syntax?</li>
+
+                <li>What is semantics?</li>
+
+            </ol>
+
+        </div>
+
+        <div class="question-box">
+
+            <h3>Long / 5–6 Marks</h3>
+
+            <ol>
+
+                <li>
+                    Explain algorithm and its characteristics with example.
+                </li>
+
+                <li>
+                    Explain flowchart and its important symbols.
+                </li>
+
+                <li>
+                    Explain compiler, interpreter and assembler.
+                </li>
+
+                <li>
+                    Explain the structure of a C program with example.
+                </li>
+
+                <li>
+                    Explain time and space complexity.
+                </li>
+
+                <li>
+                    Explain the memory layout of a C program.
+                </li>
+
+                <li>
+                    Explain debugging and testing with types of errors.
+                </li>
+
+            </ol>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SLIDE 19 ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">SLIDE 19</span>
+
+        <h2>🔥 Most Important for Exam</h2>
+
+        <ul>
+
+            <li>
+                ⭐ Algorithm + characteristics
+            </li>
+
+            <li>
+                ⭐ Flowchart symbols
+            </li>
+
+            <li>
+                ⭐ Pseudocode
+            </li>
+
+            <li>
+                ⭐ Compiler vs Interpreter vs Assembler
+            </li>
+
+            <li>
+                ⭐ Structure of C program
+            </li>
+
+            <li>
+                ⭐ Syntax vs Semantics
+            </li>
+
+            <li>
+                ⭐ Debugging and types of errors
+            </li>
+
+            <li>
+                ⭐ Dry Run
+            </li>
+
+            <li>
+                ⭐ Time and Space Complexity
+            </li>
+
+            <li>
+                ⭐ Memory Layout
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ================= QUICK REVISION ================= -->
+
+    <section class="slide">
+
+        <span class="slide-number">FINAL SLIDE</span>
+
+        <h2>⚡ Unit 1 Quick Revision</h2>
+
+        <table>
+
+            <tr>
+                <th>Topic</th>
+                <th>One-Line Revision</th>
+            </tr>
+
+            <tr>
+                <td>Algorithm</td>
+                <td>Step-by-step procedure to solve a problem.</td>
+            </tr>
+
+            <tr>
+                <td>Flowchart</td>
+                <td>Graphical representation of an algorithm.</td>
+            </tr>
+
+            <tr>
+                <td>Pseudocode</td>
+                <td>English-like representation of program logic.</td>
+            </tr>
+
+            <tr>
+                <td>Debugging</td>
+                <td>Finding and removing errors.</td>
+            </tr>
+
+            <tr>
+                <td>Dry Run</td>
+                <td>Manually tracing program execution.</td>
+            </tr>
+
+            <tr>
+                <td>Compiler</td>
+                <td>Translates source code for execution.</td>
+            </tr>
+
+            <tr>
+                <td>Variable</td>
+                <td>Named memory location whose value can change.</td>
+            </tr>
+
+            <tr>
+                <td>Syntax</td>
+                <td>Rules for writing valid code.</td>
+            </tr>
+
+            <tr>
+                <td>Semantics</td>
+                <td>Meaning of program statements.</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ================= PAGE BUTTONS ================= -->
+
+    <div class="page-buttons">
+
+        <a href="c-notes.html" class="btn">
+            ← Back to C Notes
+        </a>
+
+        <a href="c-notes-unit2.html" class="btn">
+            Unit 2 →
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    <p>
+        © 2026 College Resource Hub | C Programming
+    </p>
+
+</div>
+```
+
+</body>
+
+</html>

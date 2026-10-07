@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>AI & ML - Important Questions | College Resource Hub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: #eef4ff;
+        color: #172033;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 14px 20px;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid #d9e3f5;
+        box-shadow: 0 4px 15px rgba(20, 60, 120, 0.08);
+        backdrop-filter: blur(10px);
+    }
+
+    nav a {
+        color: #174ea6;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 9px 16px;
+        border-radius: 20px;
+        transition: 0.25s;
+    }
+
+    nav a:hover {
+        background: #174ea6;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .ai-page {
+        width: min(1150px, 94%);
+        margin: auto;
+        padding: 35px 0 60px;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 330px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 45px 25px;
+        margin-bottom: 30px;
+        border-radius: 28px;
+        background:
+            radial-gradient(circle at top left, rgba(65, 130, 255, 0.28), transparent 35%),
+            radial-gradient(circle at bottom right, rgba(123, 92, 255, 0.20), transparent 35%),
+            #ffffff;
+        border: 1px solid #d9e5fa;
+        box-shadow: 0 18px 45px rgba(30, 80, 150, 0.12);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: "AI";
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        font-size: 120px;
+        font-weight: 900;
+        color: rgba(30, 100, 220, 0.055);
+    }
+
+    .hero-badge {
+        display: inline-block;
+        padding: 8px 17px;
+        border-radius: 30px;
+        background: #e8f0ff;
+        color: #1455b8;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        margin: 0;
+        font-size: clamp(32px, 6vw, 58px);
+        color: #123d80;
+        line-height: 1.1;
+    }
+
+    .hero p {
+        max-width: 720px;
+        font-size: 18px;
+        color: #52627a;
+        line-height: 1.7;
+        margin: 18px auto 0;
+    }
+
+    .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .hero-stat {
+        background: #f5f8ff;
+        border: 1px solid #dbe6f8;
+        padding: 10px 18px;
+        border-radius: 14px;
+        font-weight: 700;
+        color: #31517d;
+    }
+
+    /* NAVIGATION BOX */
+
+    .question-map {
+        background: white;
+        border-radius: 22px;
+        padding: 24px;
+        margin-bottom: 35px;
+        border: 1px solid #d9e3f5;
+        box-shadow: 0 10px 30px rgba(30, 70, 130, 0.08);
+    }
+
+    .question-map h2 {
+        margin-top: 0;
+        color: #123d80;
+        text-align: center;
+    }
+
+    .map-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .map-grid a {
+        text-decoration: none;
+        padding: 13px 15px;
+        border-radius: 13px;
+        background: #f4f7fc;
+        color: #24549a;
+        border: 1px solid #dce6f5;
+        font-weight: 700;
+        transition: 0.25s;
+    }
+
+    .map-grid a:hover {
+        background: #e8f0ff;
+        transform: translateY(-3px);
+        border-color: #8eb4ee;
+    }
+
+    /* SECTION */
+
+    .section-title {
+        margin: 50px 0 20px;
+        padding: 20px 24px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #164a94, #276fd1);
+        color: white;
+        box-shadow: 0 12px 28px rgba(27, 80, 160, 0.18);
+    }
+
+    .section-title h2 {
+        margin: 0 0 7px;
+        font-size: 26px;
+    }
+
+    .section-title p {
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    /* QUESTION CARD */
+
+    .question-card {
+        background: white;
+        border: 1px solid #d8e3f3;
+        border-radius: 22px;
+        padding: 30px;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 28px rgba(20, 60, 120, 0.08);
+        scroll-margin-top: 90px;
+        transition: 0.25s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .question-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(20, 60, 120, 0.12);
+    }
+
+    .question-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background: linear-gradient(#1c65c9, #65a4ff);
+    }
+
+    .question-number {
+        display: inline-block;
+        padding: 7px 12px;
+        border-radius: 20px;
+        background: #eaf2ff;
+        color: #1456b3;
+        font-size: 13px;
+        font-weight: 800;
+        margin-bottom: 12px;
+    }
+
+    .question-card h2 {
+        margin: 0 0 18px;
+        color: #143d78;
+        font-size: 23px;
+        line-height: 1.4;
+    }
+
+    .marks {
+        float: right;
+        background: #fff4d9;
+        color: #8b5b00;
+        border: 1px solid #f0d48a;
+        padding: 6px 11px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+    .answer {
+        line-height: 1.8;
+        color: #394861;
+        font-size: 16px;
+    }
+
+    .answer strong {
+        color: #173f79;
+    }
+
+    .answer ul,
+    .answer ol {
+        padding-left: 25px;
+    }
+
+    .answer li {
+        margin-bottom: 8px;
+    }
+
+    .definition {
+        margin: 18px 0;
+        padding: 18px;
+        border-radius: 15px;
+        background: #eef6ff;
+        border-left: 5px solid #2471cf;
+    }
+
+    .definition-title {
+        font-weight: 800;
+        color: #1456b3;
+        margin-bottom: 7px;
+    }
+
+    .example {
+        margin: 18px 0;
+        padding: 18px;
+        border-radius: 15px;
+        background: #f2fbf5;
+        border-left: 5px solid #37a66b;
+    }
+
+    .example-title {
+        font-weight: 800;
+        color: #23794d;
+        margin-bottom: 7px;
+    }
+
+    .exam-point {
+        margin: 18px 0;
+        padding: 17px;
+        border-radius: 15px;
+        background: #fff8e8;
+        border-left: 5px solid #e1a628;
+    }
+
+    .exam-point strong {
+        color: #8b5b00;
+    }
+
+    /* DIAGRAM */
+
+    .diagram {
+        background: #f7faff;
+        border: 1px solid #d5e2f5;
+        padding: 22px;
+        border-radius: 16px;
+        margin: 20px 0;
+        text-align: center;
+        overflow-x: auto;
+    }
+
+    .diagram pre {
+        margin: 0;
+        font-family: "Courier New", monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #21436f;
+        white-space: pre;
+    }
+
+    /* FLOW */
+
+    .flow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    .flow-box {
+        padding: 13px 17px;
+        border-radius: 12px;
+        background: #eaf2ff;
+        border: 1px solid #bcd2f1;
+        color: #194f9b;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    .arrow {
+        font-size: 24px;
+        color: #356caf;
+        font-weight: bold;
+    }
+
+    /* TABLE */
+
+    .table-wrapper {
+        overflow-x: auto;
+        margin: 20px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 600px;
+        background: white;
+    }
+
+    th {
+        background: #174f9d;
+        color: white;
+        padding: 13px;
+        text-align: left;
+    }
+
+    td {
+        padding: 13px;
+        border: 1px solid #d8e3f2;
+        color: #40516b;
+        vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+        background: #f7faff;
+    }
+
+    /* QUICK REVISION */
+
+    .revision {
+        margin-top: 45px;
+        background: linear-gradient(135deg, #102f61, #1c579f);
+        color: white;
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: 0 15px 35px rgba(20, 60, 120, 0.2);
+    }
+
+    .revision h2 {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .revision-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 20px;
+    }
+
+    .revision-item {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 15px;
+        border-radius: 13px;
+    }
+
+    .revision-item strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    /* BACK BUTTON */
+
+    .back-button {
+        text-align: center;
+        margin: 40px 0 10px;
+    }
+
+    .back-button a {
+        text-decoration: none;
+    }
+
+    .back-button button {
+        border: none;
+        border-radius: 30px;
+        padding: 13px 25px;
+        background: #1760bd;
+        color: white;
+        font-size: 15px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.25s;
+        box-shadow: 0 8px 20px rgba(23, 96, 189, 0.25);
+    }
+
+    .back-button button:hover {
+        transform: translateY(-3px);
+        background: #104b98;
+    }
+
+    footer {
+        text-align: center;
+        padding: 28px 15px;
+        background: #102744;
+        color: white;
+        margin-top: 20px;
+    }
+
+    footer p {
+        margin: 6px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 700px) {
+
+        nav {
+            gap: 4px;
+            padding: 10px;
+        }
+
+        nav a {
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+
+        .ai-page {
+            width: 94%;
+            padding-top: 20px;
+        }
+
+        .hero {
+            min-height: 280px;
+            padding: 35px 18px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+        }
+
+        .hero p {
+            font-size: 15px;
+        }
+
+        .question-card {
+            padding: 23px 18px;
+        }
+
+        .question-card h2 {
+            font-size: 19px;
+        }
+
+        .marks {
+            float: none;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            padding: 18px;
+        }
+
+        .flow {
+            flex-direction: column;
+        }
+
+        .arrow {
+            transform: rotate(90deg);
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="ai-introduction.html">📋 Syllabus</a>
+    <a href="ai-notes.html">📚 Notes</a>
+    <a href="ai-important.html">⭐ Important Questions</a>
+    <a href="ai-pyq.html">📝 PYQ</a>
+</nav>
+
+<div class="ai-page">
+
+```
+<!-- HERO -->
+
+<section class="hero">
+
+    <span class="hero-badge">🎓 EXAM PREPARATION</span>
+
+    <h1>🤖 AI & ML</h1>
+
+    <p>
+        Important Questions with simple, detailed and
+        exam-ready answers for quick revision and sessional preparation.
+    </p>
+
+    <div class="hero-stats">
+        <div class="hero-stat">📌 20 Important Questions</div>
+        <div class="hero-stat">📖 4 Units</div>
+        <div class="hero-stat">✍️ Exam Ready</div>
+        <div class="hero-stat">⚡ Quick Revision</div>
+    </div>
+
+</section>
+
+
+<!-- QUESTION MAP -->
+
+<section class="question-map">
+
+    <h2>📑 Question Navigator</h2>
+
+    <div class="map-grid">
+
+        <a href="#q1">Q1–Q4 · AI Basics</a>
+        <a href="#q5">Q5–Q8 · AI Domains & Learning</a>
+        <a href="#q9">Q9–Q12 · Search & Knowledge</a>
+        <a href="#q13">Q13–Q15 · Expert Systems</a>
+        <a href="#q16">Q16–Q20 · Machine Learning</a>
+
+    </div>
+
+</section>
+
+
+<!-- UNIT 1 -->
+
+<div class="section-title">
+
+    <h2>🧠 UNIT 1 — Foundations of Artificial Intelligence</h2>
+
+    <p>AI basics, types, domains and intelligent systems</p>
+
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question-card" id="q1">
+
+    <span class="question-number">QUESTION 01</span>
+    <span class="marks">⭐ 2–6 Marks</span>
+
+    <h2>What is Artificial Intelligence (AI)?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Artificial Intelligence (AI) is a branch of computer science
+            that develops systems capable of performing tasks that normally
+            require human intelligence.
+
+        </div>
+
+        <p>
+            AI enables computers or machines to perform activities such as
+            <strong>learning, reasoning, problem solving, decision making,
+            perception and language understanding.</strong>
+        </p>
+
+        <p><strong>Main abilities of AI:</strong></p>
+
+        <ul>
+            <li>Learning from data and experience</li>
+            <li>Reasoning and logical thinking</li>
+            <li>Solving complex problems</li>
+            <li>Understanding natural language</li>
+            <li>Recognising images, speech and patterns</li>
+            <li>Making decisions</li>
+        </ul>
+
+        <div class="example">
+
+            <div class="example-title">💡 Examples</div>
+
+            Chatbots, voice assistants, recommendation systems,
+            face recognition, autonomous vehicles and medical diagnosis systems.
+
+        </div>
+
+        <div class="exam-point">
+            <strong>Exam Point:</strong>
+            AI = Making machines capable of performing tasks that require human-like intelligence.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question-card" id="q2">
+
+    <span class="question-number">QUESTION 02</span>
+    <span class="marks">⭐ 3–5 Marks</span>
+
+    <h2>What are the types of Artificial Intelligence?</h2>
+
+    <div class="answer">
+
+        <p>
+            AI can be classified according to its capability into the following types:
+        </p>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr>
+                    <th>Type</th>
+                    <th>Meaning</th>
+                    <th>Example / Status</th>
+                </tr>
+
+                <tr>
+                    <td><strong>Narrow AI</strong></td>
+                    <td>
+                        Designed to perform a specific task or a limited
+                        range of tasks.
+                    </td>
+                    <td>Voice assistants, recommendation systems</td>
+                </tr>
+
+                <tr>
+                    <td><strong>General AI</strong></td>
+                    <td>
+                        Theoretical AI capable of performing a wide range
+                        of intellectual tasks similar to humans.
+                    </td>
+                    <td>Not achieved yet</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Super AI</strong></td>
+                    <td>
+                        Hypothetical AI that would exceed human intelligence
+                        in many areas.
+                    </td>
+                    <td>Future / hypothetical concept</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="exam-point">
+            <strong>Remember:</strong>
+            Narrow AI exists in practical applications. General AI and Super AI are theoretical concepts.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question-card" id="q3">
+
+    <span class="question-number">QUESTION 03</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>Differentiate between AI, Machine Learning and Deep Learning.</h2>
+
+    <div class="answer">
+
+        <div class="flow">
+
+            <div class="flow-box">Artificial Intelligence</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Machine Learning</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Deep Learning</div>
+
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr>
+                    <th>AI</th>
+                    <th>Machine Learning</th>
+                    <th>Deep Learning</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        Broad field of creating intelligent machines.
+                    </td>
+
+                    <td>
+                        Subfield of AI where systems learn patterns from data.
+                    </td>
+
+                    <td>
+                        Subfield of ML using multi-layer neural networks.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Includes reasoning, planning and perception.
+                    </td>
+
+                    <td>
+                        Learns from examples and data.
+                    </td>
+
+                    <td>
+                        Particularly useful for complex data such as images,
+                        audio and text.
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="exam-point">
+            <strong>One-line answer:</strong>
+            AI is the broad field → ML is a subset of AI → Deep Learning is a subset of ML.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question-card" id="q4">
+
+    <span class="question-number">QUESTION 04</span>
+    <span class="marks">⭐ 3–5 Marks</span>
+
+    <h2>What is Machine Learning?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Machine Learning is a branch of AI in which computers learn
+            patterns from data and use those patterns to make predictions
+            or decisions.
+
+        </div>
+
+        <p>
+            In traditional programming, rules are explicitly written.
+            In ML, a model can learn useful patterns from examples.
+        </p>
+
+        <div class="flow">
+
+            <div class="flow-box">Data</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Learning</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Model</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Prediction</div>
+
+        </div>
+
+        <div class="example">
+
+            <div class="example-title">💡 Example</div>
+
+            A video recommendation system analyses previous viewing
+            behaviour and recommends videos that the user may like.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- UNIT 1 CONT -->
+
+<div class="section-title">
+
+    <h2>🌐 UNIT 1 — AI Domains & Intelligent Systems</h2>
+
+    <p>Learning types, NLP, Computer Vision and intelligent behaviour</p>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question-card" id="q5">
+
+    <span class="question-number">QUESTION 05</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>Explain Supervised, Unsupervised and Reinforcement Learning.</h2>
+
+    <div class="answer">
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <tr>
+                    <th>Type</th>
+                    <th>Data</th>
+                    <th>How it learns</th>
+                    <th>Example</th>
+                </tr>
+
+                <tr>
+                    <td><strong>Supervised</strong></td>
+                    <td>Labelled data</td>
+                    <td>Learns input-output relationship</td>
+                    <td>Spam detection</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Unsupervised</strong></td>
+                    <td>Unlabelled data</td>
+                    <td>Finds hidden patterns/groups</td>
+                    <td>Customer clustering</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Reinforcement</strong></td>
+                    <td>Interaction with environment</td>
+                    <td>Uses rewards and penalties</td>
+                    <td>Game-playing agent</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="diagram">
+
+            <pre>
+             MACHINE LEARNING
+                     |
+      ┌──────────────┼──────────────┐
+      ↓              ↓              ↓
+ SUPERVISED     UNSUPERVISED   REINFORCEMENT
+      ↓              ↓              ↓
+ Labelled Data   No Labels     Reward/Penalty
+            </pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question-card" id="q6">
+
+    <span class="question-number">QUESTION 06</span>
+    <span class="marks">⭐ 3–5 Marks</span>
+
+    <h2>What is Natural Language Processing (NLP)?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Natural Language Processing is a branch of AI that enables
+            computers to understand, process and generate human language.
+
+        </div>
+
+        <p><strong>Major applications:</strong></p>
+
+        <ul>
+            <li>Chatbots</li>
+            <li>Language translation</li>
+            <li>Speech recognition</li>
+            <li>Sentiment analysis</li>
+            <li>Text summarisation</li>
+            <li>Question answering</li>
+        </ul>
+
+        <div class="example">
+
+            <div class="example-title">💡 Example</div>
+
+            A chatbot receives a user's question, processes the language
+            and generates an appropriate response.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question-card" id="q7">
+
+    <span class="question-number">QUESTION 07</span>
+    <span class="marks">⭐ 3–5 Marks</span>
+
+    <h2>What is Computer Vision?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Computer Vision is a field of AI that enables computers to
+            analyse and understand information contained in images and videos.
+
+        </div>
+
+        <p><strong>Applications:</strong></p>
+
+        <ul>
+            <li>Face recognition</li>
+            <li>Object detection</li>
+            <li>Medical image analysis</li>
+            <li>Traffic monitoring</li>
+            <li>OCR and document analysis</li>
+            <li>Autonomous vehicles</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question-card" id="q8">
+
+    <span class="question-number">QUESTION 08</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>What are intelligent systems? Explain their characteristics.</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            An intelligent system is a computer-based system that can
+            perceive information, process knowledge, learn, reason and
+            take suitable actions.
+
+        </div>
+
+        <p><strong>Characteristics:</strong></p>
+
+        <ol>
+            <li><strong>Learning:</strong> Ability to improve using experience.</li>
+            <li><strong>Reasoning:</strong> Ability to draw conclusions from information.</li>
+            <li><strong>Problem Solving:</strong> Ability to find solutions.</li>
+            <li><strong>Decision Making:</strong> Ability to select suitable actions.</li>
+            <li><strong>Adaptability:</strong> Ability to respond to changing situations.</li>
+            <li><strong>Knowledge Representation:</strong> Ability to store and use knowledge.</li>
+            <li><strong>Perception:</strong> Ability to obtain information from the environment.</li>
+        </ol>
+
+        <div class="exam-point">
+            <strong>6-Mark Tip:</strong>
+            Definition + 5–7 characteristics + one real-world example is a strong answer.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- UNIT 2 -->
+
+<div class="section-title">
+
+    <h2>🔎 UNIT 2 — Searching & Knowledge Representation</h2>
+
+    <p>BFS, DFS, heuristic search and representation of knowledge</p>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question-card" id="q9">
+
+    <span class="question-number">QUESTION 09</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>What is Breadth First Search (BFS)?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Breadth First Search is an uninformed search algorithm that
+            explores a search tree or graph level by level.
+
+        </div>
+
+        <p>
+            BFS normally uses a <strong>Queue</strong> data structure.
+            It first visits the starting node, then all its neighbouring
+            nodes, and continues level by level.
+        </p>
+
+        <div class="diagram">
+
+            <pre>
+                A
+              /   \
+             B     C
+            / \   / \
+           D   E F   G
+
+         BFS Traversal:
+         A → B → C → D → E → F → G
+            </pre>
+
+        </div>
+
+        <p><strong>Important points:</strong></p>
+
+        <ul>
+            <li>Uses Queue</li>
+            <li>Works level by level</li>
+            <li>Complete under standard finite-branching assumptions</li>
+            <li>Can find the shallowest solution when each step has equal cost</li>
+        </ul>
+
+        <div class="exam-point">
+            <strong>Remember:</strong>
+            BFS → Breadth → Queue → Level by Level.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question-card" id="q10">
+
+    <span class="question-number">QUESTION 10</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>What is Depth First Search (DFS)?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Depth First Search is an uninformed search algorithm that
+            explores one branch as deeply as possible before backtracking.
+
+        </div>
+
+        <p>
+            DFS can be implemented using a <strong>Stack</strong> or
+            recursion.
+        </p>
+
+        <div class="diagram">
+
+            <pre>
+                A
+              /   \
+             B     C
+            / \   / \
+           D   E F   G
+
+         One possible DFS:
+         A → B → D → E → C → F → G
+            </pre>
+
+        </div>
+
+        <p><strong>Important points:</strong></p>
+
+        <ul>
+            <li>Uses Stack / Recursion</li>
+            <li>Explores deeply before backtracking</li>
+            <li>Uses less memory than BFS in many cases</li>
+            <li>May get stuck following a deep path in an infinite search space</li>
+        </ul>
+
+        <div class="exam-point">
+            <strong>Remember:</strong>
+            DFS → Depth → Stack → Deep first.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question-card" id="q11">
+
+    <span class="question-number">QUESTION 11</span>
+    <span class="marks">⭐ 3–5 Marks</span>
+
+    <h2>What is Heuristic Search?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Heuristic search uses additional problem-specific knowledge
+            to guide the search toward a promising solution.
+
+        </div>
+
+        <p>
+            This additional knowledge is represented by a
+            <strong>heuristic function</strong>, commonly written as
+            <strong>h(n)</strong>.
+        </p>
+
+        <div class="flow">
+
+            <div class="flow-box">Current State</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Evaluate h(n)</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Choose Promising State</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Solution</div>
+
+        </div>
+
+        <div class="example">
+
+            <div class="example-title">💡 Example</div>
+
+            In a route-finding problem, estimated distance to the destination
+            can help the system choose a promising route.
+
+        </div>
+
+        <p>
+            Common heuristic-based approaches include
+            <strong>Greedy Best-First Search</strong> and
+            <strong>A*</strong>.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question-card" id="q12">
+
+    <span class="question-number">QUESTION 12</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>What is Knowledge Representation?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Knowledge Representation is the process of representing and
+            organising knowledge in a form that a computer can store,
+            understand and use for reasoning and problem solving.
+
+        </div>
+
+        <p><strong>Major techniques include:</strong></p>
+
+        <ul>
+            <li>Propositional Calculus</li>
+            <li>Predicate Calculus</li>
+            <li>Production Systems</li>
+            <li>Semantic Networks</li>
+            <li>Conceptual Graphs</li>
+            <li>Frames</li>
+            <li>Scripts</li>
+        </ul>
+
+        <div class="diagram">
+
+            <pre>
+              KNOWLEDGE
+                  |
+      ┌───────────┼───────────┐
+      ↓           ↓           ↓
+   Facts         Rules     Relations
+      |           |           |
+      └───────────┼───────────┘
+                  ↓
+              REASONING
+                  ↓
+               RESULT
+            </pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- UNIT 3 -->
+
+<div class="section-title">
+
+    <h2>🧑‍💻 UNIT 3 — Expert Systems</h2>
+
+    <p>Concept, architecture, components and knowledge acquisition</p>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question-card" id="q13">
+
+    <span class="question-number">QUESTION 13</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>What is an Expert System?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            An Expert System is an AI-based computer system that uses
+            stored knowledge and reasoning techniques to solve problems
+            in a specific domain in a manner similar to a human expert.
+
+        </div>
+
+        <p><strong>Main components:</strong></p>
+
+        <ul>
+            <li><strong>Knowledge Base:</strong> Stores facts and rules.</li>
+            <li><strong>Inference Engine:</strong> Applies rules to the available facts.</li>
+            <li><strong>User Interface:</strong> Provides communication with the user.</li>
+            <li><strong>Working Memory:</strong> Stores information about the current problem.</li>
+        </ul>
+
+        <div class="example">
+
+            <div class="example-title">💡 Example</div>
+
+            A medical expert system can use symptoms and medical knowledge
+            to assist in identifying possible diseases.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question-card" id="q14">
+
+    <span class="question-number">QUESTION 14</span>
+    <span class="marks">⭐ 6 Marks</span>
+
+    <h2>Explain the architecture of an Expert System.</h2>
+
+    <div class="answer">
+
+        <div class="diagram">
+
+            <pre>
+                     USER
+                       |
+                       ↓
+              ┌─────────────────┐
+              │  User Interface │
+              └────────┬────────┘
+                       ↓
+              ┌─────────────────┐
+              │ Inference Engine│
+              └───────┬─┬───────┘
+                      /   \
+                     /     \
+                    ↓       ↓
+         ┌─────────────┐ ┌──────────────┐
+         │ Knowledge   │ │ Working      │
+         │ Base        │ │ Memory       │
+         └─────────────┘ └──────────────┘
+            </pre>
+
+        </div>
+
+        <ul>
+            <li>
+                <strong>Knowledge Base:</strong>
+                Contains domain facts, rules and knowledge.
+            </li>
+
+            <li>
+                <strong>Inference Engine:</strong>
+                Uses rules to derive conclusions from available information.
+            </li>
+
+            <li>
+                <strong>Working Memory:</strong>
+                Contains facts related to the current problem.
+            </li>
+
+            <li>
+                <strong>User Interface:</strong>
+                Allows the user to interact with the expert system.
+            </li>
+        </ul>
+
+        <div class="exam-point">
+            <strong>Exam Tip:</strong>
+            Draw the architecture diagram first, then explain each component.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question-card" id="q15">
+
+    <span class="question-number">QUESTION 15</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>What is Knowledge Acquisition?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Knowledge Acquisition is the process of collecting,
+            organising and transferring knowledge from experts,
+            documents, databases or other sources into a form that
+            an AI system can use.
+
+        </div>
+
+        <p><strong>Common methods:</strong></p>
+
+        <ol>
+            <li>Expert interviews</li>
+            <li>Observation</li>
+            <li>Questionnaires</li>
+            <li>Document analysis</li>
+            <li>Database and data analysis</li>
+            <li>Case studies</li>
+        </ol>
+
+        <div class="exam-point">
+            <strong>Important:</strong>
+            Knowledge acquisition is often difficult because experts may
+            have knowledge based on experience that is difficult to express explicitly.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- UNIT 4 -->
+
+<div class="section-title">
+
+    <h2>🤖 UNIT 4 — Machine Learning Concepts</h2>
+
+    <p>Classification, regression, clustering, reinforcement learning and ML workflow</p>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question-card" id="q16">
+
+    <span class="question-number">QUESTION 16</span>
+    <span class="marks">⭐ 3–5 Marks</span>
+
+    <h2>What is Classification in Machine Learning?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Classification is a supervised learning technique used to
+            assign an input to one of several predefined classes.
+
+        </div>
+
+        <div class="example">
+
+            <div class="example-title">💡 Examples</div>
+
+            <ul>
+                <li>Email → Spam / Not Spam</li>
+                <li>Medical report → Disease / No Disease</li>
+                <li>Image → Cat / Dog</li>
+            </ul>
+
+        </div>
+
+        <div class="flow">
+
+            <div class="flow-box">Input Data</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Trained Model</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Class Label</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question-card" id="q17">
+
+    <span class="question-number">QUESTION 17</span>
+    <span class="marks">⭐ 3–5 Marks</span>
+
+    <h2>What is Regression in Machine Learning?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Regression is a supervised learning technique used to predict
+            a continuous numerical value.
+
+        </div>
+
+        <div class="example">
+
+            <div class="example-title">💡 Examples</div>
+
+            <ul>
+                <li>Predicting house prices</li>
+                <li>Predicting temperature</li>
+                <li>Predicting sales</li>
+                <li>Predicting monthly revenue</li>
+            </ul>
+
+        </div>
+
+        <p>
+            In simple words, classification predicts a
+            <strong>category</strong>, while regression predicts a
+            <strong>number/value</strong>.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question-card" id="q18">
+
+    <span class="question-number">QUESTION 18</span>
+    <span class="marks">⭐ 3–5 Marks</span>
+
+    <h2>What is Clustering?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Clustering is an unsupervised learning technique that groups
+            similar data objects together without predefined labels.
+
+        </div>
+
+        <div class="diagram">
+
+            <pre>
+         DATA POINTS
+
+      ● ● ●             ▲ ▲
+    ● ● ● ●           ▲ ▲ ▲
+      ● ●               ▲ ▲
+
+         ■ ■ ■
+       ■ ■ ■ ■
+
+      Cluster 1       Cluster 2       Cluster 3
+            </pre>
+
+        </div>
+
+        <div class="example">
+
+            <div class="example-title">💡 Example</div>
+
+            A shopping company can group customers according to
+            purchasing behaviour.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question-card" id="q19">
+
+    <span class="question-number">QUESTION 19</span>
+    <span class="marks">⭐ 5–6 Marks</span>
+
+    <h2>What is Reinforcement Learning?</h2>
+
+    <div class="answer">
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Definition</div>
+
+            Reinforcement Learning is a type of Machine Learning in which
+            an agent learns by interacting with an environment and receiving
+            rewards or penalties for its actions.
+
+        </div>
+
+        <div class="diagram">
+
+            <pre>
+                   ┌──────────────┐
+                   │   AGENT      │
+                   └──────┬───────┘
+                          │
+                       ACTION
+                          ↓
+                   ┌──────────────┐
+                   │ ENVIRONMENT  │
+                   └──────┬───────┘
+                          │
+                 STATE + REWARD
+                          │
+                          └──────→ AGENT
+            </pre>
+
+        </div>
+
+        <p><strong>Important terms:</strong></p>
+
+        <ul>
+            <li><strong>Agent:</strong> Learner or decision maker.</li>
+            <li><strong>Environment:</strong> World in which the agent operates.</li>
+            <li><strong>Action:</strong> Decision taken by the agent.</li>
+            <li><strong>Reward:</strong> Feedback received after an action.</li>
+            <li><strong>Policy:</strong> Strategy used to select actions.</li>
+        </ul>
+
+        <div class="example">
+
+            <div class="example-title">💡 Example</div>
+
+            A game-playing AI can learn which actions lead to winning
+            by receiving positive or negative rewards.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question-card" id="q20">
+
+    <span class="question-number">QUESTION 20</span>
+    <span class="marks">⭐ 6 Marks</span>
+
+    <h2>Explain the Machine Learning Workflow.</h2>
+
+    <div class="answer">
+
+        <div class="flow">
+
+            <div class="flow-box">Collect Data</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Prepare Data</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Select Model</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Train</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Test</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">Evaluate</div>
+
+        </div>
+
+        <div class="definition">
+
+            <div class="definition-title">📌 Main Steps</div>
+
+            <ol>
+                <li>
+                    <strong>Data Collection:</strong>
+                    Gather relevant data for the problem.
+                </li>
+
+                <li>
+                    <strong>Data Preparation:</strong>
+                    Clean and prepare the data for training.
+                </li>
+
+                <li>
+                    <strong>Feature Selection:</strong>
+                    Select useful information/features when required.
+                </li>
+
+                <li>
+                    <strong>Model Selection:</strong>
+                    Choose a suitable ML algorithm or model.
+                </li>
+
+                <li>
+                    <strong>Training:</strong>
+                    Train the model using available training data.
+                </li>
+
+                <li>
+                    <strong>Testing:</strong>
+                    Test the model on data not used for training.
+                </li>
+
+                <li>
+                    <strong>Evaluation:</strong>
+                    Measure how well the model performs.
+                </li>
+
+                <li>
+                    <strong>Deployment:</strong>
+                    Put the trained model into practical use.
+                </li>
+            </ol>
+
+        </div>
+
+        <div class="exam-point">
+            <strong>6-Mark Tip:</strong>
+            Draw the workflow diagram and explain each step in one or two lines.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- EXTRA VERY IMPORTANT -->
+
+<div class="section-title">
+
+    <h2>🔥 EXTRA — Must Remember Comparisons</h2>
+
+    <p>These short comparisons are useful for 3–5 mark questions.</p>
+
+</div>
+
+
+<div class="question-card">
+
+    <h2>⭐ BFS vs DFS</h2>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <tr>
+                <th>BFS</th>
+                <th>DFS</th>
+            </tr>
+
+            <tr>
+                <td>Explores level by level.</td>
+                <td>Explores depth first.</td>
+            </tr>
+
+            <tr>
+                <td>Uses Queue.</td>
+                <td>Uses Stack / Recursion.</td>
+            </tr>
+
+            <tr>
+                <td>Usually requires more memory.</td>
+                <td>Usually requires less memory for deep sparse searches.</td>
+            </tr>
+
+            <tr>
+                <td>Finds shallowest solution under standard equal-cost conditions.</td>
+                <td>Does not generally guarantee the shallowest solution.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<div class="question-card">
+
+    <h2>⭐ Classification vs Regression vs Clustering</h2>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <tr>
+                <th>Classification</th>
+                <th>Regression</th>
+                <th>Clustering</th>
+            </tr>
+
+            <tr>
+                <td>Predicts categories.</td>
+                <td>Predicts numerical values.</td>
+                <td>Creates groups.</td>
+            </tr>
+
+            <tr>
+                <td>Supervised.</td>
+                <td>Supervised.</td>
+                <td>Unsupervised.</td>
+            </tr>
+
+            <tr>
+                <td>Example: Spam / Not Spam.</td>
+                <td>Example: House price.</td>
+                <td>Example: Customer groups.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- QUICK REVISION -->
+
+<section class="revision">
+
+    <h2>⚡ One-Minute AI & ML Revision</h2>
+
+    <div class="revision-grid">
+
+        <div class="revision-item">
+            <strong>AI</strong>
+            Machines performing tasks requiring intelligence.
+        </div>
+
+        <div class="revision-item">
+            <strong>ML</strong>
+            Machines learn patterns from data.
+        </div>
+
+        <div class="revision-item">
+            <strong>Deep Learning</strong>
+            ML using multi-layer neural networks.
+        </div>
+
+        <div class="revision-item">
+            <strong>BFS</strong>
+            Level-wise search → Queue.
+        </div>
+
+        <div class="revision-item">
+            <strong>DFS</strong>
+            Depth-wise search → Stack.
+        </div>
+
+        <div class="revision-item">
+            <strong>Heuristic Search</strong>
+            Uses problem-specific guidance.
+        </div>
+
+        <div class="revision-item">
+            <strong>Knowledge Representation</strong>
+            Represents knowledge for computer reasoning.
+        </div>
+
+        <div class="revision-item">
+            <strong>Expert System</strong>
+            Knowledge + reasoning for a specific domain.
+        </div>
+
+        <div class="revision-item">
+            <strong>Supervised Learning</strong>
+            Uses labelled data.
+        </div>
+
+        <div class="revision-item">
+            <strong>Unsupervised Learning</strong>
+            Finds patterns in unlabelled data.
+        </div>
+
+        <div class="revision-item">
+            <strong>Classification</strong>
+            Predicts a class/category.
+        </div>
+
+        <div class="revision-item">
+            <strong>Regression</strong>
+            Predicts a continuous numerical value.
+        </div>
+
+        <div class="revision-item">
+            <strong>Clustering</strong>
+            Groups similar data.
+        </div>
+
+        <div class="revision-item">
+            <strong>Reinforcement Learning</strong>
+            Learns through rewards and penalties.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BACK -->
+
+<div class="back-button">
+
+    <a href="index.html">
+        <button>🏠 Back to Home</button>
+    </a>
+
+</div>
+```
+
+</div>
+
+<footer>
+
+```
+<p>© 2026 College Resource Hub</p>
+<p>Created by Nitin Singh ❤️</p>
+```
+
+</footer>
+
+</body>
+
+</html>
